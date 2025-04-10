@@ -1,7 +1,7 @@
 export default function ContactForm() {
   return (
     <>
-      <h3>Contact Form</h3>
+      <h1>Contact Form</h1>
     </>
   );
 }
