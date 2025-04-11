@@ -14,7 +14,6 @@ export default function Home() {
         <PageDivider />
         <Gallery />
         <Testimonials />
-        <ContactForm />
       </main>
     </div>
   );
