@@ -11,7 +11,14 @@ export default function Home() {
       <main className="flex flex-col gap-8 items-center">
         <LandingPage />
         <Services />
-        <PageDivider />
+        <PageDivider
+          imageUrl={""}
+          title={"We’re Here to Make It Easy"}
+          description={
+            "Whether you’re starting a new project or just have a question, we are here to help."
+          }
+          CTA={"Reach Out to Us"}
+        />
         <Gallery />
         <Testimonials />
       </main>

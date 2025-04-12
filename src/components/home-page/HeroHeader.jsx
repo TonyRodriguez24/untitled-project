@@ -6,10 +6,10 @@ export default function HeroHeader() {
       <div className="grid grid-cols-12 gap-10 bg-amber-500 w-full max-w-screen-xl px-10">
         {/* text section */}
         <div className="flex flex-col gap-5 p-10 justify-start  col-span-6 bg-amber-800">
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-5xl font-bold select-none">
             Get started on building the home of your dreams today
           </h1>
-          <p className="text-xl pr-5">
+          <p className="text-xl pr-5 select-none">
             Long Island's top general contractor, industry-leading results for
             over 35 years.
           </p>
