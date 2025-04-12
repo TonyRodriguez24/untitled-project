@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <div className="grid grid-cols-4 max-w-3/4 mx-auto p-10 bg-green-800">
         {/* Contact Info */}
-        <div className="bg-amber-500 flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <h3 className="text-center bg-amber-100">Connect With Us</h3>
           <ul>
             <li>
@@ -76,7 +76,7 @@ export default function Footer() {
         {/* CTA */}
         <div>
           <h3 className="text-center">Ready to Build?</h3>
-          <p>
+          <p className="px-4">
             Let’s bring your ideas to life! Contact us for a free consultation
             today and discover how JPM and Sons can help.
           </p>

@@ -72,7 +72,6 @@ export default function GallerySection() {
               width={500}
               height={350}
               className="rounded shadow-sm"
-              layout="responsive"
             />
             <figcaption className="text-center mt-2 text-md text-gray-300">
               {item.caption}
