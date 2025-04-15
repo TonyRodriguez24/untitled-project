@@ -32,3 +32,8 @@ body {
   -webkit-user-select: none;
   user-select: none;
 }
+
+#services-dropdown-menu.dropdown-toggle {
+  color: white !important;
+}
+

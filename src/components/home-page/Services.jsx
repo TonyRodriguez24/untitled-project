@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center p-20">
       <h1 className="text-2xl font-bold text-center">Our Services</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 w-3/4">
