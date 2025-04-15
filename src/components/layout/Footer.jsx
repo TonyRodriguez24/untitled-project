@@ -7,7 +7,8 @@ export default function Footer() {
         {/* Contact Info */}
         <div className="flex flex-col items-center">
           <h3 className="text-center">Connect With Us</h3>
-          <ul>
+cbe5a7
+ <ul>
             <li>
               Phone:{" "}
               <a href="tel:516-735-0685">
