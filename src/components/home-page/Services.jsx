@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <div className="flex flex-col items-center p-20">
-      <h1 className="text-2xl font-bold text-center">Our Services</h1>
+    <div className="flex flex-col items-center p-4 lg:p-20">
+      <h2 className="text-xl font-bold text-center">Our Services</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 w-3/4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 lg:w-3/4">
         {services.map((service) => (
           <div
             key={service.id}
@@ -21,7 +21,7 @@ export default function Services() {
             <h3 className="text-start pl-6 text-2xl font-bold mt-4">
               {service.name}
             </h3>
-            <p className="text-start pl-6 pb-5 pr-6 text-gray-600 mt-2">
+            <p className="text-start pl-6 pb-3 pr-6 text-gray-600">
               {service.cardDescription}
             </p>
           </div>

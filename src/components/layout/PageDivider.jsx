@@ -1,7 +1,7 @@
 export default function PageDivider({ imageUrl, title, description, CTA }) {
   return (
     <div
-      className=" w-full my-5 bg-cover bg-center bg-no-repeat"
+      className="w-full my-5 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${imageUrl})` }}>
       <div className="w-full bg-black/70 flex flex-col items-center justify-center py-12 px-4">
         <h3 className="text-2xl font-bold text-white mb-2">
@@ -13,7 +13,7 @@ export default function PageDivider({ imageUrl, title, description, CTA }) {
         </p>
         <a
           href="#ContactForm"
-          className="btn btn-md bg-blue-600 mt-4 px-5 py-2 rounded hover:bg-blue-700 transition">
+          className="btn btn-md bg-primary text-white mt-2 px-3 py-2 rounded transition">
           {CTA}
         </a>
       </div>

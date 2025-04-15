@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer>
-      <div className="grid grid-cols-4 max-w-3/4 mx-auto p-10 bg-green-800">
+      <div className="grid grid-cols-4 max-w-3/4 mx-auto p-10 ">
         {/* Contact Info */}
         <div className="flex flex-col items-center">
-          <h3 className="text-center bg-amber-100">Connect With Us</h3>
+          <h3 className="text-center">Connect With Us</h3>
           <ul>
             <li>
               Phone:{" "}

@@ -63,7 +63,7 @@ export default function GallerySection() {
       </header>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-8 px-10 lg:px-20">
         {galleryItems.map((item, idx) => (
           <figure key={idx} className="gallery-item">
             <Image

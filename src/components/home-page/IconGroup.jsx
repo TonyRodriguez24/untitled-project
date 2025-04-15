@@ -1,6 +1,6 @@
 export default function IconGroup({services}) {
   return (
-    <ul className="flex gap-3 py-3">
+    <ul className="flex flex-wrap gap-3 py-3">
       {services.map((service) => (
         <li
           key={service.name}

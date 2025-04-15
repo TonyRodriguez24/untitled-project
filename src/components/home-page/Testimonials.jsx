@@ -27,7 +27,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section id="testimonials" className="bg-gray-900 py-12">
-      <div className="max-w-2/3 mx-auto px-4">
+      <div className="lg:max-w-2/3 mx-auto px-10">
         {/* Section Header */}
         <header className="text-center mb-10">
           <h2 className="text-3xl font-bold">What Our Clients Say</h2>
@@ -37,7 +37,7 @@ export default function Testimonials() {
         </header>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, idx) => (
             <article
               key={idx}
