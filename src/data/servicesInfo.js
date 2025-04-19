@@ -2,7 +2,7 @@ export const services = [
     {
         id: 1,
         name: "Asphalt",
-        link: "/asphalt",
+        link: "asphalt",
         image: "/home_page/icon-group/asphalt.webp",
         cardDescription: 'We provide professional asphalt paving services for driveways, walkways, and parking lots. Our skilled team ensures a durable and long-lasting finish using high-quality materials and proper installation techniques. Contact us for a consultation.',
         subServices: [
@@ -20,7 +20,7 @@ export const services = [
                     "Weather-Resistant Materials",
                     "Smooth and Polished Finish"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/asphalt/driveway_installation.png"
             },
             {
                 name: "Commercial Asphalt Installation",
@@ -36,7 +36,7 @@ export const services = [
                     "Precision Grading for Drainage",
                     "Scalable for Large Areas"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/asphalt/commercial_asphalt_installation.webp"
             },
             {
                 name: "Belgium Block Borders",
@@ -52,7 +52,7 @@ export const services = [
                     "High-Quality Belgium Blocks",
                     "Customizable for Any Project"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/asphalt/belgium_block_borders.webp"
             },
             {
                 name: "Paver Walkways",
@@ -68,15 +68,17 @@ export const services = [
                     "Enhanced Accessibility",
                     "Customizable Designs"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/asphalt/paver_walkways.webp"
             }
-        ]
+        ],
+        detailedDescription: "At JPM and Sons, we specialize in professional asphalt paving services that enhance and protect your outdoor spaces. Our expert team ensures high-quality results for driveways, walkways, parking lots, and more. Whether you're looking for installation, maintenance, or repair, we use the best materials and practices to ensure durability and a smooth finish.",
+        caption: "Explore our range of high-quality asphalt solutions tailored to meet your needs."
 
     },
     {
         id: 2,
         name: "Concrete",
-        link: "/concrete",
+        link: "concrete",
         image: "/home_page/icon-group/concrete.webp",
         cardDescription: "Our concrete services include driveways, patios, sidewalks, and steps. We focus on quality and precision, ensuring long-lasting results for all installations. Whether it's a decorative patio or a functional driveway, we deliver exceptional craftsmanship.",
         subServices: [
@@ -94,7 +96,7 @@ export const services = [
                     "Weather-Resistant Finish",
                     "Seamless, Polished Look"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/concrete/driveway_installation.webp"
             },
             {
                 name: "Patios and Walkways",
@@ -110,7 +112,7 @@ export const services = [
                     "Slip-Resistant Surface",
                     "Seamlessly Integrated with Landscaping"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/concrete/patios_and_walkways.webp"
             },
             {
                 name: "Sidewalks and Aprons",
@@ -126,7 +128,7 @@ export const services = [
                     "Durable Concrete Construction",
                     "Integrated Drainage Solutions"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/concrete/sidewalks_and_aprons.webp"
             },
             {
                 name: "Steps, Stoops, and Foundation",
@@ -142,15 +144,16 @@ export const services = [
                     "Customizable Designs",
                     "Weather-Resistant Materials"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/concrete/steps_stoops_and_foundations.webp"
             }
-        ]
+        ],
+        detailedDescription: "JPM and Sons offers professional concrete services for durable and long- lasting surfaces.Whether you need a driveway, patio, walkway, or foundation, our team uses top - quality materials and expert techniques to ensure outstanding results that stand the test of time."
     },
 
     {
         id: 3,
         name: "Home Improvement",
-        link: "/home-improvement",
+        link: "home-improvement",
         image: "/home_page/icon-group/home_improvement.webp",
         cardDescription: "From kitchen remodeling to bathroom renovations, our home improvement services enhance the beauty and functionality of your home. We specialize in siding, roofing, and flooring installations, delivering quality results tailored to your needs.",
         subServices: [
@@ -168,7 +171,7 @@ export const services = [
                     "Energy-Efficient Appliances",
                     "Modern Lighting Solutions"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/home-improvement/kitchen_remodeling.webp"
             },
             {
                 name: "Bathroom Renovation",
@@ -184,7 +187,7 @@ export const services = [
                     "Water-Saving Fixtures",
                     "Heated Flooring Options"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/home-improvement/bathroom_renovation.webp"
             },
             {
                 name: "Roofing Services",
@@ -200,7 +203,7 @@ export const services = [
                     "Weather-Resistant Construction",
                     "Comprehensive Warranty"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/home-improvement/roofing_services.webp"
             },
             {
                 name: "Siding Installation",
@@ -216,7 +219,7 @@ export const services = [
                     "Fade-Resistant Colors",
                     "Professional Installation"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/home-improvement/siding_installation.webp"
             },
             {
                 name: "Window Replacement",
@@ -232,7 +235,7 @@ export const services = [
                     "Customizable Designs",
                     "Secure Locking Mechanisms"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/home-improvement/window_replacement.webp"
             },
             {
                 name: "Flooring Installation",
@@ -248,9 +251,10 @@ export const services = [
                     "Precision Installation",
                     "Scratch and Stain Resistant Options"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/home-improvement/flooring_installation.webp"
             }
-        ]
+        ],
+        detailedDescription: "Transform your home with JPM and Sons. We specialize in a range of home improvement services, including kitchen remodeling, bathroom renovations, roofing, and siding.Our team delivers high- quality solutions to enhance your living spaces and increase your home's value."
     },
 
 
@@ -258,7 +262,7 @@ export const services = [
     {
         id: 4,
         name: "Masonry",
-        link: "/masonry",
+        link: "masonry",
         image: "/home_page/icon-group/masonry.webp",
         cardDescription: "Our masonry services feature custom brickwork, retaining walls, and outdoor barbecues. We combine durability with aesthetic appeal to create functional and beautiful structures, tailored to your property's unique design.",
         subServices: [
@@ -276,7 +280,7 @@ export const services = [
                     "Weather-Resistant Materials",
                     "Polished and Seamless Finish"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/masonry/custom_brickwork_and_paver_installation.webp"
             },
             {
                 name: "Stone Veneer and Cultured Stone",
@@ -292,7 +296,7 @@ export const services = [
                     "Wide Variety of Styles",
                     "Increased Property Value"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/masonry/stone_veneers_and_cultured_stone.webp"
             },
             {
                 name: "Outdoor Barbecues",
@@ -308,7 +312,7 @@ export const services = [
                     "Durable and Weather-Resistant Materials",
                     "Expert Craftsmanship for a Polished Look"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/masonry/outdoor_barbecues.webp"
             },
             {
                 name: "Retaining Walls and Stoops",
@@ -324,9 +328,10 @@ export const services = [
                     "Customizable Designs for Any Space",
                     "Low Maintenance and Long-Lasting"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/masonry/retaining_walls_and_stoops.webp"
             }
-        ]
+        ],
+        detailedDescription: "At JPM and Sons, we offer expert masonry services to enhance the beauty and functionality of your property.From custom patios to retaining walls and decorative brickwork, our skilled team provides top- quality craftsmanship tailored to your vision."
     }
     ,
 
@@ -334,7 +339,7 @@ export const services = [
     {
         id: 5,
         name: "Paver Sealing",
-        link: "/paver-sealing",
+        link: "paver-sealing",
         image: "/home_page/icon-group/paver_sealing.webp",
         cardDescription: "Revitalize and protect your outdoor spaces with our paver sealing services. We offer thorough cleaning, polymeric sand application, and high-grade sealing to enhance the look and durability of your pavers.",
         subServices: [
@@ -352,7 +357,7 @@ export const services = [
                     "Eco-Friendly and Safe Methods",
                     "Quick and Thorough Cleaning"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/paver-sealing/hot_water_pressure_washing.webp"
             },
             {
                 name: "Polymeric Sand Application",
@@ -368,7 +373,7 @@ export const services = [
                     "Weed Prevention and Stability",
                     "Long-Lasting Joint Sealing"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/paver-sealing/polymeric_sand_application.webp"
             },
             {
                 name: "Sealing Application",
@@ -384,7 +389,7 @@ export const services = [
                     "Weatherproof and UV-Resistant Coating",
                     "Enhances Color and Texture"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/paver-sealing/sealing_application.webp"
             },
             {
                 name: "Paver Repair",
@@ -400,16 +405,17 @@ export const services = [
                     "Stability and Safety Improvements",
                     "Seamless Restoration of Appearance"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/paver-sealing/paver_repair.webp"
             }
-        ]
+        ],
+        detailedDescription: "Protect and enhance your outdoor surfaces with our professional paver sealing services.At JPM and Sons, we use high- grade sealants to safeguard your pavers against weather damage, stains, and wear while enhancing their natural color and beauty."
     },
 
 
     {
         id: 6,
         name: "Pressure Washing",
-        link: "/pressure-washing",
+        link: "pressure-washing",
         image: "/home_page/icon-group/pressure_washing.webp",
         cardDescription: "Our pressure washing services clean and restore decks, driveways, patios, and building exteriors. Using professional-grade equipment, we remove dirt, stains, and mildew to maintain your property's beauty and value.",
         subServices: [
@@ -427,7 +433,7 @@ export const services = [
                     "Eco-Friendly Cleaning Solutions",
                     "Fast and Thorough Service"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/pressure-washing/residential_pressure_washing.webp"
             },
             {
                 name: "Commercial Pressure Washing",
@@ -443,7 +449,7 @@ export const services = [
                     "Tailored Solutions for Businesses",
                     "Improves Safety and Cleanliness"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/pressure-washing/commercial_pressure_washing.webp"
             },
             {
                 name: "Surface Preparation",
@@ -459,7 +465,7 @@ export const services = [
                     "Safe for All Surfaces",
                     "Prepares for Long-Lasting Coatings"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/pressure-washing/surface_preparation.webp"
             },
             {
                 name: "Deck and Fence Cleaning",
@@ -475,9 +481,10 @@ export const services = [
                     "Preserves Wood Integrity",
                     "Eco-Friendly Cleaning Options"
                 ],
-                imageUrl: ""
+                imageUrl: "/services/pressure-washing/deck_and_fence_cleaning.webp"
             }
-        ]
+        ],
+        detailedDescription: "Keep your property looking its best with our pressure washing services.From driveways and patios to siding and decks, JPM and Sons uses advanced equipment to remove dirt, grime, and stains, restoring the original beauty of your surfaces."
     }
 
 ];

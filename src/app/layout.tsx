@@ -1,6 +1,8 @@
 import Footer from "@/components/layout/Footer";
 import MyNavbar from '@/components/layout/MyNavbar';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";

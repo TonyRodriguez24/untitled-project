@@ -27,7 +27,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section id="testimonials" className="bg-gray-900 py-12">
-      <div className="lg:max-w-2/3 mx-auto px-10">
+      <div className="xl:max-w-2/3 w-3/4 md:w-10/12 mx-auto xl:px-10">
         {/* Section Header */}
         <header className="text-center mb-10">
           <h2 className="text-3xl font-bold">What Our Clients Say</h2>
@@ -68,9 +68,9 @@ export default function Testimonials() {
         <hr className="my-10" />
 
         {/* Google Review Logo */}
-        <div className="text-center">
+        <div className="text-center mt-5">
           <Image
-            src="/static/images-webp/icons/Google_Review_logo.webp"
+            src="/google-reviews-logo.png"
             alt="Google Reviews Badge"
             width={200}
             height={80}

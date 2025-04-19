@@ -14,9 +14,9 @@ import { FaLocationArrow } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer>
-      <div className="grid grid-cols-4 max-w-3/4 mx-auto p-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 lg:gap-0 xl:grid-cols-4 items-stretch w-full xl:max-w-11/12 mx-auto p-10  ">
         {/* Contact Info */}
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col gap-3 items-center bg-gray-900 p-3">
           <h3 className="text-lg font-semibold mb-2">Connect With Us</h3>
           <ul className="flex flex-col gap-2">
             {/* Phone */}
@@ -48,34 +48,35 @@ export default function Footer() {
         </div>
 
         {/* Social Media */}
-        <div>
-          <h3 className="text-center">Follow Us</h3>
-          <div className="flex gap-2 justify-center h-fit my-3">
+        <div className="bg-gray-900 flex flex-col gap-1 items-center p-3">
+          <h3 className="text-white text-xl">Follow Us</h3>
+
+          <div className="flex gap-2 justify-center h-full mb-auto xl:mt-4">
             <a
               href="https://www.facebook.com/JPMSonsCorp/"
               target="_blank"
               rel="noopener noreferrer">
-              <FaFacebook className="text-5xl" />
+              <FaFacebook className="text-5xl lg:text-6xl text-white hover:!text-blue-500 transition" />
             </a>
             <a
               href="https://www.tiktok.com/@jpmandsons"
               target="_blank"
               rel="noopener noreferrer">
-              <FaTiktok className="text-5xl" />
+              <FaTiktok className="text-5xl lg:text-6xl text-white hover:!text-gray-800 transition" />
             </a>
             <a
               href="https://www.instagram.com/jpmandsonscorp/"
               target="_blank"
               rel="noopener noreferrer">
-              <FaInstagram className="text-5xl" />
+              <FaInstagram className="text-5xl lg:text-6xl text-white hover:!text-purple-300 transition" />
             </a>
           </div>
         </div>
 
         {/* Quick Links */}
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col gap-3 items-center bg-gray-900 p-3">
           <h3 className="text-center">Quick Links</h3>
-          <ul>
+          <ul className="flex md:flex-col gap-2 text-center md:gap-2 p-0 ">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -92,9 +93,9 @@ export default function Footer() {
         </div>
 
         {/* CTA */}
-        <div>
+        <div className="hidden lg:flex bg-gray-900 gap-3 flex-col items-center p-3 ">
           <h3 className="text-center">Ready to Build?</h3>
-          <p className="px-4">
+          <p className="text-center px-2">
             Let’s bring your ideas to life! Contact us for a free consultation
             today and discover how JPM and Sons can help.
           </p>

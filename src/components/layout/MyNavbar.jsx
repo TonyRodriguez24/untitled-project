@@ -43,18 +43,16 @@ export default function MyNavbar() {
             <NavDropdown
               title="Services"
               id="services-dropdown-menu"
-              classname="hover:!text-amber-400">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+              className="hover:!text-amber-400">
+              <NavDropdown.Item href="/services/asphalt">Asphalt</NavDropdown.Item>
+              <NavDropdown.Item href="/services/concrete">Concrete</NavDropdown.Item>
+              <NavDropdown.Item href="/services/home-improvement">Home Improvement</NavDropdown.Item>
+              <NavDropdown.Item href="/services/masonry">Masonry</NavDropdown.Item>
+              <NavDropdown.Item href="/services/paver-sealing">Paver Sealing</NavDropdown.Item>
+              <NavDropdown.Item href="/services/pressure-washing">Pressure Washing</NavDropdown.Item>
+            
             </NavDropdown>
-            <Nav.Link href="#link" className="text-white hover:!text-amber-400">
+            <Nav.Link href="/about-us" className="text-white hover:!text-amber-400">
               About us
             </Nav.Link>
           </Nav>

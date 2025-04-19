@@ -4,7 +4,7 @@ import { services } from "@/data/servicesInfo";
 
 export default function LandingPage() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <HeroHeader />
       <IconGroup services={services} />
     </div>
