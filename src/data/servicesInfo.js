@@ -2,6 +2,7 @@ export const services = [
     {
         id: 1,
         name: "Asphalt",
+        link: "/asphalt",
         image: "/home_page/icon-group/asphalt.webp",
         cardDescription: 'We provide professional asphalt paving services for driveways, walkways, and parking lots. Our skilled team ensures a durable and long-lasting finish using high-quality materials and proper installation techniques. Contact us for a consultation.',
         subServices: [
@@ -75,6 +76,7 @@ export const services = [
     {
         id: 2,
         name: "Concrete",
+        link: "/concrete",
         image: "/home_page/icon-group/concrete.webp",
         cardDescription: "Our concrete services include driveways, patios, sidewalks, and steps. We focus on quality and precision, ensuring long-lasting results for all installations. Whether it's a decorative patio or a functional driveway, we deliver exceptional craftsmanship.",
         subServices: [
@@ -148,6 +150,7 @@ export const services = [
     {
         id: 3,
         name: "Home Improvement",
+        link: "/home-improvement",
         image: "/home_page/icon-group/home_improvement.webp",
         cardDescription: "From kitchen remodeling to bathroom renovations, our home improvement services enhance the beauty and functionality of your home. We specialize in siding, roofing, and flooring installations, delivering quality results tailored to your needs.",
         subServices: [
@@ -255,6 +258,7 @@ export const services = [
     {
         id: 4,
         name: "Masonry",
+        link: "/masonry",
         image: "/home_page/icon-group/masonry.webp",
         cardDescription: "Our masonry services feature custom brickwork, retaining walls, and outdoor barbecues. We combine durability with aesthetic appeal to create functional and beautiful structures, tailored to your property's unique design.",
         subServices: [
@@ -330,6 +334,7 @@ export const services = [
     {
         id: 5,
         name: "Paver Sealing",
+        link: "/paver-sealing",
         image: "/home_page/icon-group/paver_sealing.webp",
         cardDescription: "Revitalize and protect your outdoor spaces with our paver sealing services. We offer thorough cleaning, polymeric sand application, and high-grade sealing to enhance the look and durability of your pavers.",
         subServices: [
@@ -404,6 +409,7 @@ export const services = [
     {
         id: 6,
         name: "Pressure Washing",
+        link: "/pressure-washing",
         image: "/home_page/icon-group/pressure_washing.webp",
         cardDescription: "Our pressure washing services clean and restore decks, driveways, patios, and building exteriors. Using professional-grade equipment, we remove dirt, stains, and mildew to maintain your property's beauty and value.",
         subServices: [

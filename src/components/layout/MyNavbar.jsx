@@ -16,19 +16,34 @@ export default function MyNavbar() {
         <Navbar.Toggle aria-controls="main-navbar-collapse" />
         <Navbar.Collapse id="main-navbar-collapse">
           <Nav className="me-auto">
-            <Nav.Link as={Link} href="/" className="text-white">
+            <Nav.Link
+              as={Link}
+              href="/"
+              className="text-white hover:!text-amber-400">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} href="/financing" className="text-white">
+            <Nav.Link
+              as={Link}
+              href="/financing"
+              className="text-white hover:!text-amber-400">
               Financing Options
             </Nav.Link>
-            <Nav.Link as={Link} href="/estimate" className="text-white">
+            <Nav.Link
+              as={Link}
+              href="/estimate"
+              className="text-white hover:!text-amber-400">
               Estimate Tool
             </Nav.Link>
-            <Nav.Link as={Link} href="/estimate" className="text-white">
+            <Nav.Link
+              as={Link}
+              href="/gallery"
+              className="text-white hover:!text-amber-400">
               Gallery
             </Nav.Link>
-            <NavDropdown title="Services" id="services-dropdown-menu">
+            <NavDropdown
+              title="Services"
+              id="services-dropdown-menu"
+              classname="hover:!text-amber-400">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -39,7 +54,7 @@ export default function MyNavbar() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link" className="text-white">
+            <Nav.Link href="#link" className="text-white hover:!text-amber-400">
               About us
             </Nav.Link>
           </Nav>
