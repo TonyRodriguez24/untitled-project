@@ -1,16 +1,17 @@
+"use client"
+
 import { useState } from "react";
-import { paverOptions, borderOptions, sizeOptions } from "../../../Portfolio/src/data/paverInfo";
-import ProgressBar from "../../../Portfolio/src/components/ProgressBar";
-import Step from "../../../Portfolio/src/components/Step";
+import { paverOptions, borderOptions, sizeOptions } from "@/data/paverInfo.js";
+import Step from "@/components/Step.jsx";
 
 function PricingCalculator() {
-  const [progress, setProgress] = useState(0);
+  // const [progress, setProgress] = useState(0);
   const [step, setStep] = useState(1);
   const [total, setTotal] = useState(0);
 
   return (
     <>
-      <ProgressBar steps={5} />
+      {/* <ProgressBar steps={5} /> */}
 
       <div id="steps-container" className="mt-5 flex flex-col gap-10">
         <Step

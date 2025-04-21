@@ -1,3 +1,9 @@
+import PricingCalculator from "@/components/PricingCalculator";
+
 export default function EstimateTool() {
-  return <h1>EstimateTool</h1>;
+  return (
+    <>
+      <PricingCalculator />
+    </>
+  );
 }
