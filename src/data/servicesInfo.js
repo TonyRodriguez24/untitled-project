@@ -57,7 +57,7 @@ export const services = [
             {
                 name: "Paver Walkways",
                 caption: "Custom paver walkways that blend beauty and utility for any landscape.",
-                description: "We specialize in the design and installation of stunning paver walkways that elevate the beauty and functionality of your property. Using high-quality materials and precise techniques, we ensure your walkways are durable, slip-resistant, and visually appealing. Trusted by customers in your area, our licensed and insured team guarantees reliable service tailored to your needs.",
+                description: "We specialize in the design and installation of stunning paver walkways that elevate the beauty and functionality of your property. Using high-quality materials and precise techniques, we ensure your walkways are durable, slip-resistant, and visually appealing.",
                 benefits: [
                     "Improves property accessibility and visual appeal.",
                     "Slip-resistant for enhanced safety.",

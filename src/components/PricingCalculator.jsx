@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react";
-import { paverOptions, borderOptions, sizeOptions } from "@/data/paverInfo.js";
 import Step from "@/components/Step.jsx";
+import { borderOptions, paverOptions, sizeOptions } from "@/data/paverInfo.js";
+import { useState } from "react";
 
 function PricingCalculator() {
   // const [progress, setProgress] = useState(0);
@@ -40,26 +40,24 @@ function PricingCalculator() {
         <Step
           stepNumber={3}
           description={"Border Selection"}
-          values={borderOptions.map(({ style, price }) => ({
+          values={borderOptions.map(({ id, style, price }) => ({
+            id,
             style,
             price,
           }))}
-          fields={["style", "price"]}
+          fields={["id", "style", "price"]}
         />
         <Step
           stepNumber={4}
           description={"Size Selection"}
-          values={sizeOptions.map(({ size, price }) => ({
+          values={sizeOptions.map(({ id, size, price }) => ({
+            id,
             size,
             price,
           }))}
-          fields={["size", "price"]}
+          fields={["id", "size", "price"]}
         />
-        <Step
-          stepNumber={5}
-          description={"Add-Ons Selection (optional)"}
-        
-        />
+        <Step stepNumber={5} description={"Add-Ons Selection (optional)"} />
       </div>
     </>
   );

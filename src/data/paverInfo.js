@@ -66,17 +66,17 @@ export const paverOptions = [
 ];
 
 export const borderOptions = [
-    { style: "Single Row Soldier", price: 2 },
-    { style: "Double Row Sailor", price: 3 },
-    { style: "Contrasting Color Accent", price: 4 },
-    { style: "Inlaid Decorative Edge", price: 5 }
+    { id: 1, style: "Single Row Soldier", price: 2 },
+    { id: 2, style: "Double Row Sailor", price: 3 },
+    { id: 3, style: "Contrasting Color Accent", price: 4 },
+    { id: 4, style: "Inlaid Decorative Edge", price: 5 }
 ];
 
 export const sizeOptions = [
-    { size: "4x8 inches", price: 0 },
-    { size: "6x6 inches", price: 1 },
-    { size: "6x9 inches", price: 2 },
-    { size: "12x12 inches", price: 3 },
-    { size: "12x24 inches", price: 4 },
-    { size: "Custom Size", price: 5 }
+    { id: 1, size: "4x8 inches", price: 0 },
+    { id: 2, size: "6x6 inches", price: 1 },
+    { id: 3, size: "6x9 inches", price: 2 },
+    { id: 4, size: "12x12 inches", price: 3 },
+    { id: 5, size: "12x24 inches", price: 4 },
+    { id: 6, size: "Custom Size", price: 5 }
 ];

@@ -1,9 +1,9 @@
-//this is a step in choosing one of the following selection items
+"use client"
 import { titleize } from "../data/helpers";
   
-function Step({ stepNumber, description, values, fields }) {
+function Step({ stepNumber, description, values = [], fields = [] }) {
   return (
-    <div id={`step-${stepNumber}`} className="text-start">
+    <div id={`step-${stepNumber}`} className="text-start p-10">
       <h2 className="mb-3">
         Step {stepNumber} of 5: {description}
       </h2>
@@ -11,6 +11,7 @@ function Step({ stepNumber, description, values, fields }) {
       <ul className="flex gap-10">
         {values.map((item) => (
           <li key={item.id} className="list-none">
+            {console.log('logging item id ' + item.id)}
             {/* Image */}
             {item.img ? (
               <img src={item.img} className="w-100 h-60" />
@@ -22,17 +23,16 @@ function Step({ stepNumber, description, values, fields }) {
             )}
 
             {/* Field values */}
-            <ul className="my-3">
+            <ul className="my-3 p-0">
               {fields.map((field) => {
                 if (field === "img" || field === "id") return null;
-
                 if (field === "colorOptions") {
                   return (
-                    <li key={field}>
+                    <li key={`colorOptions-${item.id}`}>
                       <h4 className="underline">Available Colors:</h4>
                       <ul>
-                        {item.colorOptions.map((option, idx) => (
-                          <li key={idx}>
+                        {item.colorOptions.map((option) => (
+                          <li key={`${item.id}-${option.color}`}>
                             {option.color} - ${option.price}
                           </li>
                         ))}
@@ -42,7 +42,7 @@ function Step({ stepNumber, description, values, fields }) {
                 }
 
                 return (
-                  <li key={field}>
+                  <li key={`${item.id}-${field}`}>
                     {titleize(field)}: {item[field]}
                   </li>
                 );
