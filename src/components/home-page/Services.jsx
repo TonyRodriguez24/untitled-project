@@ -23,12 +23,12 @@ export default function Services() {
             </Link>
 
             <Link href={`/services/${service.link}`}>
-              <h3 className="text-white hover:!text-blue-400 transition cursor-pointer text-start pl-6 text-2xl font-bold mt-3">
+              <h3 className="text-white my-4 px-5 hover:!text-blue-400 transition cursor-pointer text-start text-2xl font-bold">
                 {service.name}
               </h3>
             </Link>
 
-            <p className="text-start pl-6 pb-3 pr-6 text-gray-600">
+            <p className="text-start p-5 pt-0 text-gray-400">
               {service.cardDescription}
             </p>
           </div>

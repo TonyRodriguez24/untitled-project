@@ -17,7 +17,9 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 lg:gap-0 xl:grid-cols-4 items-stretch w-full xl:max-w-11/12 mx-auto p-10  ">
         {/* Contact Info */}
         <div className="flex flex-col gap-3 items-center bg-gray-900 p-3">
-          <h3 className="text-lg font-semibold mb-2">Connect With Us</h3>
+          <h3 className="font-bold text-2xl lg:text-3xl">
+            CONNECT WITH US
+          </h3>
           <ul className="flex flex-col gap-2">
             {/* Phone */}
             <li>
@@ -49,9 +51,11 @@ export default function Footer() {
 
         {/* Social Media */}
         <div className="bg-gray-900 flex flex-col gap-1 items-center p-3">
-          <h3 className="text-white text-xl">Follow Us</h3>
+          <h3 className="text-white font-bold text-2xl lg:text-3xl">
+            FOLLOW US
+          </h3>
 
-          <div className="flex gap-2 justify-center h-full mb-auto xl:mt-4">
+          <div className="flex gap-4 p-3 justify-center h-full mb-auto xl:mt-4">
             <a
               href="https://www.facebook.com/JPMSonsCorp/"
               target="_blank"
@@ -75,8 +79,10 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex flex-col gap-3 items-center bg-gray-900 p-3">
-          <h3 className="text-center">Quick Links</h3>
-          <ul className="flex md:flex-col gap-2 text-center md:gap-2 p-0 ">
+          <h3 className="text-center font-bold text-2xl lg:text-3xl">
+            QUICK LINKS
+          </h3>
+          <ul className="flex md:flex-col gap-4  text-center md:gap-2 p-0 ">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -94,7 +100,7 @@ export default function Footer() {
 
         {/* CTA */}
         <div className="hidden lg:flex bg-gray-900 gap-3 flex-col items-center p-3 ">
-          <h3 className="text-center">Ready to Build?</h3>
+          <h3 className="text-center font-bold lg:text-3xl">READY TO BUILD?</h3>
           <p className="text-center px-2">
             Let’s bring your ideas to life! Contact us for a free consultation
             today and discover how JPM and Sons can help.
