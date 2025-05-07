@@ -12,6 +12,7 @@ export default function ContactForm() {
   };
 
   const [formData, setFormData] = useState(INITIAL_STATE);
+  const [isSubmitted, setIsSubmitted] = useState(null)
 
   const handleSubmit = (e) => {};
 
@@ -30,7 +31,7 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       autoComplete="on"
-      className="flex flex-col gap-2 my-2 mx-3 lg:mx-0 p-7 rounded-2xl bg-gray-800 shadow-background shadow-2xl h-full w-fit justify-center items-start">
+      className="flex flex-col gap-2 my-2 mx-3 lg:mx-0 p-10 rounded-2xl bg-gray-800 shadow-background shadow-2xl h-full w-fit justify-center items-start">
       <header className="text-start">
         <h3 className="fw-bold text-xl">
           Ready when you are, let’s bring your ideas to life with ease.

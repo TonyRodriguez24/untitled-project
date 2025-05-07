@@ -20,7 +20,7 @@ export default async function ServicePage({ params }) {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {service.name} Services
           </h1>
-          <p className="text-lg max-w-3xl mx-auto whitespace-pre-line">
+          <p className="text-lg max-w-4xl mx-auto whitespace-pre-line">
             {service.detailedDescription}
           </p>
         </div>
