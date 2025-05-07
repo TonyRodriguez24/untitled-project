@@ -1,63 +1,158 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
-export default function MyNavbar() {
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
   return (
-    <Navbar expand="lg" className="bg-gray-900">
-      <Container>
-        <Navbar.Brand href="/" className="text-white">
-          JPM and Sons
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="main-navbar-collapse" />
-        <Navbar.Collapse id="main-navbar-collapse">
-          <Nav className="me-auto">
-            <Nav.Link
-              as={Link}
-              href="/"
-              className="text-white hover:!text-amber-400">
-              Home
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              href="/financing"
-              className="text-white hover:!text-amber-400">
-              Financing Options
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              href="/estimate"
-              className="text-white hover:!text-amber-400">
-              Estimate Tool
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              href="/gallery"
-              className="text-white hover:!text-amber-400">
-              Gallery
-            </Nav.Link>
-            <NavDropdown
-              title="Services"
-              id="services-dropdown-menu"
-              className="hover:!text-amber-400">
-              <NavDropdown.Item href="/services/asphalt">Asphalt</NavDropdown.Item>
-              <NavDropdown.Item href="/services/concrete">Concrete</NavDropdown.Item>
-              <NavDropdown.Item href="/services/home-improvement">Home Improvement</NavDropdown.Item>
-              <NavDropdown.Item href="/services/masonry">Masonry</NavDropdown.Item>
-              <NavDropdown.Item href="/services/paver-sealing">Paver Sealing</NavDropdown.Item>
-              <NavDropdown.Item href="/services/pressure-washing">Pressure Washing</NavDropdown.Item>
-            
-            </NavDropdown>
-            <Nav.Link href="/about-us" className="text-white hover:!text-amber-400">
-              About us
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav className="bg-gray-900 w-full">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        {/* Logo */}
+        <div>
+          <Link href="/" className="text-white font-bold text-xl">
+            JPM and Sons
+          </Link>
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex space-x-6 items-center">
+          <Link href="/" className="text-white hover:text-amber-400">
+            Home
+          </Link>
+          <Link href="/financing" className="text-white hover:text-amber-400">
+            Financing Options
+          </Link>
+          <Link href="/estimate" className="text-white hover:text-amber-400">
+            Estimate Tool
+          </Link>
+          <Link href="/gallery" className="text-white hover:text-amber-400">
+            Gallery
+          </Link>
+
+          {/* Services Dropdown (click-to-open) */}
+          <div className="relative">
+            <button
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="text-white hover:text-amber-400 focus:outline-none">
+              Services ▾
+            </button>
+            {isServicesOpen && (
+              <div className="absolute z-10 bg-gray-900 shadow-lg rounded mt-2 w-48">
+                <Link
+                  href="/services/asphalt"
+                  className="block px-4 py-2 text-white hover:text-amber-400">
+                  Asphalt
+                </Link>
+                <Link
+                  href="/services/concrete"
+                  className="block px-4 py-2 text-white hover:text-amber-400">
+                  Concrete
+                </Link>
+                <Link
+                  href="/services/home-improvement"
+                  className="block px-4 py-2 text-white hover:text-amber-400">
+                  Home Improvement
+                </Link>
+                <Link
+                  href="/services/masonry"
+                  className="block px-4 py-2 text-white hover:text-amber-400">
+                  Masonry
+                </Link>
+                <Link
+                  href="/services/paver-sealing"
+                  className="block px-4 py-2 text-white hover:text-amber-400">
+                  Paver Sealing
+                </Link>
+                <Link
+                  href="/services/pressure-washing"
+                  className="block px-4 py-2 text-white hover:text-amber-400">
+                  Pressure Washing
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link href="/about-us" className="text-white hover:text-amber-400">
+            About Us
+          </Link>
+        </div>
+
+        {/* Mobile Hamburger */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="lg:hidden bg-gray-800 px-4 pb-4 space-y-2">
+          <Link href="/" className="block text-white hover:text-amber-400">
+            Home
+          </Link>
+          <Link
+            href="/financing"
+            className="block text-white hover:text-amber-400">
+            Financing Options
+          </Link>
+          <Link
+            href="/estimate"
+            className="block text-white hover:text-amber-400">
+            Estimate Tool
+          </Link>
+          <Link
+            href="/gallery"
+            className="block text-white hover:text-amber-400">
+            Gallery
+          </Link>
+          <div>
+            <span className="text-white">Services</span>
+            <div className="ml-4 space-y-1">
+              <Link
+                href="/services/asphalt"
+                className="block text-white hover:text-amber-400">
+                Asphalt
+              </Link>
+              <Link
+                href="/services/concrete"
+                className="block text-white hover:text-amber-400">
+                Concrete
+              </Link>
+              <Link
+                href="/services/home-improvement"
+                className="block text-white hover:text-amber-400">
+                Home Improvement
+              </Link>
+              <Link
+                href="/services/masonry"
+                className="block text-white hover:text-amber-400">
+                Masonry
+              </Link>
+              <Link
+                href="/services/paver-sealing"
+                className="block text-white hover:text-amber-400">
+                Paver Sealing
+              </Link>
+              <Link
+                href="/services/pressure-washing"
+                className="block text-white hover:text-amber-400">
+                Pressure Washing
+              </Link>
+            </div>
+          </div>
+          <Link
+            href="/about-us"
+            className="block text-white hover:text-amber-400">
+            About Us
+          </Link>
+        </div>
+      )}
+    </nav>
   );
 }

@@ -43,7 +43,7 @@ export default function ContactForm() {
 
       <hr className=" my-3 border-amber-400 w-full border-2"></hr>
 
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-2/3">
         <label htmlFor="name">Name</label>
         <input
           className={styles}
@@ -56,7 +56,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-2/3">
         <label htmlFor="number">Number</label>
         <input
           className={styles}
@@ -69,7 +69,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-2/3">
         <label htmlFor="address">Address</label>
         <input
           className={styles}
@@ -82,7 +82,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-2/3">
         <label htmlFor="email">Email</label>
         <input
           className={styles}
@@ -95,7 +95,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-2/3">
         <label htmlFor="service">Service type</label>
         <select
           className={styles}

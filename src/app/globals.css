@@ -16,7 +16,7 @@
 /* dark mode theme  */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: black;
     --foreground: #ededed;
   }
 }
@@ -33,13 +33,10 @@ body {
   user-select: none;
 }
 
-a{
+a {
   text-decoration: none;
 }
-
-
 
 #services-dropdown-menu.dropdown-toggle {
   color: white !important;
 }
-

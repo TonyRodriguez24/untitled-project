@@ -8,69 +8,70 @@ export const services = [
         subServices: [
             {
                 name: "Driveway Installation",
-                caption: "Expertly crafted driveways using high-quality materials, ensuring durability and a polished appearance that enhances curb appeal.",
-                description: "We use high-quality materials and advanced techniques to ensure durability and a polished appearance. Trusted by hundreds of customers in your area, we deliver fast and reliable service while ensuring peace of mind with our licensed and insured team.",
+                caption: "Transform your property entrance with a durable, expertly installed asphalt driveway built to withstand local weather conditions.",
+                description: "We create properly graded, weather-resistant driveways using premium materials and thorough compaction techniques. Our installations prevent water pooling and edge crumbling while enhancing your home's value. Most projects complete within days, providing quick access and lasting results.",
                 benefits: [
-                    "Enhances curb appeal and property value.",
-                    "Professionally graded for long-lasting durability.",
-                    "Licensed and insured team for a stress-free experience."
+                    "Enhances your property's market value with improved curb appeal",
+                    "Engineered with a substantial compacted base material to prevent sinking and cracking",
+                    "Quality workmanship from an experienced local team"
                 ],
                 features: [
-                    "Customizable Designs",
-                    "Weather-Resistant Materials",
-                    "Smooth and Polished Finish"
+                    "Custom Edging Options",
+                    "Cold-Weather Performance Mix",
+                    "Professional Drainage Integration"
                 ],
                 imageUrl: "/services/asphalt/driveway_installation.png"
             },
             {
                 name: "Commercial Asphalt Installation",
-                caption: "Robust asphalt solutions for parking lots, walkways, and commercial spaces.",
-                description: "Our commercial asphalt installation focuses on durability and performance for high-traffic areas. Trusted by hundreds of businesses, we provide licensed and insured services tailored to your needs.",
+                caption: "Heavy-duty paving solutions engineered specifically for business environments and high-traffic commercial properties.",
+                description: "Our commercial installations use industrial-grade mixes with enhanced load-bearing polymers for high-traffic areas. We work during off-hours to minimize business disruption and ensure compliance with ADA requirements and local codes. Proper pitch planning prevents standing water issues that lead to premature deterioration.",
                 benefits: [
-                    "Designed for heavy usage and traffic.",
-                    "Ensures proper drainage and long-lasting performance.",
-                    "Compliance with industry standards and local regulations."
+                    "Formulated specifically for continuous traffic patterns and commercial vehicle weights",
+                    "Strategic installation scheduling that minimizes business downtime",
+                    "Built to meet commercial property requirements and reduce liability concerns"
                 ],
                 features: [
-                    "High Load-Bearing Capacity",
-                    "Precision Grading for Drainage",
-                    "Scalable for Large Areas"
+                    "High Capacity Design",
+                    "Precision Water Management",
+                    "Multi-Phase Project Capability"
                 ],
                 imageUrl: "/services/asphalt/commercial_asphalt_installation.webp"
             },
             {
                 name: "Belgium Block Borders",
-                caption: "Decorative and durable Belgium block borders to define and protect driveway and walkway edges.",
-                description: "Our decorative Belgium block borders combine elegance with functionality, ensuring structural integrity and a finished look.",
+                caption: "Classic stone borders that frame your property while preventing edge erosion and asphalt breakdown.",
+                description: "Our Belgium block borders combine aesthetics with function by preventing edge deterioration. Installed on a concrete foundation, these hand-selected blocks create perfect alignment with existing landscapes. They provide clean transitions between surfaces while preventing grass invasion that typically undermines standard asphalt edges.",
                 benefits: [
-                    "Prevents erosion and edge deterioration.",
-                    "Adds an elegant and finished look to your space.",
-                    "Durable and weather-resistant installation."
+                    "Creates a physical barrier that stops edge crumbling and extends pavement life",
+                    "Prevents lawn maintenance equipment from damaging asphalt edges",
+                    "Allows for cleaner snow removal that won't damage your driveway boundaries"
                 ],
                 features: [
-                    "Decorative and Functional",
-                    "High-Quality Belgium Blocks",
-                    "Customizable for Any Project"
+                    "Secure Base Construction",
+                    "Weathered or Clean-Cut Finishes",
+                    "Water-Channeling Design"
                 ],
                 imageUrl: "/services/asphalt/belgium_block_borders.webp"
             },
             {
                 name: "Paver Walkways",
-                caption: "Custom paver walkways that blend beauty and utility for any landscape.",
-                description: "We specialize in the design and installation of stunning paver walkways that elevate the beauty and functionality of your property. Using high-quality materials and precise techniques, we ensure your walkways are durable, slip-resistant, and visually appealing.",
+                caption: "Interlocking stone pathways that connect your landscape elements while enhancing safety and visual appeal.",
+                description: "Our engineered paver walkways connect property features while addressing practical concerns like visibility, traction, and landscape integration. Installed using sand-set methods over compacted gravel, they allow slight movement without cracking during ground freezes. Each paver is precisely placed to create consistent surfaces that eliminate trip hazards.",
                 benefits: [
-                    "Improves property accessibility and visual appeal.",
-                    "Slip-resistant for enhanced safety.",
-                    "Long-lasting and easy to maintain."
+                    "Natural texture provides better footing in wet conditions than poured concrete",
+                    "Individual pavers can be replaced if damaged, unlike monolithic walkway systems",
+                    "Permeable options available that reduce runoff and comply with local water regulations"
                 ],
                 features: [
-                    "Slip-Resistant Materials",
-                    "Enhanced Accessibility",
-                    "Customizable Designs"
+                    "Anti-Slip Surface Texturing",
+                    "Integrated Landscape Lighting Options",
+                    "Frost-Resistant Design"
                 ],
                 imageUrl: "/services/asphalt/paver_walkways.webp"
             }
         ],
+
         detailedDescription: "At JPM and Sons, we specialize in professional asphalt paving services that enhance and protect your outdoor spaces. Our expert team ensures high-quality results for driveways, walkways, parking lots, and more. Whether you're looking for installation, maintenance, or repair, we use the best materials and practices to ensure durability and a smooth finish.",
         caption: "Explore our range of high-quality asphalt solutions tailored to meet your needs."
 
