@@ -31,7 +31,7 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       autoComplete="on"
-      className="flex flex-col gap-2 my-2 mx-3 lg:mx-0 p-10 rounded-2xl bg-gray-800 shadow-background shadow-2xl h-full w-fit justify-center items-start">
+      className="flex flex-col gap-2 my-2 mx-3 lg:mx-0 p-10 rounded-2xl bg-gray-800 shadow-background shadow-2xl justify-center items-start w-11/12">
       <header className="text-start">
         <h3 className="fw-bold text-xl">
           Ready when you are, let’s bring your ideas to life with ease.
@@ -44,8 +44,8 @@ export default function ContactForm() {
 
       <hr className="my-2 border-black w-full border-1"></hr>
 
-      <div className="flex flex-col lg:flex-row flex-wrap lg:flex-nowrap w-full gap-4 items-center lg:items-end">
-        <div className="flex flex-col w-4/5 lg:w-2/3">
+      <div className="flex flex-col lg:flex-row flex-wrap w-full h-fit gap-4 items-center lg:items-end">
+        <div className="flex flex-col w-4/5 lg:w-1/7">
           <label htmlFor="name">Name</label>
           <input
             className={styles}
@@ -57,7 +57,7 @@ export default function ContactForm() {
             value={formData.name}
           />
         </div>
-        <div className="flex flex-col w-4/5 lg:w-2/3">
+        <div className="flex flex-col w-4/5 lg:w-1/7">
           <label htmlFor="number">Number</label>
           <input
             className={styles}
@@ -70,7 +70,7 @@ export default function ContactForm() {
             autoComplete="tel"
           />
         </div>
-        <div className="flex flex-col w-4/5 lg:w-2/3">
+        <div className="flex flex-col w-4/5 lg:w-1/6">
           <label htmlFor="address">Address</label>
           <input
             className={styles}
@@ -82,7 +82,7 @@ export default function ContactForm() {
             value={formData.address}
           />
         </div>
-        <div className="flex flex-col w-4/5 lg:w-2/3">
+        <div className="flex flex-col w-4/5 lg:w-1/6">
           <label htmlFor="email">Email</label>
           <input
             className={styles}
@@ -94,7 +94,7 @@ export default function ContactForm() {
             value={formData.email}
           />
         </div>
-        <div className="flex flex-col w-4/5 lg:w-2/3">
+        <div className="flex flex-col w-4/5 lg:w-fit">
           <label htmlFor="service">Service type</label>
           <select
             className={styles}
@@ -113,7 +113,7 @@ export default function ContactForm() {
             <option value="paver_sealing">Paver Sealing</option>
           </select>
         </div>
-        <button className="bg-blue-800 py-2 px-4 border-1 my-4  lg:my-0 border-black rounded-sm w-4/5 h-fit cursor-pointer ">
+        <button className="bg-blue-800 py-2 px-4 border-1 my-4  lg:my-0 border-black rounded-sm  w-4/5 lg:w-1/8 h-fit cursor-pointer ">
           Get started today
         </button>
       </div>

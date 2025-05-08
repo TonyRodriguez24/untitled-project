@@ -31,6 +31,7 @@ body {
 * {
   -webkit-user-select: none;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -40,3 +41,4 @@ a {
 #services-dropdown-menu.dropdown-toggle {
   color: white !important;
 }
+

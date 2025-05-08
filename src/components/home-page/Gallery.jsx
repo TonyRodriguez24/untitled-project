@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PageDivider from "../layout/PageDivider";
 
 const galleryItems = [
   {
@@ -48,14 +49,13 @@ const galleryItems = [
   },
 ];
 
-
 export default function GallerySection() {
   return (
-    <section id="gallery" className="container mx-auto">
+    <section id="gallery" className="w-full p-5 lg:p-0">
       {/* Heading */}
       <header className="text-center mb-8">
         <h2 className="text-3xl font-bold">Our Gallery</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mt-2 text-center">
+        <p className="text-gray-600 max-w-2xl mx-auto mt-2 text-start lg:text-center">
           Explore our recent projects, from paver patios to stunning masonry and
           more. See how we’ve transformed outdoor and indoor spaces for our
           clients.
@@ -63,7 +63,7 @@ export default function GallerySection() {
       </header>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-8 px-10 lg:px-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 place-items-center max-w-7xl justify-center mx-auto">
         {galleryItems.map((item, idx) => (
           <figure key={idx} className="gallery-item">
             <Image
@@ -79,6 +79,17 @@ export default function GallerySection() {
           </figure>
         ))}
       </div>
+
+      <PageDivider
+        href={"/gallery"}
+        imageUrl={"/"}
+        title={"Explore More of Our Best Work"}
+        description={
+          "Get inspired by browsing our complete gallery of recent projects."
+        }
+        CTA={"View Full Gallery"}
+        customClass={"lg:text-start text-center my-1"}
+      />
     </section>
   );
 }

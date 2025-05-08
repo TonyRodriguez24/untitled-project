@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <div className="flex flex-col items-center p-4 lg:p-20">
+    <section id = "services" className="flex flex-col items-center p-4 lg:p-20">
       <h2 className="text-xl font-bold text-center">Our Services</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 lg:w-3/4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 w-11/12 lg:w-full xl:w-2/3">
         {services.map((service) => (
           <div
             key={service.id}
@@ -16,7 +16,7 @@ export default function Services() {
               <Image
                 src={service.image}
                 alt={service.name}
-                width={400}
+                width={300}
                 height={200}
                 className="w-full rounded-t-xl cursor-pointer hover:opacity-60 transition"
               />
@@ -34,6 +34,6 @@ export default function Services() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

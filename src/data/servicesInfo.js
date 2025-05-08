@@ -4,7 +4,7 @@ export const services = [
         name: "Asphalt",
         link: "asphalt",
         image: "/home_page/icon-group/asphalt.webp",
-        cardDescription: 'We provide professional asphalt paving services for driveways, walkways, and parking lots. Our skilled team ensures a durable and long-lasting finish using high-quality materials and proper installation techniques. Contact us for a consultation.',
+        cardDescription: 'We provide professional asphalt paving services for driveways, walkways, and parking lots. We ensure a durable and long-lasting finish by using high-quality materials and proper installation techniques.',
         subServices: [
             {
                 name: "Driveway Installation",
@@ -81,7 +81,7 @@ export const services = [
         name: "Concrete",
         link: "concrete",
         image: "/home_page/icon-group/concrete.webp",
-        cardDescription: "Our concrete services include driveways, patios, sidewalks, and steps. We focus on quality and precision, ensuring long-lasting results for all installations. Whether it's a decorative patio or a functional driveway, we deliver exceptional craftsmanship.",
+        cardDescription: "Our concrete services include driveways, patios, sidewalks, and steps. We focus on quality and precision, ensuring long-lasting results for all installations, whether it's a decorative patio or a functional driveway.",
         subServices: [
             {
                 name: "Driveway Installation",
@@ -156,7 +156,7 @@ export const services = [
         name: "Home Improvement",
         link: "home-improvement",
         image: "/home_page/icon-group/home_improvement.webp",
-        cardDescription: "From kitchen remodeling to bathroom renovations, our home improvement services enhance the beauty and functionality of your home. We specialize in siding, roofing, and flooring installations, delivering quality results tailored to your needs.",
+        cardDescription: "From kitchen remodeling to bathroom renovations, our home improvement services enhance the beauty and functionality of your home. We specialize in siding, roofing, and flooring installations.",
         subServices: [
             {
                 name: "Kitchen Remodeling",

@@ -12,12 +12,14 @@ export default function Home() {
         <LandingPage />
         <Services />
         <PageDivider
+          href={'/contact-us'}
           imageUrl={"/page-dividers/overhead-pavers.png"}
           title={"We’re Here to Make It Easy"}
           description={
             "Whether you’re starting a new project or just have a question, we are here to help."
           }
           CTA={"Reach Out to Us"}
+          customClass={"text-center"}
         />
         <Gallery />
         <Testimonials />
