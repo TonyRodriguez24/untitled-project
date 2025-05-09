@@ -6,9 +6,16 @@ import ContactForm from "../ContactForm";
 export default function LandingPage() {
   return (
     <div className="flex flex-col items-center">
+      <HeroHeader
+        title="Get started on building the home of your dreams today"
+        subtitle="Long Island's top general contractor, delivering industry-leading results for over 35 years."
+        buttonText="Learn More"
+        buttonHref="#services"
+        imageSrc="/sample_image.jpg"
+        imageAlt="A beautiful home"
+      />
 
-      <HeroHeader />
-      <ContactForm/>
+      <ContactForm />
     </div>
   );
 }

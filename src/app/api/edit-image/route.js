@@ -1,47 +1,47 @@
+// app/api/edit-image/route.js
+
 import { NextResponse } from "next/server";
+import OpenAI from "openai";
+import { toFile } from "openai";
+import fs from "fs/promises";
+import path from "path";
+import os from "os";
 
-export async function POST(request) {
-    // 1️⃣ parse the incoming multipart/form-data
-    const formData = await request.formData();
-    const file = formData.get("file");       // this is a File/Blob
-    const prompt = formData.get("prompt");   // this is your text
+export async function POST(req) {
+  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-    if (!(file instanceof Blob) || !prompt) {
-        return NextResponse.json(
-            { error: "Missing file or prompt" },
-            { status: 400 }
-        );
+  try {
+    const formData = await req.formData();
+    const file = formData.get("image");
+    const prompt = formData.get("prompt");
+
+    if (!file || !prompt) {
+      return NextResponse.json({ error: "Missing image or prompt" }, { status: 400 });
     }
 
-    // 2️⃣ build a new FormData for the OpenAI API
-    const out = new FormData();
-    out.append("model", "gpt-image-1");
-    out.append("prompt", prompt);
-    // you can pass the File/Blob directly
-    out.append("image", file, file.name);
+    // Save uploaded file to temp folder
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const tempDir = os.tmpdir();
+    const tempFilePath = path.join(tempDir, file.name);
+    await fs.writeFile(tempFilePath, buffer);
 
-    // 3️⃣ call OpenAI’s image-edits endpoint
-    const aiRes = await fetch("https://api.openai.com/v1/images/edits", {
-        method: "POST",
-        headers: {
-            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        },
-        body: out,
+    const imageFile = await toFile(tempFilePath);
+
+    const response = await openai.images.edit({
+      image: imageFile,
+      prompt: prompt,
+      model: "dall-e-2"
     });
 
-    if (!aiRes.ok) {
-        const errText = await aiRes.text();
-        console.error("OpenAI error:", errText);
-        return NextResponse.json(
-            { error: "OpenAI API request failed" },
-            { status: 502 }
-        );
-    }
+    // Clean up temp file
+    await fs.unlink(tempFilePath);
 
-    const aiJson = await aiRes.json();
-    // the API returns an array of images; grab the first
-    const { b64_json } = aiJson.data[0];
+    const imageUrl = response.data[0].url;
 
-    // 4️⃣ send that base64 blob back to your frontend
-    return NextResponse.json({ b64_json });
+    return NextResponse.json({ imageUrl });
+  } catch (err) {
+    console.error(err);
+    return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
+  }
 }

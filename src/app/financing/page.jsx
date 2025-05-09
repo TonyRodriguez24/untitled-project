@@ -1,33 +1,22 @@
-import React from "react";
+import Button from "../../components/layout/Button";
 import PageDivider from "../../components/layout/PageDivider";
+import HeroHeader from "@/components/home-page/HeroHeader";
+
 
 export default function Financing() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="text-black py-8">
-        <div className="container mx-auto mb-12 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <h1 className="text-4xl text-white font-bold mb-4">
-              Financing made simple and stress free
-            </h1>
-            <p className="text-lg text-white mb-4">
-              Get the funding you need to start your dream project today. No
-              impact on your credit score to explore your options!
-            </p>
-            <a href="#financing-details" className="btn btn-primary">
-              Learn More
-            </a>
-          </div>
-          <div className="md:w-1/2">
-            <img
-              src="/financing/financing.webp"
-              alt="Hero Image"
-              className="w-full h-auto aspect-square object-cover"
-            />
-          </div>
-        </div>
-      </section>
+      <HeroHeader
+        title="Financing made simple and stress free"
+        subtitle="Get the funding you need to start your dream project today. No impact on your credit score to explore your options!"
+        buttonText="Learn More"
+        buttonHref="#financing-details"
+        imageSrc="/financing/financing.png"
+        imageAlt="Hero Image"
+        imageWrapperClassName="bg-amber-400 rounded-2xl flex justify-center items-center mx-auto max-w-xl w-full aspect-[4/3] p-4 px-20"
+        imageClassName="w-full h-auto object-cover"
+      />
 
       {/* Why Choose Hearth Section */}
       <section id="financing-details" className="py-12">
@@ -38,21 +27,25 @@ export default function Financing() {
           <div className="flex flex-col md:flex-row justify-center gap-8">
             <div className="md:w-1/3 p-4">
               <i className="bi bi-credit-card text-blue-600 text-5xl mb-4"></i>
-              <h3 className="font-bold mb-2">No Credit Impact</h3>
-              <p>
+              <h3 className="font-bold my-2">No Credit Impact</h3>
+              <p className="text-gray-400">
                 Prequalify with a "soft" credit check—compare offers without
                 affecting your credit score.
               </p>
             </div>
             <div className="md:w-1/3 p-4">
-              <i className="bi bi-cash text-green-600 text-5xl mb-4"></i>
-              <h3 className="font-bold mb-2">No Pre-Payment Fees</h3>
-              <p>Pay off your loan early without any additional charges.</p>
+              <i className="bi bi-cash text-green-600 text-5xl"></i>
+              <h3 className="font-bold my-2">No Pre-Payment Fees</h3>
+              <p className="text-gray-400">
+                Pay off your loan early without any additional charges.
+              </p>
             </div>
             <div className="md:w-1/3 p-4">
               <i className="bi bi-clock text-yellow-500 text-5xl mb-4"></i>
-              <h3 className="font-bold mb-2">Fast Funding</h3>
-              <p>Receive your funds in as little as 1–5 business days.</p>
+              <h3 className="font-bold my-2">Fast Funding</h3>
+              <p className="text-gray-400">
+                Receive your funds in as little as 1–5 business days.
+              </p>
             </div>
           </div>
         </div>
@@ -60,12 +53,14 @@ export default function Financing() {
 
       {/* Banner Section */}
       <PageDivider
-        imageUrl={""}
-        title={"We’re Here to Make It Easy"}
+        imageUrl={"/financing/financing_banner.webp"}
+        title={"Financing Made Simple"}
         description={
-          "Whether you’re starting a new project or just have a question, we are here to help."
+          "Flexible payment options to fit your budget. Start your project today without the stress—let’s find the right financing solution for you."
         }
-        CTA={"Reach Out to Us"}
+        CTA={"Get in Touch Today"}
+        href={"/contact-us"}
+        customClass={"text-gray-400"}
       />
 
       {/* Additional Features */}
@@ -75,18 +70,20 @@ export default function Financing() {
             What Makes Their Financing Stand Out?
           </h2>
           <div className="flex flex-col md:flex-row justify-center gap-8">
-            <div className="md:w-1/2 p-4">
-              <i className="bi bi-currency-dollar text-blue-600 text-5xl mb-4"></i>
-              <h3 className="font-bold mb-2">Flexible Loan Amounts</h3>
-              <p>
-                Choose a loan amount that fits your project—whether it’s big or
-                small. Borrow as little as $1,000 or as much as $100,000.
+            <div className="md:w-1/2 p-4 text-center">
+              <i className="bi bi-currency-dollar text-green-600 text-5xl"></i>
+              <h3 className="font-bold text-lg my-2">Flexible Loan Amounts</h3>
+              <p className="w-2/3 mx-auto text-gray-400">
+                Choose a loan amount that fits your project. Borrow as little as
+                $1,000 or as much as $100,000.
               </p>
             </div>
             <div className="md:w-1/2 p-4">
-              <i className="bi bi-calendar-check text-green-600 text-5xl mb-4"></i>
-              <h3 className="font-bold mb-2">Customizable Payment Plans</h3>
-              <p>
+              <i className="bi bi-calendar-check text-blue-600 text-5xl"></i>
+              <h3 className="font-bold text-lg my-2">
+                Customizable Payment Plans
+              </h3>
+              <p className="w-2/3 mx-auto text-gray-400">
                 Work with lenders to create payment schedules that match your
                 budget and timeline.
               </p>
@@ -96,11 +93,11 @@ export default function Financing() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="py-12 text-center">
+      <section className="py-20 text-center">
         <div className="container mx-auto">
-          <hr className="border-2 border-blue-600 w-11/12 mx-auto mb-6" />
-          <i className="bi bi-chat-left-quote text-blue-600 text-4xl mb-4"></i>
-          <blockquote className="font-bold mb-2">
+          <hr className="border-2 border-gray-600 w-11/12 mx-auto mb-6" />
+          <i className="bi bi-chat-left-quote text-amber-300 text-4xl mb-4"></i>
+          <blockquote className="font-bold my-2">
             "Hearth made financing simple and stress-free. I got the funds I
             needed in no time!"
           </blockquote>
@@ -111,43 +108,45 @@ export default function Financing() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-10 bg-gray-100 text-black">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl text-blue-600 font-bold mb-8">
+      <section className="py-20 bg-gray-900 w-1/2 mx-auto rounded-2xl">
+        <div className="container mx-auto w-2/3 text-center">
+          <h2 className="text-3xl font-bold mb-8 underline underline-offset-4">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-6 text-left">
+          <div className="space-y-8 text-left">
             <div>
-              <h4 className="font-bold mb-1">
+              <h4 className="font-bold text-lg mb-1">
                 Does checking my rate affect my credit score?
               </h4>
-              <p>
-                No, prequalification involves a "soft" inquiry that won’t affect
-                your credit score.
+              <p className="text-gray-400">
+                - No, prequalification involves a "soft" inquiry that{" "}
+                <span className="text-green-600 underline underline-offset-4">
+                  won't affect your credit score
+                </span>
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-1">
+              <h4 className="text-lg font-bold mb-1">
                 Can I pay off my loan early without penalties?
               </h4>
-              <p>
-                Yes, all of Hearth's lenders have no pre-payment fees, so you
+              <p className="text-gray-400">
+                - Yes, all of Hearth's lenders have no pre-payment fees, so you
                 can pay off your loan anytime without additional charges.
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-1">
+              <h4 className="text-lg font-bold mb-1">
                 How do lenders evaluate my application?
               </h4>
-              <p>
-                Lenders consider factors like your credit history,
+              <p className="text-gray-400">
+                - Lenders consider factors like your credit history,
                 debt-to-income ratio, income, and expenses to determine your
                 eligibility and loan terms.
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-1">Can I add a co-borrower?</h4>
-              <p>
+              <h4 className="font-bold mb-1 text-lg">Can I add a co-borrower?</h4>
+              <p className="text-gray-400">
                 Yes, adding a co-borrower can improve your chances of approval
                 and may lower your APR. Both parties will sign the agreement and
                 share liability.
@@ -158,20 +157,18 @@ export default function Financing() {
       </section>
 
       {/* Final Call to Action */}
-      <section className="text-center py-12">
-        <div className="container mx-auto">
-          <h3 className="text-2xl font-bold mb-3">Start Your Project Today!</h3>
-          <p className="text-gray-600 mb-4">
-            Don't let finances hold you back. Unlock affordable, stress-free
-            financing options tailored for you.
-          </p>
-          <a
-            href="https://app.gethearth.com/financing/48905/85753/prequalify?utm_campaign=48905&utm_content=general&utm_medium=custom-lp&utm_source=contractor&utm_term=85753"
-            className="btn btn-primary">
-            Visit Hearth
-          </a>
-        </div>
-      </section>
+      <PageDivider
+        imageUrl={"/page-dividers/financing.png"}
+        title={"Start Your Project Today!"}
+        description={
+          "Don't let finances hold you back. Unlock affordable, stress-free financing options tailored for you."
+        }
+        href={
+          "https://app.gethearth.com/financing/48905/85753/prequalify?utm_campaign=48905&utm_content=general&utm_medium=custom-lp&utm_source=contractor&utm_term=85753"
+        }
+        CTA={"Visit Hearth"}
+        customClass={"text-gray-400"}
+      />
     </div>
   );
 }

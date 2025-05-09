@@ -5,8 +5,7 @@ import {
   homeImprovementGallery,
 } from "@/data/gallery.js";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { FaBusinessTime } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import { RiMessage2Fill } from "react-icons/ri";
 
@@ -34,7 +33,7 @@ export default function Gallery() {
       )}
 
       <section id="gallery" className="p-10">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-10">
           <div className="lg:w-1/2 text-left">
             <h1 className="font-bold text-3xl mb-4">Our Gallery</h1>
             <p className="text-gray-500 leading-relaxed">
@@ -49,23 +48,16 @@ export default function Gallery() {
             </p>
           </div>
 
-          <div className="hidden md:flex flex-wrap justify-center lg:w-1/2 gap-4">
-            <div className="flex flex-col items-center border-4 border-gray-800 shadow-sm rounded-lg p-4 w-1/3">
-              <IoLocationSharp className="text-green-900 w-6 h-fit" />
-              <h4 className="text-xl font-bold text-green-700">50+</h4>
+          <div className="hidden md:flex flex-wrap justify-center items-center lg:w-1/2 gap-4">
+            <div className="flex flex-col items-center bg-gray-800 shadow-sm rounded-lg p-5 w-1/3">
+              <IoLocationSharp className="text-green-500 w-8 h-fit" />
+              <h4 className="text-xl font-bold text-green-500">50+</h4>
               <small className="text-center">Towns Served on Long Island</small>
             </div>
-            <div className="flex flex-col items-center border-4 border-gray-800 shadow-sm rounded-lg p-4 w-1/3">
-              <RiMessage2Fill className="text-green-900 w-6 h-fit" />
-              <h4 className="font-bold text-xl text-green-700 my-1">
-                Same-Day
-              </h4>
+            <div className="flex flex-col items-center bg-gray-800 shadow-sm rounded-lg p-5 w-1/3">
+              <RiMessage2Fill className="text-green-500 w-8 h-fit" />
+              <h4 className="text-xl font-bold text-green-500">Same Day</h4>
               <small className="text-center">Response to Inquiries</small>
-            </div>
-            <div className="flex flex-col items-center border-4 border-gray-800 shadow-sm rounded-lg p-4 w-1/3">
-              <FaBusinessTime className="text-green-900 w-6 h-fit" />
-              <h4 className="font-bold text-xl my-1 text-green-700">35+</h4>
-              <small className="text-center">Years of Experience</small>
             </div>
           </div>
         </div>
@@ -120,7 +112,6 @@ export default function Gallery() {
                   width={600}
                   height={800}
                   className="rounded shadow object-cover"
-                  
                 />
                 <figcaption className="text-center text-sm text-gray-500 mt-1">
                   Before
@@ -135,7 +126,6 @@ export default function Gallery() {
                     width={600}
                     height={800}
                     className="rounded shadow object-cover"
-                    
                   />
                   <figcaption className="text-center text-sm text-gray-500 mt-1">
                     After
@@ -163,7 +153,6 @@ export default function Gallery() {
                 width={400}
                 height={350}
                 className="rounded shadow-sm w-full"
-                
               />
             </figure>
           ))}

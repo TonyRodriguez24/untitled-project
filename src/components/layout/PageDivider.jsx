@@ -26,7 +26,7 @@ export default function PageDivider({
         <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
         {/* allow rich JSX for description */}
         <div className={customClass}>{description}</div>
-        {CTA && <Button href={href} CTA={"Get Started Today"} customClass="mt-3"/>}
+        {CTA && <Button href={href} CTA={CTA} customClass="mt-3"/>}
       </div>
     </div>
   );
