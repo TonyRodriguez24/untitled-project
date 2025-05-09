@@ -1,4 +1,3 @@
-import ContactForm from "@/components/ContactForm";
 import Gallery from "@/components/home-page/Gallery";
 import LandingPage from "@/components/home-page/LandingPage";
 import Services from "@/components/home-page/Services";
@@ -12,7 +11,7 @@ export default function Home() {
         <LandingPage />
         <Services />
         <PageDivider
-          href={'/contact-us'}
+          href={"/contact-us"}
           imageUrl={"/page-dividers/overhead-pavers.png"}
           title={"We’re Here to Make It Easy"}
           description={
@@ -22,6 +21,29 @@ export default function Home() {
           customClass={"text-center"}
         />
         <Gallery />
+        <PageDivider
+          href="/contact-us"
+          imageUrl="/materials.png"
+          title="See Materials Before You Buy"
+          description={
+            <>
+              Visit our partnered showroom with{" "}
+              <a
+                href="https://www.fiveborobuildingsupply.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-300 underline">
+                Five Boro Building Supply
+              </a>
+              {""} located at 990 S. Broadway, Hicksville to see and feel
+              pavers, bricks, and stone veneers in person. We’ll help you
+              explore colors, textures, and styles to make the perfect choice.
+            </>
+          }
+          CTA=""
+          customClass="text-center max-w-4xl text-white"
+        />
+
         <Testimonials />
       </main>
     </div>

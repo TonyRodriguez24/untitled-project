@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "@/components/layout/Button"
 
 export default function HeroHeader() {
   return (
@@ -14,11 +15,7 @@ export default function HeroHeader() {
             Long Island's top general contractor, delivering industry-leading
             results for over 35 years.
           </p>
-          <Link
-            href={"#services"}
-            className="btn bg-blue-800 px-4 py-2 rounded-4xl text-white hover:bg-blue-700 transition cursor-pointer w-fit">
-            Learn More
-          </Link>
+          <Button CTA={"Learn More"} href={"#services"}/>
         </div>
 
         {/* Image Section */}

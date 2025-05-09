@@ -191,54 +191,6 @@ export const services = [
                 imageUrl: "/services/home-improvement/bathroom_renovation.webp"
             },
             {
-                name: "Roofing Services",
-                caption: "Protect your home with durable, high-quality roofing solutions.",
-                description: "Our roofing services include installation, repair, and maintenance to ensure your home remains secure and weatherproof. We provide trusted and reliable service tailored to your roofing needs.",
-                benefits: [
-                    "Ensures structural integrity.",
-                    "Prevents leaks and water damage.",
-                    "Improves energy efficiency."
-                ],
-                features: [
-                    "High-Quality Materials",
-                    "Weather-Resistant Construction",
-                    "Comprehensive Warranty"
-                ],
-                imageUrl: "/services/home-improvement/roofing_services.webp"
-            },
-            {
-                name: "Siding Installation",
-                caption: "Enhance your home's exterior with premium siding solutions.",
-                description: "We offer a variety of siding materials, such as vinyl, fiber cement, and wood, to improve your home's curb appeal and energy efficiency. Our services transform your home's exterior with quality and style.",
-                benefits: [
-                    "Increases curb appeal.",
-                    "Provides additional insulation.",
-                    "Low maintenance and durable."
-                ],
-                features: [
-                    "Variety of Material Options",
-                    "Fade-Resistant Colors",
-                    "Professional Installation"
-                ],
-                imageUrl: "/services/home-improvement/siding_installation.webp"
-            },
-            {
-                name: "Window Replacement",
-                caption: "Improve energy efficiency and aesthetics with new windows.",
-                description: "Our window replacement services include custom-sized windows with modern styles and high-performance glass for better insulation and style. We deliver reliable and high-quality results to enhance your home's comfort.",
-                benefits: [
-                    "Reduces energy costs.",
-                    "Enhances natural light.",
-                    "Improves home security."
-                ],
-                features: [
-                    "Energy-Efficient Glass",
-                    "Customizable Designs",
-                    "Secure Locking Mechanisms"
-                ],
-                imageUrl: "/services/home-improvement/window_replacement.webp"
-            },
-            {
                 name: "Flooring Installation",
                 caption: "Upgrade your interior with professional flooring installation.",
                 description: "From hardwood to tile and luxury vinyl, our flooring services offer quality materials and expert installation for a seamless finish. We provide licensed and reliable service tailored to your needs.",
@@ -486,6 +438,64 @@ export const services = [
             }
         ],
         detailedDescription: "Keep your property looking its best with our pressure washing services.From driveways and patios to siding and decks, JPM and Sons uses advanced equipment to remove dirt, grime, and stains, restoring the original beauty of your surfaces."
-    }
+    },
+
+    {
+        id: 7,
+        name: "Exterior Renovations ",
+        link: "exterior-renovations",
+        image: "/home_page/icon-group/exterior-renovations.webp",
+        cardDescription: "From kitchen remodeling to bathroom renovations, our home improvement services enhance the beauty and functionality of your home. We specialize in siding, roofing, and flooring installations.",
+        subServices: [
+            {
+                name: "Roofing Services",
+                caption: "Protect your home with durable, high-quality roofing solutions.",
+                description: "Our roofing services include installation, repair, and maintenance to ensure your home remains secure and weatherproof. We provide trusted and reliable service tailored to your roofing needs.",
+                benefits: [
+                    "Ensures structural integrity.",
+                    "Prevents leaks and water damage.",
+                    "Improves energy efficiency."
+                ],
+                features: [
+                    "High-Quality Materials",
+                    "Weather-Resistant Construction",
+                    "Comprehensive Warranty"
+                ],
+                imageUrl: "/services/home-improvement/roofing_services.webp"
+            },
+            {
+                name: "Siding Installation",
+                caption: "Enhance your home's exterior with premium siding solutions.",
+                description: "We offer a variety of siding materials, such as vinyl, fiber cement, and wood, to improve your home's curb appeal and energy efficiency. Our services transform your home's exterior with quality and style.",
+                benefits: [
+                    "Increases curb appeal.",
+                    "Provides additional insulation.",
+                    "Low maintenance and durable."
+                ],
+                features: [
+                    "Variety of Material Options",
+                    "Fade-Resistant Colors",
+                    "Professional Installation"
+                ],
+                imageUrl: "/services/home-improvement/siding_installation.webp"
+            },
+            {
+                name: "Window Replacement",
+                caption: "Improve energy efficiency and aesthetics with new windows.",
+                description: "Our window replacement services include custom-sized windows with modern styles and high-performance glass for better insulation and style. We deliver reliable and high-quality results to enhance your home's comfort.",
+                benefits: [
+                    "Reduces energy costs.",
+                    "Enhances natural light.",
+                    "Improves home security."
+                ],
+                features: [
+                    "Energy-Efficient Glass",
+                    "Customizable Designs",
+                    "Secure Locking Mechanisms"
+                ],
+                imageUrl: "/services/home-improvement/window_replacement.webp"
+            }
+        ],
+    },
 
 ];

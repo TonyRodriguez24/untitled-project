@@ -1,23 +1,40 @@
 "use client";
-// import ionicons or use react-icons instead
-import { beforeAfters, homeImprovementGallery, galleryInfo } from "@/data/gallery.js";
+import {
+  beforeAfters,
+  galleryInfo,
+  homeImprovementGallery,
+} from "@/data/gallery.js";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { FaBusinessTime } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { RiMessage2Fill } from "react-icons/ri";
 
 export default function Gallery() {
+  const [loadedCount, setLoadedCount] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const TOTAL_TRACKED_IMAGES = 6; // ✅ ONLY WAIT FOR 6 IMAGES
+
+  useEffect(() => {
+    if (loadedCount >= TOTAL_TRACKED_IMAGES) {
+      setIsLoaded(true);
+    }
+  }, [loadedCount]);
+
+  const handleImageLoaded = () => {
+    setLoadedCount((prev) => prev + 1);
+  };
+
   return (
     <>
-      {/* Loading Screen */}
-      <div id="loading-screen">
-        <div className="spinner"></div>
-        <p>Loading...</p>
-      </div>
+      {!isLoaded && (
+        <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
+          <div className="w-16 h-16 border-4 border-t-green-600 border-gray-300 rounded-full animate-spin"></div>
+        </div>
+      )}
 
       <section id="gallery" className="p-10">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10">
-          {/* Left Side: Paragraph */}
           <div className="lg:w-1/2 text-left">
             <h1 className="font-bold text-3xl mb-4">Our Gallery</h1>
             <p className="text-gray-500 leading-relaxed">
@@ -32,30 +49,23 @@ export default function Gallery() {
             </p>
           </div>
 
-          {/* Right Side: Stats */}
           <div className="hidden md:flex flex-wrap justify-center lg:w-1/2 gap-4">
             <div className="flex flex-col items-center border-4 border-gray-800 shadow-sm rounded-lg p-4 w-1/3">
               <IoLocationSharp className="text-green-900 w-6 h-fit" />
               <h4 className="text-xl font-bold text-green-700">50+</h4>
               <small className="text-center">Towns Served on Long Island</small>
             </div>
-
             <div className="flex flex-col items-center border-4 border-gray-800 shadow-sm rounded-lg p-4 w-1/3">
               <RiMessage2Fill className="text-green-900 w-6 h-fit" />
               <h4 className="font-bold text-xl text-green-700 my-1">
                 Same-Day
               </h4>
-              <small className="text-center">
-                Response to Inquiries
-              </small>
+              <small className="text-center">Response to Inquiries</small>
             </div>
-
             <div className="flex flex-col items-center border-4 border-gray-800 shadow-sm rounded-lg p-4 w-1/3">
               <FaBusinessTime className="text-green-900 w-6 h-fit" />
               <h4 className="font-bold text-xl my-1 text-green-700">35+</h4>
-              <small className="text-center">
-                Years of Experience
-              </small>
+              <small className="text-center">Years of Experience</small>
             </div>
           </div>
         </div>
@@ -70,7 +80,7 @@ export default function Gallery() {
           living spaces, and other modern upgrades.
         </p>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 place-items-center gap-2">
+        <div className="grid md:grid-cols-3 lg:grid-cols-3 place-items-center gap-2">
           {homeImprovementGallery.map((item, idx) => (
             <figure key={idx}>
               <Image
@@ -79,6 +89,10 @@ export default function Gallery() {
                 width={500}
                 height={350}
                 className="rounded shadow-sm w-full"
+                // ✅ pass onLoad only to first 6
+                onLoad={
+                  idx < TOTAL_TRACKED_IMAGES ? handleImageLoaded : undefined
+                }
               />
             </figure>
           ))}
@@ -106,6 +120,7 @@ export default function Gallery() {
                   width={600}
                   height={800}
                   className="rounded shadow object-cover"
+                  
                 />
                 <figcaption className="text-center text-sm text-gray-500 mt-1">
                   Before
@@ -120,6 +135,7 @@ export default function Gallery() {
                     width={600}
                     height={800}
                     className="rounded shadow object-cover"
+                    
                   />
                   <figcaption className="text-center text-sm text-gray-500 mt-1">
                     After
@@ -147,6 +163,7 @@ export default function Gallery() {
                 width={400}
                 height={350}
                 className="rounded shadow-sm w-full"
+                
               />
             </figure>
           ))}

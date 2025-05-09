@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PageDivider from "../layout/PageDivider";
+import Button from "../layout/Button";
 
 const galleryItems = [
   {
@@ -80,16 +81,14 @@ export default function GallerySection() {
         ))}
       </div>
 
-      <PageDivider
-        href={"/gallery"}
-        imageUrl={"/"}
-        title={"Explore More of Our Best Work"}
-        description={
-          "Get inspired by browsing our complete gallery of recent projects."
-        }
-        CTA={"View Full Gallery"}
-        customClass={"lg:text-start text-center my-1"}
-      />
+      {/* Centered Button */}
+      <div className="flex justify-center mt-4">
+        <Button
+          CTA="View full gallery"
+          customClass="text-black"
+          href="/gallery"
+        />
+      </div>
     </section>
   );
 }

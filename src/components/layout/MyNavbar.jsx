@@ -52,6 +52,11 @@ export default function Navbar() {
                   Concrete
                 </Link>
                 <Link
+                  href="/services/exterior-renovations"
+                  className="block px-4 py-2 text-white hover:text-amber-400">
+                  Exterior Renovations
+                </Link>
+                <Link
                   href="/services/home-improvement"
                   className="block px-4 py-2 text-white hover:text-amber-400">
                   Home Improvement
@@ -71,6 +76,7 @@ export default function Navbar() {
                   className="block px-4 py-2 text-white hover:text-amber-400">
                   Pressure Washing
                 </Link>
+
               </div>
             )}
           </div>
