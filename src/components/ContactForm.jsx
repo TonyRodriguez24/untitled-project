@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Button from "./layout/Button";
+import Link from "next/link";
 
 export default function ContactForm() {
   const INITIAL_STATE = {
@@ -37,15 +39,15 @@ export default function ContactForm() {
             Ready when you are, let’s bring your ideas to life with ease.
           </h3>
           <small className="text-gray-400">
-            Rest assured, we respect your privacy—no spam or junk emails, just
-            timely updates and professional communication.
+            No spam or junk emails, just
+            timely updates and professional communication. If you want to leave a message, view our full contact form <Link href={'/contact-us'} className="text-blue-500">here</Link>
           </small>
         </header>
 
         <hr className="my-2 border-black w-full border-1"></hr>
 
         <div className="flex flex-col lg:flex-row flex-wrap w-full h-fit gap-4 items-center lg:items-end">
-          <div className="flex flex-col w-4/5 lg:w-1/7">
+          <div className="flex flex-col w-full lg:w-1/7">
             <label htmlFor="name">Name</label>
             <input
               className={styles}
@@ -57,7 +59,7 @@ export default function ContactForm() {
               value={formData.name}
             />
           </div>
-          <div className="flex flex-col w-4/5 lg:w-1/7">
+          <div className="flex flex-col w-full lg:w-1/7">
             <label htmlFor="number">Number</label>
             <input
               className={styles}
@@ -70,7 +72,7 @@ export default function ContactForm() {
               autoComplete="tel"
             />
           </div>
-          <div className="flex flex-col w-4/5 lg:w-1/6">
+          <div className="flex flex-col w-full lg:w-1/6">
             <label htmlFor="address">Address</label>
             <input
               className={styles}
@@ -82,7 +84,7 @@ export default function ContactForm() {
               value={formData.address}
             />
           </div>
-          <div className="flex flex-col w-4/5 lg:w-1/6">
+          <div className="flex flex-col w-full lg:w-1/6">
             <label htmlFor="email">Email</label>
             <input
               className={styles}
@@ -94,7 +96,7 @@ export default function ContactForm() {
               value={formData.email}
             />
           </div>
-          <div className="flex flex-col w-4/5 lg:w-fit">
+          <div className="flex flex-col w-full lg:w-fit">
             <label htmlFor="service">Service type</label>
             <select
               className={styles}
@@ -113,9 +115,7 @@ export default function ContactForm() {
               <option value="paver_sealing">Paver Sealing</option>
             </select>
           </div>
-          <button className="bg-blue-800 px-4 py-2 rounded-full text-white hover:bg-blue-700 transition cursor-pointer w-fit">
-            Get Free Quote
-          </button>
+          <Button href={ '' } customClass={"w-full md:w-fit text-center"} CTA={ 'Get Your Free Quote' } />
         </div>
       </form>
     </>

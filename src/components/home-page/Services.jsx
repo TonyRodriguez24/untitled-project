@@ -3,49 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Services() {
-  // split into first 4, then the remaining 3
-  const firstRow = services.slice(0, 4);
-  const secondRow = services.slice(4);
-
   return (
-    <section id="services" className="flex flex-col items-center p-4 lg:p-20">
+    <section id="services" className="flex flex-col items-center p-3">
       <h2 className="text-3xl font-bold text-center">Our Services</h2>
 
-      {/* first 4 in a 4-column grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 lg:w-10/12">
-        {firstRow.map((service) => (
+      <div className="my-2 flex flex-wrap justify-center gap-6 xl:p-6 xl:w-10/12">
+        {services.map((service) => (
           <div
             key={service.id}
-            className="flex flex-col text-center shadow-lg rounded-xl bg-gray-900 overflow-hidden">
-            <Link href={`/services/${service.link}`}>
-              <Image
-                src={service.image}
-                alt={service.name}
-                width={300}
-                height={200}
-                className="w-full rounded-t-xl cursor-pointer hover:opacity-60 transition"
-              />
-            </Link>
-
-            <Link href={`/services/${service.link}`}>
-              <h3 className="text-white my-4 px-5 hover:!text-blue-400 transition cursor-pointer text-start text-2xl font-bold">
-                {service.name}
-              </h3>
-            </Link>
-
-            <p className="text-start p-5 pt-0 text-gray-400">
-              {service.cardDescription}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      {/* last 3 in a centered 3-column grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 mx-auto w-2/3">
-        {secondRow.map((service) => (
-          <div
-            key={service.id}
-            className="flex flex-col text-center shadow-lg rounded-xl bg-gray-900 overflow-hidden">
+            className="flex flex-col text-center shadow-lg rounded-xl bg-gray-900 overflow-hidden w-10/12 sm:max-w-[300px]">
             <Link href={`/services/${service.link}`}>
               <Image
                 src={service.image}

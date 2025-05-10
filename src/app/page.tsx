@@ -45,6 +45,16 @@ export default function Home() {
         />
 
         <Testimonials />
+        <PageDivider
+          imageUrl={"/page-dividers/1.png"}
+          title={"Let’s Bring Your Vision to Life"}
+          description={
+            "Whether you're ready to start or just exploring options, our team is here to help. Reach out for a free consultation and let's talk about your project today."
+          }
+          href={"/contact-us"}
+          CTA={"Get Your Free Estimate"}
+          customClass={"text-gray-400"}
+        />
       </main>
     </div>
   );

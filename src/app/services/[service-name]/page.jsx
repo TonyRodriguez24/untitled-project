@@ -35,7 +35,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Sub Services */}
-      <section className="lg:max-w-2/3 my-3 mx-auto px-4 space-y-16 pb-20 ">
+      <section className="lg:max-w-2/3 my-3 mx-auto px-4 py-1 space-y-16 pb-20 ">
         <div className="flex flex-wrap gap-2 justify-center mb-8">
           {service.subServices.map((sub, i) => (
             <a
@@ -50,8 +50,8 @@ export default async function ServicePage({ params }) {
         {service.subServices.map((sub, i) => (
           <div
             key={i}
-            className={`flex flex-col md:flex-row  items-stretch justify-center bg-amber-50 rounded-xl shadow p-6 lg:gap-6`}
-            id={sub.name.toLowerCase().replace(/\s+/g, "-")}>
+            id={sub.name.toLowerCase().replace(/\s+/g, "-")}
+            className="flex flex-col md:flex-row items-stretch justify-center bg-amber-50 rounded-xl shadow p-6 lg:gap-6 scroll-mt-10">
             {/* Left: Card */}
             <div className="md:w-2/5 flex flex-col bg-amber-50 p-4">
               <img
