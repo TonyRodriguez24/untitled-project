@@ -17,17 +17,15 @@ export default function AboutUs() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>
-            <h2 className="text-3xl font-bold mb-4">A Legacy of Quality</h2>
+            <h2 className="text-3xl font-bold mb-4">About Us</h2>
             <p className="text-lg mb-6 leading-relaxed text-gray-700">
-              At JPM and Sons, we bring decades of experience in masonry,
-              concrete, and asphalt work across Long Island. Whether it's
-              crafting custom patios, driveways, retaining walls, or full home
-              renovations — we do it with professionalism and pride.
+              At JPM and Sons, we have decades of experience in masonry,
+              concrete, and asphalt work across Long Island. We take pride in our work and how our customers feel about us helping bring their designs to life.
             </p>
             <p className="text-lg text-gray-600">
-              Our mission is simple: deliver work that lasts, looks great, and
-              adds value. Licensed, insured, and trusted — we're the team
-              homeowners call when they want it done right.
+              Our mission is to deliver work that lasts, looks great, and
+              adds value to your home. Licensed, insured, and trusted — we're the team
+              you call when you want it done right.
             </p>
           </div>
 

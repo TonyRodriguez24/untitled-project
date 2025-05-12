@@ -41,7 +41,7 @@ export default async function ServicePage({ params }) {
             <a
               key={i}
               href={`#${sub.name.toLowerCase().replace(/\s+/g, "-")}`}
-              className="px-2 lg:px-4 py-2 lg:py-3 rounded-xl bg-gray-800 text-white text-sm lg:text-md hover:bg-indigo-700 transition">
+              className="px-2 lg:px-4 py-2 lg:py-3 rounded-xl bg-blue-800 text-white text-sm lg:text-md hover:bg-indigo-700 transition">
               {sub.name}
             </a>
           ))}

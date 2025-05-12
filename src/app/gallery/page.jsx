@@ -32,9 +32,9 @@ export default function Gallery() {
         </div>
       )}
 
-      <section id="gallery" className="p-10">
+      <section id="gallery" className="xl:p-10">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-10">
-          <div className="lg:w-1/2 text-left">
+          <div className="lg:w-1/2 text-left p-3">
             <h1 className="font-bold text-3xl mb-4">Our Gallery</h1>
             <p className="text-gray-500 leading-relaxed">
               Explore our gallery showcasing a wide range of completed projects,

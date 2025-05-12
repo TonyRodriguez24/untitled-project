@@ -24,14 +24,15 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+      console.log(formData);
+      setFormData(INITIAL_STATE)
   };
 
   return (
     <div
       id="ContactForm"
-      className="max-w-7xl mx-auto my-4 p-10 rounded-lg shadow-[5px_5px_10px_rgba(0,0,0,0.4)] [background:linear-gradient(135deg,_#9acdffca,_#fad0c4c6_50%,_#fbc2eb78)]">
-      <h1 className="text-center text-3xl font-bold text-gray-900">
+      className="max-w-7xl mx-auto my-4 px-30 py-10 rounded-lg shadow-[5px_5px_10px_rgba(0,0,0,0.4)] [background:linear-gradient(135deg,_#9acdffca,_#fad0c4c6_50%,_#fbc2eb78)]">
+      <h1 className="text-center text-3xl pt-10 font-bold text-gray-900">
         How Can We Help?
       </h1>
       <p className="text-center text-gray-700 text-sm mt-1 mb-8">
