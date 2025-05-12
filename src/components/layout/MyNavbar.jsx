@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ export default function Navbar() {
             Home
           </Link>
           <Link href="/financing" className="text-white hover:text-amber-400">
-            Financing Options
+            Financing
           </Link>
           <Link href="/estimate" className="text-white hover:text-amber-400">
             Estimate Tool
@@ -33,12 +33,14 @@ export default function Navbar() {
           </Link>
 
           {/* Services Dropdown (click-to-open) */}
-          <div className="relative">
-            <button
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="text-white hover:text-amber-400 focus:outline-none">
+          <div
+            className="relative"
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}>
+            <button className="text-white hover:text-amber-400 focus:outline-none">
               Services ▾
             </button>
+
             {isServicesOpen && (
               <div className="absolute z-10 bg-gray-900 shadow-lg rounded mt-2 w-48">
                 <Link
@@ -76,13 +78,15 @@ export default function Navbar() {
                   className="block px-4 py-2 text-white hover:text-amber-400">
                   Pressure Washing
                 </Link>
-
               </div>
             )}
           </div>
 
           <Link href="/about-us" className="text-white hover:text-amber-400">
             About Us
+          </Link>
+          <Link href="/contact-us" className=" bg-blue-800 hover:bg-blue-600 p-2 px-4 rounded-2xl transition">
+            Contact Us!
           </Link>
         </div>
 
