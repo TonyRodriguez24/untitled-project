@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.5",
     "bootstrap-icons": "^1.11.3",
     "formidable": "^3.5.4",
     "next": "15.2.4",

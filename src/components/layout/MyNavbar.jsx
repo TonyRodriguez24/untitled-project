@@ -25,9 +25,9 @@ export default function Navbar() {
           <Link href="/financing" className="text-white hover:text-amber-400">
             Financing
           </Link>
-          <Link href="/estimate" className="text-white hover:text-amber-400">
+          {/* <Link href="/estimate" className="text-white hover:text-amber-400">
             Estimate Tool
-          </Link>
+          </Link> */}
           <Link href="/gallery" className="text-white hover:text-amber-400">
             Gallery
           </Link>
@@ -102,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-gray-800 px-4 pb-4 space-y-2">
+        <div className="lg:hidden bg-gray-800 p-4 gap-5 flex flex-col justify-center items-center">
           <Link href="/" className="block text-white hover:text-amber-400">
             Home
           </Link>
@@ -111,11 +111,11 @@ export default function Navbar() {
             className="block text-white hover:text-amber-400">
             Financing Options
           </Link>
-          <Link
+          {/* <Link
             href="/estimate"
             className="block text-white hover:text-amber-400">
             Estimate Tool
-          </Link>
+          </Link> */}
           <Link
             href="/gallery"
             className="block text-white hover:text-amber-400">
