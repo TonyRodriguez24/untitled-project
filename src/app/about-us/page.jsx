@@ -2,15 +2,7 @@ export default function AboutUs() {
   return (
     <main className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-500 text-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-extrabold mb-4">JPM and Sons</h1>
-          <p className="text-lg max-w-2xl mx-auto opacity-90">
-            We’re a Long Island family business that does it all — masonry,
-            paving, concrete, and more. Done once, done right.
-          </p>
-        </div>
-      </section>
+      
 
       {/* Content Section */}
       <section className="py-20">

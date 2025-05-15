@@ -28,7 +28,7 @@ export async function POST(request) {
 
         return NextResponse.json({ success: true });
     } catch (err) {
-        console.error('SendGrid error:', err.response?.body || err.message || err);
+        console.error('Error', err.response?.body || err.message || err);
         return NextResponse.json({ error: 'Email failed to send' }, { status: 500 });
     }
 }

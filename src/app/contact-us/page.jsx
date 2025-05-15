@@ -24,14 +24,14 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      console.log(formData);
-      setFormData(INITIAL_STATE)
+    console.log(formData);
+    setFormData(INITIAL_STATE);
   };
 
   return (
     <div
       id="ContactForm"
-      className="w-11/12 lg:max-w-7xl mx-auto my-4 px-2 lg:px-30 py-10 rounded-lg [background:linear-gradient(135deg,_#9acdffca,_#fad0c4c6_50%,_#fbc2eb78)]">
+      className="w-11/12 lg:max-w-7xl mx-auto my-4 px-2 lg:px-30 py-10 rounded-lg bg-amber-50">
       <h1 className="text-center text-2xl lg:text-3xl pt-10 font-bold text-gray-900">
         How Can We Help?
       </h1>
@@ -109,12 +109,16 @@ export default function ContactForm() {
                     name="service_type"
                     value={formData.service_type}
                     onChange={handleChange}
-                    className="w-full bg-white rounded-lg border-2 border-gray-600 text-gray-500 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2">
-                    <option value="">Select a service</option>
+                    className={`w-full bg-white rounded-lg border-2 border-gray-600 px-3 py-2 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200
+    ${formData.service_type ? "text-black" : "text-gray-500"}`}>
+                    <option value="" disabled hidden>
+                      Select a service
+                    </option>
                     <option value="Concrete">Concrete</option>
                     <option value="Asphalt">Asphalt</option>
                     <option value="Masonry">Masonry</option>
                   </select>
+
                   {errors.service_type && (
                     <small className="text-red-500">
                       {errors.service_type}
@@ -147,15 +151,17 @@ export default function ContactForm() {
                     name="referral"
                     value={formData.referral}
                     onChange={handleChange}
-                    className="w-full bg-white rounded-lg border-2 text-gray-500 border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
-                    >
-                    <option value="" className="text-gray-800">
+                    className={`w-full bg-white rounded-lg border-2 border-gray-600 px-3 py-2
+    focus:border-blue-500 focus:ring focus:ring-blue-200
+    ${formData.referral ? "text-black" : "text-gray-500"}`}>
+                    <option value="" disabled hidden>
                       Select
                     </option>
                     <option value="Google">Google</option>
                     <option value="Friend">Friend</option>
                     <option value="Social Media">Social Media</option>
                   </select>
+
                   {errors.referral && (
                     <small className="text-red-500">{errors.referral}</small>
                   )}
@@ -173,7 +179,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Tell us more about your project..."
-                className="w-full bg-white rounded border-2 border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                className="w-full bg-white rounded border-2 border-gray-600 placeholder-gray-500 text-black focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
               />
               {errors.message && (
                 <small className="text-red-500">{errors.message}</small>

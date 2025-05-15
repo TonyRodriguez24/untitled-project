@@ -72,7 +72,7 @@ export default function Gallery() {
           living spaces, and other modern upgrades.
         </p>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-3 place-items-center gap-2">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-2">
           {homeImprovementGallery.map((item, idx) => (
             <figure key={idx}>
               <Image
@@ -80,7 +80,7 @@ export default function Gallery() {
                 alt={item.alt}
                 width={500}
                 height={350}
-                className="rounded shadow-sm w-full"
+                className="rounded shadow-sm"
                 // ✅ pass onLoad only to first 6
                 onLoad={
                   idx < TOTAL_TRACKED_IMAGES ? handleImageLoaded : undefined
@@ -144,7 +144,7 @@ export default function Gallery() {
           living spaces, and other modern upgrades.
         </p>
 
-        <div className="grid md:grid-cols-5 lg:grid-cols-4 place-items-center gap-2">
+        <div className="grid md:grid-cols-5 lg:grid-cols-4 gap-2">
           {galleryInfo.map((item, idx) => (
             <figure key={idx}>
               <Image

@@ -1,11 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import ThemeToggle from "@/components/layout/ThemeToggle";
+
+
+
+
+import { useState, useRef } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 100);
+  };
 
   return (
     <nav className="bg-gray-900 w-full">
@@ -14,7 +32,8 @@ export default function Navbar() {
         <div>
           <Link href="/" className="text-white font-bold text-xl">
             JPM and Sons
-          </Link>
+          </Link>{" "}
+          <ThemeToggle />
         </div>
 
         {/* Desktop Menu */}
@@ -32,60 +51,63 @@ export default function Navbar() {
             Gallery
           </Link>
 
-          {/* Services Dropdown (click-to-open) */}
+          {/* Services Dropdown (hover to open and stay open) */}
           <div
             className="relative"
-            onMouseEnter={() => setIsServicesOpen(true)}
-            onMouseLeave={() => setIsServicesOpen(false)}>
-            <button className="text-white hover:text-amber-400 focus:outline-none">
-              Services ▾
-            </button>
-
-            {isServicesOpen && (
-              <div className="absolute z-10 bg-gray-900 shadow-lg rounded mt-2 w-48">
-                <Link
-                  href="/services/asphalt"
-                  className="block px-4 py-2 text-white hover:text-amber-400">
-                  Asphalt
-                </Link>
-                <Link
-                  href="/services/concrete"
-                  className="block px-4 py-2 text-white hover:text-amber-400">
-                  Concrete
-                </Link>
-                <Link
-                  href="/services/exterior-renovations"
-                  className="block px-4 py-2 text-white hover:text-amber-400">
-                  Exterior Renovations
-                </Link>
-                <Link
-                  href="/services/home-improvement"
-                  className="block px-4 py-2 text-white hover:text-amber-400">
-                  Home Improvement
-                </Link>
-                <Link
-                  href="/services/masonry"
-                  className="block px-4 py-2 text-white hover:text-amber-400">
-                  Masonry
-                </Link>
-                <Link
-                  href="/services/paver-sealing"
-                  className="block px-4 py-2 text-white hover:text-amber-400">
-                  Paver Sealing
-                </Link>
-                <Link
-                  href="/services/pressure-washing"
-                  className="block px-4 py-2 text-white hover:text-amber-400">
-                  Pressure Washing
-                </Link>
-              </div>
-            )}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}>
+            <div>
+              <button className="text-white hover:text-amber-400 focus:outline-none">
+                Services ▾
+              </button>
+              {isServicesOpen && (
+                <div className="absolute z-10 bg-gray-900 shadow-lg rounded mt-2 w-48">
+                  <Link
+                    href="/services/asphalt"
+                    className="block px-4 py-2 text-white hover:text-amber-400">
+                    Asphalt
+                  </Link>
+                  <Link
+                    href="/services/concrete"
+                    className="block px-4 py-2 text-white hover:text-amber-400">
+                    Concrete
+                  </Link>
+                  <Link
+                    href="/services/exterior-renovations"
+                    className="block px-4 py-2 text-white hover:text-amber-400">
+                    Exterior Renovations
+                  </Link>
+                  <Link
+                    href="/services/home-improvement"
+                    className="block px-4 py-2 text-white hover:text-amber-400">
+                    Home Improvement
+                  </Link>
+                  <Link
+                    href="/services/masonry"
+                    className="block px-4 py-2 text-white hover:text-amber-400">
+                    Masonry
+                  </Link>
+                  <Link
+                    href="/services/paver-sealing"
+                    className="block px-4 py-2 text-white hover:text-amber-400">
+                    Paver Sealing
+                  </Link>
+                  <Link
+                    href="/services/pressure-washing"
+                    className="block px-4 py-2 text-white hover:text-amber-400">
+                    Pressure Washing
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           <Link href="/about-us" className="text-white hover:text-amber-400">
             About Us
           </Link>
-          <Link href="/contact-us" className=" bg-blue-800 hover:bg-blue-600 p-2 px-4 rounded-2xl transition">
+          <Link
+            href="/contact-us"
+            className="bg-blue-800 hover:bg-blue-600 p-2 px-4 rounded-2xl transition">
             Contact Us!
           </Link>
         </div>
@@ -121,45 +143,61 @@ export default function Navbar() {
             className="block text-white hover:text-amber-400">
             Gallery
           </Link>
-          <div>
-            <span className="text-white">Services</span>
-            <div className="ml-4 space-y-1">
-              <Link
-                href="/services/asphalt"
-                className="block text-white hover:text-amber-400">
-                Asphalt
-              </Link>
-              <Link
-                href="/services/concrete"
-                className="block text-white hover:text-amber-400">
-                Concrete
-              </Link>
-              <Link
-                href="/services/home-improvement"
-                className="block text-white hover:text-amber-400">
-                Home Improvement
-              </Link>
-              <Link
-                href="/services/masonry"
-                className="block text-white hover:text-amber-400">
-                Masonry
-              </Link>
-              <Link
-                href="/services/paver-sealing"
-                className="block text-white hover:text-amber-400">
-                Paver Sealing
-              </Link>
-              <Link
-                href="/services/pressure-washing"
-                className="block text-white hover:text-amber-400">
-                Pressure Washing
-              </Link>
-            </div>
+          <div className="w-full text-center">
+            <button
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+              className="text-white hover:text-amber-400 w-full text-left">
+              Services ▾
+            </button>
+            {isMobileServicesOpen && (
+              <div className="ml-4 space-y-1 mt-2">
+                <Link
+                  href="/services/asphalt"
+                  className="block text-white hover:text-amber-400">
+                  Asphalt
+                </Link>
+                <Link
+                  href="/services/concrete"
+                  className="block text-white hover:text-amber-400">
+                  Concrete
+                </Link>
+                <Link
+                  href="/services/exterior-renovations"
+                  className="block text-white hover:text-amber-400">
+                  Exterior Renovations
+                </Link>
+                <Link
+                  href="/services/home-improvement"
+                  className="block text-white hover:text-amber-400">
+                  Home Improvement
+                </Link>
+                <Link
+                  href="/services/masonry"
+                  className="block text-white hover:text-amber-400">
+                  Masonry
+                </Link>
+                <Link
+                  href="/services/paver-sealing"
+                  className="block text-white hover:text-amber-400">
+                  Paver Sealing
+                </Link>
+                <Link
+                  href="/services/pressure-washing"
+                  className="block text-white hover:text-amber-400">
+                  Pressure Washing
+                </Link>
+              </div>
+            )}
           </div>
           <Link
             href="/about-us"
             className="block text-white hover:text-amber-400">
             About Us
+          </Link>
+          <Link
+            href="/contact-us"
+            className="block bg-blue-800 hover:bg-blue-600 p-2 px-4 rounded-2xl transition">
+            Contact Us!
           </Link>
         </div>
       )}
