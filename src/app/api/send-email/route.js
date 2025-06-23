@@ -1,12 +1,30 @@
 import sgMail from '@sendgrid/mail';
 import { NextResponse } from 'next/server';
-import {generateEmailToSelf, generateEmailToCustomer} from '../../helpers/emails'
+import { generateEmailToSelf, generateEmailToCustomer } from '../../helpers/emails'
+import Ajv from 'ajv';
+import { contactFormSchema } from '../../../schemas/ContactFormSchema';
+import addFormats from "ajv-formats";
+
+const ajv = new Ajv();
+addFormats(ajv);
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(request) {
     try {
         const data = await request.json();
+
+        //validate data
+        const validate = ajv.compile(contactFormSchema)
+        const valid = validate(data)
+        console.log(validate.errors); // check what’s failing
+
+        if (!valid) {
+            return NextResponse.json(
+                { error: 'Invalid input', details: validate.errors },
+                { status: 400 }
+            );
+          }
 
         const messageToSelf = {
             to: 'contact@jpmandsons.com', 

@@ -103,7 +103,7 @@ export default function whatIf() {
 
         <button
           type="submit"
-          className="bg-green-600 px-4 py-2 w-fit rounded hover:bg-green-500 cursor">
+          className="bg-green-600 cursor-pointer transition px-4 py-2 w-fit rounded hover:bg-green-500 cursor">
           Upload
         </button>
       </form>

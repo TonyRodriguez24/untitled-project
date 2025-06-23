@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Button from "./layout/Button";
+import axios from 'axios'
 
 export default function ContactForm() {
   const INITIAL_STATE = {
@@ -16,9 +17,11 @@ export default function ContactForm() {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitted(true);
+    const response = await axios.post('/api/send-email', formData)
+    console.log(response)
   };
 
   const handleChange = (e) => {
@@ -41,12 +44,12 @@ export default function ContactForm() {
             method="POST"
             onSubmit={handleSubmit}
             autoComplete="on"
-            className="flex flex-col gap-2 my-2 mx-3 lg:mx-0 p-10 rounded-2xl bg-gray-800 shadow-background shadow-2xl justify-center items-start">
+            className="flex flex-col bg-gray-800 gap-2 my-2 lg:mx-0 p-8 rounded-2xl shadow-background shadow-2xl justify-center items-start">
             <header className="text-start">
-              <h3 className="fw-bold text-xl">
+              <h3 className="font-bold text-2xl">
                 Ready when you are, let’s bring your ideas to life with ease.
               </h3>
-              <small className="text-gray-400">
+              <small className="text-gray-500">
                 No spam or junk emails, just timely updates and professional
                 communication. If you want to leave a message, view our full
                 contact form{" "}

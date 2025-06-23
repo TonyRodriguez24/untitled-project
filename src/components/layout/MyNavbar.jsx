@@ -1,12 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import ThemeToggle from "@/components/layout/ThemeToggle";
 
-
-
-
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +29,6 @@ export default function Navbar() {
           <Link href="/" className="text-white font-bold text-xl">
             JPM and Sons
           </Link>{" "}
-          <ThemeToggle />
         </div>
 
         {/* Desktop Menu */}
@@ -116,7 +111,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none">
+            className="text-white cursor-pointer text-2xl focus:outline-none">
             ☰
           </button>
         </div>
@@ -125,12 +120,14 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden bg-gray-800 p-4 gap-5 flex flex-col justify-center items-center">
-          <Link href="/" className="block text-white hover:text-amber-400">
+          <Link
+            href="/"
+            className="block text-white hover:text-amber-400 bg-gray-500 w-full p-3">
             Home
           </Link>
           <Link
             href="/financing"
-            className="block text-white hover:text-amber-400">
+            className="block text-white bg-gray-500 w-full p-3 hover:text-amber-400">
             Financing Options
           </Link>
           {/* <Link
@@ -140,50 +137,50 @@ export default function Navbar() {
           </Link> */}
           <Link
             href="/gallery"
-            className="block text-white hover:text-amber-400">
+            className="block text-white bg-gray-500 w-full p-3 hover:text-amber-400">
             Gallery
           </Link>
           <div className="w-full text-center">
             <button
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              className="text-white hover:text-amber-400 w-full text-left">
+              className="text-white text-start hover:text-amber-400 bg-gray-500 w-full p-3">
               Services ▾
             </button>
             {isMobileServicesOpen && (
-              <div className="ml-4 space-y-1 mt-2">
+              <div className="ml-4 flex flex-wrap space-y-1 mt-2">
                 <Link
                   href="/services/asphalt"
-                  className="block text-white hover:text-amber-400">
+                  className="block bg-gray-500 border-3 w-1/2 p-3 text-white hover:text-amber-400">
                   Asphalt
                 </Link>
                 <Link
                   href="/services/concrete"
-                  className="block text-white hover:text-amber-400">
+                  className="block text-white bg-gray-500 border-3 w-1/2 p-3 hover:text-amber-400">
                   Concrete
                 </Link>
                 <Link
                   href="/services/exterior-renovations"
-                  className="block text-white hover:text-amber-400">
+                  className="block bg-gray-500 border-3 w-1/2 p-3 text-white hover:text-amber-400">
                   Exterior Renovations
                 </Link>
                 <Link
                   href="/services/home-improvement"
-                  className="block text-white hover:text-amber-400">
+                  className="block bg-gray-500 border-3 w-1/2 p-3 text-white hover:text-amber-400">
                   Home Improvement
                 </Link>
                 <Link
                   href="/services/masonry"
-                  className="block text-white hover:text-amber-400">
+                  className="block bg-gray-500 border-3 w-1/2 p-3 text-white hover:text-amber-400">
                   Masonry
                 </Link>
                 <Link
                   href="/services/paver-sealing"
-                  className="block text-white hover:text-amber-400">
+                  className="block bg-gray-500 border-3 w-1/2 p-3 text-white hover:text-amber-400">
                   Paver Sealing
                 </Link>
                 <Link
                   href="/services/pressure-washing"
-                  className="block text-white hover:text-amber-400">
+                  className="block bg-gray-500 border-3 w-1/2 p-3 text-white hover:text-amber-400">
                   Pressure Washing
                 </Link>
               </div>
@@ -191,7 +188,7 @@ export default function Navbar() {
           </div>
           <Link
             href="/about-us"
-            className="block text-white hover:text-amber-400">
+            className="block bg-gray-500 w-full p-3 text-white hover:text-amber-400">
             About Us
           </Link>
           <Link
