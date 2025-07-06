@@ -44,7 +44,7 @@ export default function ContactForm() {
             method="POST"
             onSubmit={handleSubmit}
             autoComplete="on"
-            className="flex flex-col bg-gray-800 gap-2 my-2 lg:mx-0 p-8 rounded-2xl shadow-background shadow-2xl justify-center items-start">
+            className="flex flex-col lg:bg-gray-800 gap-2 my-2 lg:mx-0 p-8 rounded-2xl shadow-background shadow-2xl justify-center items-start">
             <header className="text-start">
               <h3 className="font-bold text-2xl">
                 Ready when you are, let’s bring your ideas to life with ease.
