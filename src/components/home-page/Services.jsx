@@ -4,14 +4,14 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <section id="services" className="flex flex-col items-center p-3">
-      <h2 className="text-3xl font-bold text-center">Our Services</h2>
+    <section id="services" className="flex flex-col items-center p-0 lg:p-3">
+      <h2 className="text-3xl font-bold text-center mb-3 lg:mb-0">Our Services</h2>
 
       <div className="my-2 flex flex-wrap justify-center gap-6 xl:p-6 xl:w-10/12">
         {services.map((service) => (
           <div
             key={service.id}
-            className="flex flex-col text-center shadow-lg rounded-xl bg-gray-900 overflow-hidden w-10/12 sm:max-w-[320px]">
+            className="flex flex-col text-center shadow-lg rounded-xl bg-gray-900 overflow-hidden w-11/12 lg:w-10/12 sm:max-w-[320px]">
             <Link href={`/services/${service.link}`}>
               <Image
                 src={service.image}
