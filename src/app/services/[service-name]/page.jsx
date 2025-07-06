@@ -28,9 +28,9 @@ export default async function ServicePage({ params }) {
 
       {/* Sub-Header */}
       <section className="p-5 pb-0 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold">Our {service.name} Services</h2>
-          <p className="text-gray-600 text-lg">{service.caption}</p>
+        <div className="max-w-4xl mx-auto lg:px-4 ">
+          <h2 className="text-3xl font-bold mb-1 lg:mb-0">Our {service.name} Services</h2>
+          <p className="text-gray-600 lg:text-lg ">{service.caption}</p>
         </div>
       </section>
 
@@ -51,9 +51,9 @@ export default async function ServicePage({ params }) {
           <div
             key={i}
             id={sub.name.toLowerCase().replace(/\s+/g, "-")}
-            className="flex flex-col md:flex-row items-stretch justify-center bg-amber-50 rounded-xl shadow p-6 lg:gap-6 scroll-mt-10">
+            className="flex flex-col md:flex-row items-stretch justify-center rounded-xl bg-blue-200  p-6 lg:gap-6 scroll-mt-10">
             {/* Left: Card */}
-            <div className="md:w-2/5 flex flex-col bg-amber-50 p-4">
+            <div className="md:w-2/5 flex flex-col p-4">
               <img
                 src={sub.imageUrl || "/placeholder.jpg"}
                 alt={sub.name}
@@ -66,7 +66,7 @@ export default async function ServicePage({ params }) {
               <ul className="flex flex-wrap gap-2 mt-3 mb-6 p-0">
                 {sub.features.map((feature, i) => (
                   <li key={i}>
-                    <span className="inline-flex items-center gap-2 bg-slate-300 text-black px-2 py-1 rounded-full text-sm font-medium">
+                    <span className="inline-flex items-center gap-2 bg-white text-black px-2 py-1 rounded-full text-sm font-medium">
                       <i
                         className={`bi ${
                           i === 0
@@ -87,7 +87,7 @@ export default async function ServicePage({ params }) {
             </div>
 
             {/* Right: Long Description + Benefits + CTAs */}
-            <div className="md:w-2/5 p-4 flex flex-col bg-amber-50">
+            <div className="md:w-2/5 p-4 flex flex-col">
               <p className="text-lg mb-4 text-black">{sub.description}</p>
               <hr className="my-4 text-black" />
               <ul className="list-none p-0 space-y-3 text-gray-700">

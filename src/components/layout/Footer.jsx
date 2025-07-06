@@ -14,7 +14,7 @@ import { FaLocationArrow } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 lg:gap-0 xl:grid-cols-4 items-stretch w-full xl:max-w-full mx-auto bg-black md:p-10 p-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 lg:gap-0 xl:grid-cols-4 items-stretch w-full xl:max-w-full mx-auto dark:bg-black md:p-10 p-5">
         {/* Contact Info */}
         <div className="flex flex-col gap-3 items-center p-3">
           <h3 className="font-bold text-2xl lg:text-3xl">CONNECT WITH US</h3>
@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* Social Media */}
         <div className=" flex flex-col gap-1 items-center p-3">
-          <h3 className="text-white font-bold text-2xl lg:text-3xl">
+          <h3 className="dark:text-white font-bold text-2xl lg:text-3xl">
             FOLLOW US
           </h3>
 
@@ -58,13 +58,13 @@ export default function Footer() {
               href="https://www.facebook.com/JPMSonsCorp/"
               target="_blank"
               rel="noopener noreferrer">
-              <FaFacebook className="text-5xl lg:text-6xl text-white hover:!text-blue-800 transition" />
+              <FaFacebook className="text-5xl lg:text-6xl dark:text-white hover:!text-blue-800 transition" />
             </a>
             <a
               href="https://www.tiktok.com/@jpmandsons"
               target="_blank"
               rel="noopener noreferrer">
-              <FaTiktok className="text-5xl lg:text-6xl text-white hover:!text-blue-800 transition" />
+              <FaTiktok className="text-5xl lg:text-6xl dark:text-white hover:!text-blue-800 transition" />
             </a>
             <a
               href="https://www.instagram.com/jpmandsonscorp/"

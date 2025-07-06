@@ -56,7 +56,7 @@ export default function GallerySection() {
       {/* Heading */}
       <header className="text-center mb-8">
         <h2 className="text-3xl font-bold">Our Gallery</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mt-2 text-start lg:text-center">
+        <p className="text-gray-800 dark:text-gray-600 max-w-2xl mx-auto mt-2 text-start lg:text-center">
           Explore our recent projects, from paver patios to stunning masonry and
           more. See how we’ve transformed outdoor and indoor spaces for our
           clients.
@@ -64,7 +64,7 @@ export default function GallerySection() {
       </header>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 place-items-center max-w-7xl justify-center mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-6 place-items-center max-w-7xl justify-center mx-auto">
         {galleryItems.map((item, idx) => (
           <figure key={idx} className="gallery-item">
             <Image
@@ -74,7 +74,7 @@ export default function GallerySection() {
               height={350}
               className="rounded shadow-sm"
             />
-            <figcaption className="text-center mt-2 text-md text-gray-300">
+            <figcaption className="text-center mt-2 text-md dark:text-gray-300">
               {item.caption}
             </figcaption>
           </figure>

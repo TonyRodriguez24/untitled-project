@@ -25,7 +25,7 @@ export default function PageDivider({
       <div className="w-full relative z-10 bg-black/75 flex flex-col items-center justify-center py-16 px-4">
         <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
         {/* allow rich JSX for description */}
-        <div className={customClass}>{description}</div>
+        <div className={`${customClass} text-white` }>{description}</div>
         {CTA && <Button href={href} CTA={CTA} customClass="mt-3"/>}
       </div>
     </div>

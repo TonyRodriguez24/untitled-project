@@ -34,8 +34,8 @@ export default function Gallery() {
       <section id="gallery" className="xl:p-10">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-10">
           <div className="lg:w-1/2 text-left p-3">
-            <h1 className="font-bold text-3xl mb-4">Our Gallery</h1>
-            <p className="text-gray-500 leading-relaxed">
+            <h1 className="font-bold text-4xl mb-4">Our Gallery</h1>
+            <p className="dark:text-gray-500 leading-relaxed">
               Explore our gallery showcasing a wide range of completed projects,
               from stunning paver installations and meticulous pressure washing
               transformations to professional sealing and elegant home
@@ -48,14 +48,14 @@ export default function Gallery() {
           </div>
 
           <div className="hidden md:flex flex-wrap justify-center items-center lg:w-1/2 gap-4">
-            <div className="flex flex-col items-center bg-gray-800 shadow-sm rounded-lg p-5 w-1/3">
-              <IoLocationSharp className="text-green-500 w-8 h-fit" />
-              <h4 className="text-xl font-bold text-green-500">50+</h4>
+            <div className="flex flex-col items-center bg-zinc-100 shadow-lg rounded-lg p-5 w-1/3">
+              <IoLocationSharp className="w-8 h-fit" />
+              <h4 className="text-xl">50+</h4>
               <small className="text-center">Towns Served on Long Island</small>
             </div>
-            <div className="flex flex-col items-center bg-gray-800 shadow-sm rounded-lg p-5 w-1/3">
-              <RiMessage2Fill className="text-green-500 w-8 h-fit" />
-              <h4 className="text-xl font-bold text-green-500">Same Day</h4>
+            <div className="flex flex-col items-center shadow-lg bg-zinc-100 rounded-lg p-5 w-1/3">
+              <RiMessage2Fill className=" w-8 h-fit" />
+              <h4 className="text-xl ">Same Day</h4>
               <small className="text-center">Response to Inquiries</small>
             </div>
           </div>
@@ -65,8 +65,8 @@ export default function Gallery() {
       </section>
 
       <section className="p-3 lg:p-10">
-        <h3 className="text-3xl font-bold mb-2">Home Improvement Work</h3>
-        <p className="text-gray-400 mb-4">
+        <h3 className="text-xl font-bold mb-2">Home Improvement Work</h3>
+        <p className="dark:text-gray-400 mb-4">
           Featuring home improvement projects, including kitchens, bathrooms,
           living spaces, and other modern upgrades.
         </p>

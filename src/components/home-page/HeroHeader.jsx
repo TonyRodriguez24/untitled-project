@@ -17,14 +17,18 @@ export default function HeroHeader({
         {/* Text Section */}
         <div
           className="relative p-3 lg:p-0 col-span-12 lg:col-span-6 flex flex-col justify-center gap-4 lg:gap-6 py-10 text-white h-[calc(var(--vh,1vh)*100-64px)] lg:h-auto
-            bg-[url('/potential-bg.webp')] bg-cover bg-center lg:bg-none">
+            bg-[url('/potential-bg.webp')] bg-cover bg-center md:bg-none">
           {/* Mobile-only overlay */}
-          <div className="absolute inset-0 bg-black/70 z-0 lg:hidden" />
+          <div className="absolute inset-0 bg-black/70 z-0 md:hidden" />
 
           {/* Content */}
           <div className="flex flex-col p-5 lg:p-0 gap-3 relative z-10">
-            <h1 className="text-3xl xl:text-5xl font-extrabold select-none">{title}</h1>
-            <p className="text-md lg:text-xl select-none">{subtitle}</p>
+            <h1 className="text-3xl xl:text-5xl md:text-black dark:text-white font-extrabold select-none">
+              {title}
+            </h1>
+            <p className="text-md md:text-black dark:text-white lg:text-xl select-none">
+              {subtitle}
+            </p>
             <Button CTA={buttonText} href={buttonHref} />
           </div>
         </div>

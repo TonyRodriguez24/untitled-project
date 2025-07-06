@@ -32,7 +32,7 @@ export default function ContactForm() {
     });
   };
 
-  const styles = "p-2 border-1 border-black rounded-sm bg-gray-900 text-white";
+  const styles = "p-2 border-1 border-black rounded-sm bg-gray-200";
 
   return (
     <>
@@ -44,12 +44,12 @@ export default function ContactForm() {
             method="POST"
             onSubmit={handleSubmit}
             autoComplete="on"
-            className="flex flex-col lg:bg-gray-800 gap-2 my-2 lg:mx-0 p-8 rounded-2xl shadow-background shadow-2xl justify-center items-start">
+            className="flex flex-col lg:bg-zinc-300 gap-2 my-2 lg:mx-0 p-8 rounded-2xl shadow-background shadow-2xl justify-center items-start">
             <header className="text-start">
               <h3 className="font-bold text-2xl mb-1">
                 Ready when you are, let’s bring your ideas to life with ease.
               </h3>
-              <small className="text-gray-500">
+              <small className="text-gray-700">
                 No spam or junk emails, just timely updates and professional
                 communication. If you want to leave a message, view our full
                 contact form{" "}

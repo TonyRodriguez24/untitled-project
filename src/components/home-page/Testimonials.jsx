@@ -26,7 +26,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-black py-12">
+    <section id="testimonials" className="dark:bg-black py-12">
       <div className="xl:max-w-2/3 w-11/12 md:w-10/12 mx-auto xl:px-10">
         {/* Section Header */}
         <header className="text-center mb-10">
@@ -41,17 +41,19 @@ export default function Testimonials() {
           {testimonials.map((t, idx) => (
             <article
               key={idx}
-              className="bg-gray-800 shadow-md rounded-lg p-6 text-center flex flex-col justify-between h-full">
-              <Image
-                src={t.avatar}
-                alt={`Photo of ${t.name}`}
-                width={60}
-                height={60}
-                className="rounded-full mx-auto mb-4 object-cover"
-              />
-              <h3 className="text-lg font-semibold mb-1">{t.name}</h3>
-              <p className="text-sm text-gray-500 mb-3">{t.details}</p>
-              <blockquote className="text-sm text-left text-gray-300 italic mb-4">
+              className="bg-gray-800 shadow-md rounded-lg p-6 text-center bg-zinc-300 flex flex-col justify-start h-full">
+              <div className="mb-5 p-3">
+                <Image
+                  src={t.avatar}
+                  alt={`Photo of ${t.name}`}
+                  width={60}
+                  height={60}
+                  className="rounded-full mx-auto object-cover"
+                />
+                <h3 className="text-black text-lg font-semibold mb-1">{t.name}</h3>
+                <p className="text-sm text-gray-800 ">{t.details}</p>
+              </div>
+              <blockquote className="text-sm text-left dark:text-gray-300 mb-4">
                 {t.quote}
               </blockquote>
               <div className="text-yellow-500">

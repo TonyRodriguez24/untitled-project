@@ -11,7 +11,7 @@ export default function Services() {
         {services.map((service) => (
           <div
             key={service.id}
-            className="flex flex-col text-center shadow-lg rounded-xl bg-gray-900 overflow-hidden w-11/12 lg:w-10/12 sm:max-w-[320px]">
+            className="flex flex-col text-center shadow-lg rounded-xl bg-zinc-300 overflow-hidden w-11/12 lg:w-10/12 sm:max-w-[320px]">
             <Link href={`/services/${service.link}`}>
               <Image
                 src={service.image}
@@ -23,12 +23,12 @@ export default function Services() {
             </Link>
 
             <Link href={`/services/${service.link}`}>
-              <h3 className="text-white my-4 px-5 hover:!text-blue-400 transition cursor-pointer text-start text-2xl font-bold">
+              <h3 className="text-slate-600 my-4 px-5 hover:!text-blue-400 transition cursor-pointer text-start text-2xl font-bold">
                 {service.name}
               </h3>
             </Link>
 
-            <p className="text-start p-5 pt-0 text-gray-400">
+            <p className="text-start p-5 pt-0 text-gray-800">
               {service.cardDescription}
             </p>
           </div>
