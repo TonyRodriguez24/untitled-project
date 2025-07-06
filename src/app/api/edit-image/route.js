@@ -45,3 +45,7 @@
 //     return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
 //   }
 // }
+
+export function GET() {
+  return new Response("This route is under construction.", { status: 200 });
+}
