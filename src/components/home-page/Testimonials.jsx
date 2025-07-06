@@ -27,7 +27,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section id="testimonials" className="bg-black py-12">
-      <div className="xl:max-w-2/3 w-3/4 md:w-10/12 mx-auto xl:px-10">
+      <div className="xl:max-w-2/3 w-11/12 md:w-10/12 mx-auto xl:px-10">
         {/* Section Header */}
         <header className="text-center mb-10">
           <h2 className="text-3xl font-bold">What Our Clients Say</h2>

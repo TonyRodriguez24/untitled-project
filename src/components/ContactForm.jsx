@@ -46,7 +46,7 @@ export default function ContactForm() {
             autoComplete="on"
             className="flex flex-col lg:bg-gray-800 gap-2 my-2 lg:mx-0 p-8 rounded-2xl shadow-background shadow-2xl justify-center items-start">
             <header className="text-start">
-              <h3 className="font-bold text-2xl">
+              <h3 className="font-bold text-2xl mb-1">
                 Ready when you are, let’s bring your ideas to life with ease.
               </h3>
               <small className="text-gray-500">

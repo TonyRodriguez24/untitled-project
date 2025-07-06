@@ -10,19 +10,18 @@ import { IoLocationSharp } from "react-icons/io5";
 import { RiMessage2Fill } from "react-icons/ri";
 
 export default function Gallery() {
-  const [loadedCount, setLoadedCount] = useState(0);
+
   const [isLoaded, setIsLoaded] = useState(false);
-  const TOTAL_TRACKED_IMAGES = 6; // ✅ ONLY WAIT FOR 6 IMAGES
 
   useEffect(() => {
-    if (loadedCount >= TOTAL_TRACKED_IMAGES) {
+    const timeout = setTimeout(() => {
       setIsLoaded(true);
-    }
-  }, [loadedCount]);
+    }, 1000); // ⏱️ Adjust this as needed
 
-  const handleImageLoaded = () => {
-    setLoadedCount((prev) => prev + 1);
-  };
+    return () => clearTimeout(timeout);
+  }, []);
+
+
 
   return (
     <>
@@ -81,10 +80,7 @@ export default function Gallery() {
                 width={500}
                 height={350}
                 className="rounded shadow-sm"
-                // ✅ pass onLoad only to first 6
-                onLoad={
-                  idx < TOTAL_TRACKED_IMAGES ? handleImageLoaded : undefined
-                }
+              
               />
             </figure>
           ))}

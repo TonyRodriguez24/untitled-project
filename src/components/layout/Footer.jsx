@@ -14,7 +14,7 @@ import { FaLocationArrow } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 lg:gap-0 xl:grid-cols-4 items-stretch w-full xl:max-w-full mx-auto bg-black p-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 lg:gap-0 xl:grid-cols-4 items-stretch w-full xl:max-w-full mx-auto bg-black md:p-10 p-5">
         {/* Contact Info */}
         <div className="flex flex-col gap-3 items-center p-3">
           <h3 className="font-bold text-2xl lg:text-3xl">CONNECT WITH US</h3>

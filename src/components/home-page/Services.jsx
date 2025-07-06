@@ -11,7 +11,7 @@ export default function Services() {
         {services.map((service) => (
           <div
             key={service.id}
-            className="flex flex-col text-center shadow-lg rounded-xl bg-gray-900 overflow-hidden w-10/12 sm:max-w-[300px]">
+            className="flex flex-col text-center shadow-lg rounded-xl bg-gray-900 overflow-hidden w-10/12 sm:max-w-[320px]">
             <Link href={`/services/${service.link}`}>
               <Image
                 src={service.image}
