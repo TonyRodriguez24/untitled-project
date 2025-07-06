@@ -103,10 +103,9 @@ export default function Navbar() {
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-[999px] py-4 opacity-100" : "max-h-0 opacity-0"
-        } bg-gray-800`}>
-        <div className="gap-5 flex flex-col justify-center items-center transition-opacity duration-300">
+        } `}>
+        <div className="flex flex-col text-center bg-blue-800 justify-center items-center transition-opacity duration-300">
           {[
-            { href: "/", text: "Home" },
             { href: "/financing", text: "Financing Options" },
             { href: "/gallery", text: "Gallery" },
             { href: "/about-us", text: "About Us" },
@@ -115,17 +114,17 @@ export default function Navbar() {
               key={href}
               href={href}
               onClick={closeMobileMenu}
-              className="block text-white bg-gray-500 w-full p-3 hover:text-amber-400">
-              {text}
+              className="block text-white font-semibold text-lg bg-blue-800 border-b-3 w-full p-4 hover:text-amber-400">
+              {text.toUpperCase()}
             </Link>
           ))}
 
           {/* Services Dropdown */}
-          <div className="w-full text-center">
+          <div className="w-full text-center border-b-4 border-white">
             <button
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              className="text-white text-start hover:text-amber-400 bg-gray-500 w-full p-3">
-              Services ▾
+              className="text-white text-center font-semibold text-lg text-center cursor-pointer hover:text-amber-400 bg-blue-800 w-full p-5">
+              SERVICES ▾
             </button>
             <div
               className={`transition-all duration-300 ease-in-out overflow-hidden ${
@@ -133,7 +132,7 @@ export default function Navbar() {
                   ? "max-h-[500px] opacity-100"
                   : "max-h-0 opacity-0"
               }`}>
-              <div className="ml-4 flex flex-wrap space-y-1 mt-2">
+              <div className="flex gap-2 justify-center flex-wrap space-y-1 mt-2 p-2">
                 {[
                   "asphalt",
                   "concrete",
@@ -147,7 +146,7 @@ export default function Navbar() {
                     key={slug}
                     href={`/services/${slug}`}
                     onClick={closeMobileMenu}
-                    className="block bg-gray-500 border-3 w-1/2 p-3 text-white hover:text-amber-400">
+                    className="block bg-blue-800 border-b text-start w-2/5 p-3 text-white hover:text-amber-400">
                     {slug
                       .replace("-", " ")
                       .replace(/\b\w/g, (c) => c.toUpperCase())}
@@ -161,7 +160,7 @@ export default function Navbar() {
           <Link
             href="/contact-us"
             onClick={closeMobileMenu}
-            className="block bg-blue-800 hover:bg-blue-600 p-2 px-4 rounded-2xl transition">
+            className="block bg-white mx-auto flex my-2 mx-4 hover:bg-blue-600 p-3 px-6 rounded-2xl transition">
             Contact Us!
           </Link>
         </div>
