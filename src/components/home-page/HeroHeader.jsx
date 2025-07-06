@@ -23,8 +23,8 @@ export default function HeroHeader({
 
           {/* Content */}
           <div className="flex flex-col p-5 lg:p-0 gap-3 relative z-10">
-            <h1 className="text-4xl lg:text-5xl font-extrabold select-none">{title}</h1>
-            <p className="text-lg lg:text-xl select-none">{subtitle}</p>
+            <h1 className="text-3xl xl:text-5xl font-extrabold select-none">{title}</h1>
+            <p className="text-md lg:text-xl select-none">{subtitle}</p>
             <Button CTA={buttonText} href={buttonHref} />
           </div>
         </div>
