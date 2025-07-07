@@ -93,7 +93,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white cursor-pointer text-2xl focus:outline-none">
+            className="text-white cursor-pointer text-3xl focus:outline-none">
             ☰
           </button>
         </div>
@@ -101,29 +101,29 @@ export default function Navbar() {
 
       {/* Mobile Menu with smooth animation */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[999px] py-4 opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden border-b-3 border-slate-800 bg-blue-900 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[999px] opacity-100" : "max-h-0 opacity-0"
         } `}>
-        <div className="flex flex-col text-center bg-blue-800 justify-center items-center transition-opacity duration-300">
+        <div className="flex flex-col text-center justify-center items-center transition-opacity duration-300">
           {[
+            { href: "/about-us", text: "About Us" },
             { href: "/financing", text: "Financing Options" },
             { href: "/gallery", text: "Gallery" },
-            { href: "/about-us", text: "About Us" },
           ].map(({ href, text }) => (
             <Link
               key={href}
               href={href}
               onClick={closeMobileMenu}
-              className="block text-white font-semibold text-lg bg-blue-800 border-b-3 w-full p-4 hover:text-amber-400">
+              className="block text-white font-semibold text-lg bg-blue-900 border-b-3 border-slate-800  w-full p-4 hover:text-amber-400">
               {text.toUpperCase()}
             </Link>
           ))}
 
           {/* Services Dropdown */}
-          <div className="w-full text-center border-b-4 border-white">
+          <div className="w-full text-center border-b-3 border-slate-800">
             <button
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              className="text-white text-center font-semibold text-lg text-center cursor-pointer hover:text-amber-400 bg-blue-800 w-full p-5">
+              className="text-white text-center font-semibold text-lg text-center cursor-pointer hover:text-amber-400 bg-blue-900 w-full p-5">
               SERVICES ▾
             </button>
             <div
@@ -132,7 +132,7 @@ export default function Navbar() {
                   ? "max-h-[500px] opacity-100"
                   : "max-h-0 opacity-0"
               }`}>
-              <div className="flex gap-2 justify-center flex-wrap space-y-1 mt-2 p-2">
+              <div className="flex justify-start bg-blue-900 flex-wrap space-y-1 p-2">
                 {[
                   "asphalt",
                   "concrete",
@@ -146,7 +146,7 @@ export default function Navbar() {
                     key={slug}
                     href={`/services/${slug}`}
                     onClick={closeMobileMenu}
-                    className="block bg-blue-800 border-b text-start w-2/5 p-3 text-white hover:text-amber-400">
+                    className="block border-l text-start w-1/2 p-3 text-white hover:text-amber-400">
                     {slug
                       .replace("-", " ")
                       .replace(/\b\w/g, (c) => c.toUpperCase())}
@@ -160,8 +160,8 @@ export default function Navbar() {
           <Link
             href="/contact-us"
             onClick={closeMobileMenu}
-            className="block bg-white mx-auto flex my-2 mx-4 hover:bg-blue-600 p-3 px-6 rounded-2xl transition">
-            Contact Us!
+            className="block text-white font-semibold text-lg bg-blue-900 w-full p-4 hover:text-amber-400">
+            CONTACT US!
           </Link>
         </div>
       </div>
