@@ -49,13 +49,14 @@ export default function ContactForm() {
               <h3 className="font-bold text-2xl mb-1">
                 Ready when you are, let’s bring your ideas to life with ease.
               </h3>
-              <small className="text-gray-700">
+              <small className="text-gray-600">
                 No spam or junk emails, just timely updates and professional
                 communication. If you want to leave a message, view our full
                 contact form{" "}
                 <Link href={"/contact-us"} className="text-blue-500">
                   here
-                </Link>
+                  </Link>
+                  
               </small>
             </header>
 

@@ -169,7 +169,7 @@ export default function Financing() {
           "https://app.gethearth.com/financing/48905/85753/prequalify?utm_campaign=48905&utm_content=general&utm_medium=custom-lp&utm_source=contractor&utm_term=85753"
         }
         CTA={"Visit Hearth"}
-        customClass={"text-gray-400"}
+        customClass={"text-gray-400 text-center"}
       />
     </div>
   );

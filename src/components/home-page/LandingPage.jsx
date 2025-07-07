@@ -13,6 +13,7 @@ export default function LandingPage() {
         buttonHref="#services"
         imageSrc="/sample_image.jpg"
         imageAlt="A beautiful home"
+        customBackground = "bg-[url('/potential-bg.webp')] bg-cover bg-center md:bg-none"
       />
 
       <ContactForm />

@@ -30,7 +30,10 @@ export default function Navbar() {
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         {/* Logo */}
         <div>
-          <Link href="/" className="text-white font-bold text-xl">
+          <Link
+            onClick={closeMobileMenu}
+            href="/"
+            className="text-white font-bold text-xl">
             JPM and Sons
           </Link>
         </div>

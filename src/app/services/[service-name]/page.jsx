@@ -60,7 +60,7 @@ export default async function ServicePage({ params }) {
                 className="rounded-md h-72 w-full object-cover mb-4"
               />
               <h3 className="text-2xl font-bold dark:text-white">{sub.name}</h3>
-              <p className="text-gray-600 my-2">{sub.caption}</p>
+              <p className="dark:text-gray-500 my-2">{sub.caption}</p>
 
               {/* Feature badges */}
               <ul className="flex flex-wrap gap-2 mt-3 mb-6 p-0">
