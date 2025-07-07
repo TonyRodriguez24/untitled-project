@@ -93,7 +93,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white cursor-pointer text-3xl focus:outline-none">
+            className="text-white cursor-pointer text-4xl focus:outline-none">
             ☰
           </button>
         </div>

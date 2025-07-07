@@ -51,7 +51,7 @@ export default async function ServicePage({ params }) {
           <div
             key={i}
             id={sub.name.toLowerCase().replace(/\s+/g, "-")}
-            className="flex flex-col md:flex-row items-stretch justify-center rounded-xl bg-blue-200  p-6 lg:gap-6 scroll-mt-10">
+            className="flex flex-col md:flex-row items-stretch justify-center rounded-xl  p-0 lg:p-6 lg:gap-6 scroll-mt-10">
             {/* Left: Card */}
             <div className="md:w-2/5 flex flex-col p-4">
               <img
@@ -59,14 +59,14 @@ export default async function ServicePage({ params }) {
                 alt={sub.name}
                 className="rounded-md h-72 w-full object-cover mb-4"
               />
-              <h3 className="text-2xl font-bold text-black">{sub.name}</h3>
-              <p className="text-gray-600 mt-2">{sub.caption}</p>
+              <h3 className="text-2xl font-bold dark:text-white">{sub.name}</h3>
+              <p className="text-gray-600 my-2">{sub.caption}</p>
 
               {/* Feature badges */}
               <ul className="flex flex-wrap gap-2 mt-3 mb-6 p-0">
                 {sub.features.map((feature, i) => (
                   <li key={i}>
-                    <span className="inline-flex items-center gap-2 bg-white text-black px-2 py-1 rounded-full text-sm font-medium">
+                    <span className="inline-flex items-center gap-2 bg-blue-200 text-black px-2 py-1 rounded-full text-sm font-medium">
                       <i
                         className={`bi ${
                           i === 0
@@ -88,9 +88,9 @@ export default async function ServicePage({ params }) {
 
             {/* Right: Long Description + Benefits + CTAs */}
             <div className="md:w-2/5 p-4 flex flex-col">
-              <p className="text-lg mb-4 text-black">{sub.description}</p>
-              <hr className="my-4 text-black" />
-              <ul className="list-none p-0 space-y-3 text-gray-700">
+              <p className="text-lg mb-4 dark:text-white">{sub.description}</p>
+              <hr className="my-4 dark:text-white" />
+              <ul className="list-none p-0 space-y-3 dark:text-gray-400">
                 {sub.benefits.map((benefit, j) => (
                   <li key={j} className="flex items-center gap-2">
                     <i
