@@ -15,10 +15,10 @@ export default async function ServicePage({ params }) {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gray-900 text-white py-16 text-center">
+      <section className="border-b-3 text-white py-16 text-center">
         <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {service.name} Services
+            {service.name}
           </h1>
           <p className="text-lg max-w-4xl mx-auto whitespace-pre-line">
             {service.detailedDescription}
@@ -27,16 +27,16 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Sub-Header */}
-      <section className="p-5 pb-0 text-center">
+      <section className="p-5 pb-0 text-start">
         <div className="max-w-4xl mx-auto lg:px-4 ">
-          <h2 className="text-3xl font-bold mb-1 lg:mb-0">Our {service.name} Services</h2>
+          <h2 className="text-2xl font-semibold mb-1 lg:mb-0">Our {service.name} Services</h2>
           <p className="text-gray-600 lg:text-lg ">{service.caption}</p>
         </div>
       </section>
 
       {/* Sub Services */}
       <section className="lg:max-w-2/3 my-3 mx-auto px-4 py-1 space-y-16 pb-20 ">
-        <div className="flex flex-wrap gap-2 justify-center mb-8">
+        <div className="flex flex-wrap gap-2 justify-start mb-8">
           {service.subServices.map((sub, i) => (
             <a
               key={i}
