@@ -15,8 +15,8 @@ export default async function ServicePage({ params }) {
   return (
     <main>
       {/* Hero Section */}
-      <section className="border-b-3 text-white py-16 text-center">
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="border-b-3 border-b-gray-400  py-16 text-center">
+        <div className="max-w-2/3 mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {service.name}
           </h1>
@@ -27,16 +27,14 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Sub-Header */}
-      <section className="p-5 pb-0 text-start">
-        <div className="max-w-4xl mx-auto lg:px-4 ">
-          <h2 className="text-2xl font-semibold mb-1 lg:mb-0">Our {service.name} Services</h2>
+      <section className="flex flex-wrap justify-center px-7 pt-5 items-start gap-5 w-2/3 mx-auto">
+        <div className="w-4/5">
+          <h2 className="text-2xl font-semibold lg:mb-0">
+            Our {service.name} Services
+          </h2>
           <p className="text-gray-600 lg:text-lg ">{service.caption}</p>
         </div>
-      </section>
-
-      {/* Sub Services */}
-      <section className="lg:max-w-2/3 my-3 mx-auto px-4 py-1 space-y-16 pb-20 ">
-        <div className="flex flex-wrap gap-2 justify-start mb-8">
+        <div className="flex gap-3 w-4/5">
           {service.subServices.map((sub, i) => (
             <a
               key={i}
@@ -46,12 +44,15 @@ export default async function ServicePage({ params }) {
             </a>
           ))}
         </div>
+      </section>
 
+      {/* Sub Services */}
+      <section className="w-2/3 my-3 mx-auto space-y-16 pb-20 ">
         {service.subServices.map((sub, i) => (
           <div
             key={i}
             id={sub.name.toLowerCase().replace(/\s+/g, "-")}
-            className="flex flex-col md:flex-row items-stretch justify-center rounded-xl  p-0 lg:p-6 lg:gap-6 scroll-mt-10">
+            className="flex flex-col md:flex-row items-stretch justify-center rounded-xl p-0 lg:p-6 lg:gap-6 scroll-mt-10">
             {/* Left: Card */}
             <div className="md:w-2/5 flex flex-col p-4">
               <img

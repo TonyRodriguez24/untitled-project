@@ -32,7 +32,7 @@ export default function ContactForm() {
     });
   };
 
-  const styles = "p-2 border-1 border-black rounded-sm bg-gray-200 dark:bg-zinc-700";
+  const styles = "p-2 border-1 border-black rounded-sm bg-white dark:bg-zinc-700";
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function ContactForm() {
               <h3 className="font-bold text-2xl mb-1">
                 Ready when you are, let’s bring your ideas to life with ease.
               </h3>
-              <small className="text-gray-600">
+              <small className="text-gray-800">
                 No spam or junk emails, just timely updates and professional
                 communication. If you want to leave a message, view our full
                 contact form{" "}
