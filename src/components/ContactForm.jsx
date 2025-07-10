@@ -32,7 +32,7 @@ export default function ContactForm() {
     });
   };
 
-  const styles = "p-2 border-1 border-black rounded-sm bg-white dark:bg-zinc-700";
+  const styles = "p-2 border-1 border-black rounded-sm bg-stone-200 md:bg-white  dark:bg-zinc-700";
 
   return (
     <>

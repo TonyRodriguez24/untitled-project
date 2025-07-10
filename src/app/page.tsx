@@ -36,8 +36,7 @@ export default function Home() {
                 Five Boro Building Supply
               </a>
               {""} located at 990 S. Broadway in Hicksville to see and feel
-              pavers, bricks, and stone veneers in person. We’ll help you
-              explore colors, textures, and styles to make the perfect choice.
+              pavers, bricks, and stone veneers in person. 
             </>
           }
           CTA=""

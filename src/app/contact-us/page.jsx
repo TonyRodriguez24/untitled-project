@@ -65,7 +65,7 @@ export default function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className="w-full bg-white rounded-lg border-2 text-black border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                    className="w-full bg-stone-100 rounded-lg border-2 text-black border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
                   />
                   {errors.name && (
                     <small className="text-red-500">{errors.name}</small>
@@ -84,7 +84,7 @@ export default function ContactForm() {
                     value={formData.number}
                     onChange={handleChange}
                     placeholder="516-123-4567"
-                    className="w-full bg-white text-black rounded-lg border-2 border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                    className="w-full bg-stone-100 text-black rounded-lg border-2 border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
                   />
                   {errors.number && (
                     <small className="text-red-500">{errors.number}</small>
@@ -102,7 +102,7 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className="w-full text-black bg-white rounded-lg border-2 border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                    className="w-full text-black bg-stone-100 rounded-lg border-2 border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
                   />
                   {errors.email && (
                     <small className="text-red-500">{errors.email}</small>
@@ -122,7 +122,7 @@ export default function ContactForm() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className={`w-full bg-white rounded-lg border-2 border-gray-600 px-3 py-2 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200
+                    className={`w-full bg-stone-100 rounded-lg border-2 border-gray-600 px-3 py-2 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200
     ${formData.service ? "text-black" : "text-gray-500"}`}>
                     <option value="" disabled hidden>
                       Select a service
@@ -149,7 +149,7 @@ export default function ContactForm() {
                     value={formData.address}
                     onChange={handleChange}
                     placeholder="239 Cherry Lane, Levittown"
-                    className="w-full bg-white rounded-lg border-2 border-gray-600 placeholder-gray-500 text-black focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                    className="w-full bg-stone-100 rounded-lg border-2 border-gray-600 placeholder-gray-500 text-black focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
                   />
                   {errors.address && (
                     <small className="text-red-500">{errors.address}</small>
@@ -166,7 +166,7 @@ export default function ContactForm() {
                     name="referral"
                     value={formData.referral}
                     onChange={handleChange}
-                    className={`w-full bg-white rounded-lg border-2 border-gray-600 px-3 py-2
+                    className={`w-full bg-stone-100 rounded-lg border-2 border-gray-600 px-3 py-2
     focus:border-blue-500 focus:ring focus:ring-blue-200
     ${formData.referral ? "text-black" : "text-gray-500"}`}>
                     <option value="" disabled hidden>
@@ -194,7 +194,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Tell us more about your project..."
-                className="w-full bg-white rounded border-2 border-gray-600 placeholder-gray-500 text-black focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                className="w-full bg-stone-100 rounded border-2 border-gray-600 placeholder-gray-500 text-black focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
               />
               {errors.message && (
                 <small className="text-red-500">{errors.message}</small>
