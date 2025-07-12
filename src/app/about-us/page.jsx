@@ -4,8 +4,8 @@ export default function AboutUs() {
       {/* Hero Section */}
 
       {/* Content Section */}
-      <section className="bg-indigo-300">
-        <div className="w-11/12 lg:w-3/4 bg-green-300 mx-auto flex flex-wrap gap-5 lg:gap-0 items-center">
+      <section>
+        <div className="w-11/12 lg:w-3/4 mx-auto flex flex-wrap gap-5 lg:gap-0 items-center">
           {/* Text Content */}
 
           <div className="lg:w-1/2 lg:p-20">
@@ -40,8 +40,8 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="bg-red-300">
-        <div className="w-11/12 lg:w-3/4 bg-green-300 mx-auto flex flex-wrap lg:flex-row-reverse gap-5 lg:gap-0 items-center">
+      <section>
+        <div className="w-11/12 lg:w-3/4 mx-auto flex flex-wrap lg:flex-row-reverse gap-5 lg:gap-0 items-center">
           {/* Text Content */}
 
           {/* Image / Placeholder */}
@@ -75,8 +75,8 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="bg-red-300">
-        <div className="w-11/12 lg:w-3/4 bg-green-300 mx-auto flex flex-wrap lg:flex-row-reverse gap-5 lg:gap-0 items-center">
+      <section>
+        <div className="w-11/12 lg:w-3/4 mx-auto flex flex-wrap lg:flex-row-reverse gap-5 lg:gap-0 items-center">
           {/* Text Content */}
           <div className="lg:w-1/2 lg:p-20">
             <h2 className="dark:text-white text-3xl font-bold mb-4">
@@ -86,7 +86,7 @@ export default function AboutUs() {
               We're your neighbors, and we treat every project like it's our own
               home. No shortcuts. Just solid work done with care.
             </p>
-            <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-400">
+            <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
               <li>Over 30 years of hands-on experience</li>
               <li>Family-owned and fully licensed & insured</li>
               <li>Fair pricing with no surprise charges</li>

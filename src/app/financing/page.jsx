@@ -16,6 +16,7 @@ export default function Financing() {
         imageAlt="Hero Image"
         imageWrapperClassName="bg-amber-400 rounded-2xl flex justify-center items-center mx-auto max-w-xl w-full aspect-[4/3] p-4 px-20"
         imageClassName="w-full h-auto object-cover"
+        customBackground=""
       />
 
       {/* Why Choose Hearth Section */}
@@ -60,7 +61,7 @@ export default function Financing() {
         }
         CTA={"Get in Touch Today"}
         href={"/contact-us"}
-        customClass={"text-gray-400"}
+        customClass={"text-gray-400 text-center"}
       />
 
       {/* Additional Features */}

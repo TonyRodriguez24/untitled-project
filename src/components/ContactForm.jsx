@@ -19,10 +19,16 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsSubmitted(true);
-    const response = await axios.post('/api/send-email', formData)
-    console.log(response)
+    try {
+      setIsSubmitted(true);
+      const response = await axios.post("/api/send-email", formData);
+      console.log(response);
+    } catch (error) {
+      console.log(error)
+    }
+    
   };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;

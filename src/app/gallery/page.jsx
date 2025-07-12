@@ -48,12 +48,12 @@ export default function Gallery() {
           </div>
 
           <div className="hidden md:flex flex-wrap justify-center items-center lg:w-1/2 gap-4">
-            <div className="flex flex-col items-center bg-zinc-100 shadow-lg rounded-lg p-5 w-1/3">
+            <div className="flex flex-col items-center bg-zinc-100 dark:bg-zinc-800 shadow-lg rounded-lg p-5 w-1/3">
               <IoLocationSharp className="w-8 h-fit" />
               <h4 className="text-xl">50+</h4>
               <small className="text-center">Towns Served on Long Island</small>
             </div>
-            <div className="flex flex-col items-center shadow-lg bg-zinc-100 rounded-lg p-5 w-1/3">
+            <div className="flex flex-col items-center shadow-lg bg-zinc-100 dark:bg-zinc-800 rounded-lg p-5 w-1/3">
               <RiMessage2Fill className=" w-8 h-fit" />
               <h4 className="text-xl ">Same Day</h4>
               <small className="text-center">Response to Inquiries</small>
@@ -80,7 +80,6 @@ export default function Gallery() {
                 width={500}
                 height={350}
                 className="rounded shadow-sm"
-              
               />
             </figure>
           ))}

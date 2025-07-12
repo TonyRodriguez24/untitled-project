@@ -10,7 +10,8 @@ export default function HeroHeader({
   imageAlt,
   imageWrapperClassName = "",
   imageClassName = "",
-  customBackground = ""
+  customBackground = "",
+  customOverlay = ""
 }) {
   return (
     <div className="w-full flex justify-center sm:px-8 lg:px-10">
@@ -20,7 +21,7 @@ export default function HeroHeader({
           className={`relative p-3 lg:p-0 col-span-12 lg:col-span-6 flex flex-col justify-center gap-4 lg:gap-6 py-10 text-white h-[calc(var(--vh,1vh)*100-64px)] lg:h-auto
             ${customBackground}`}>
           {/* Mobile-only overlay */}
-          <div className="absolute inset-0 bg-black/70 z-0 md:hidden" />
+          <div className= {`${customOverlay}`}/>
 
           {/* Content */}
           <div className="flex flex-col p-5 lg:p-0 gap-3 lg:gap-5 relative z-10">

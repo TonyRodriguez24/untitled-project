@@ -15,7 +15,7 @@ export function generateEmailToCustomer(data) {
       <p>Thanks for reaching out to JPM and Sons!</p>
       <p>We’ve received your request for ${data.service} at:</p>
       <p><em>${data.address}</em></p>
-      <p>If everything looks correct, you're all set — no further action is needed. If anything needs to be changed, feel free to resubmit the form or call us directly. Either way, we'll be in touch shortly.</p>
+      <p>If everything looks correct, you're all set. If anything needs to be changed, feel free to resubmit the form or call us directly.</p>
       <p>We pride ourselves on fast, reliable communication, so keep an eye on your phone or inbox.</p>
       <br />
       <p>— The JPM and Sons Team</p>
