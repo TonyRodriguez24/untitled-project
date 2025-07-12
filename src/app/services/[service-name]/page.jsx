@@ -27,7 +27,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Sub-Header */}
-      <section className="flex flex-wrap justify-center lg:px-7 pt-5 items-start gap-5 w-full mx-auto">
+      <section className="flex flex-wrap justify-center lg:px-7 lg:w-2/3 pt-5 items-start gap-5 w-full mx-auto">
         <div className="w-4/5">
           <h2 className="text-2xl font-semibold lg:mb-0">
             Our {service.name} Services
