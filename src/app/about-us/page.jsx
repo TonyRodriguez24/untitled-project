@@ -1,13 +1,25 @@
 export default function AboutUs() {
   return (
-    <main className=" text-gray-800 flex flex-col gap-10">
+    <main className="text-gray-800 flex flex-col gap-20">
       {/* Hero Section */}
 
       {/* Content Section */}
-      <section>
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 lg:gap-12 items-center">
+      <section className="bg-indigo-300">
+        <div className="w-11/12 lg:w-3/4 bg-green-300 mx-auto flex flex-wrap gap-5 lg:gap-0 items-center">
           {/* Text Content */}
-          <div className="lg:py-10">
+
+          <div className="lg:w-1/2 lg:p-20">
+            <p className="text-xl font-bold py-2 text-pink-300">
+              Meet the newest member of our team!
+            </p>
+            <img
+              src="/IMG_8522.JPEG"
+              alt="JPM team"
+              className="w-full h-[400px] object-cover rounded-2xl shadow-lg "
+            />
+          </div>
+
+          <div className="lg:w-1/2 lg:p-20">
             <h2 className="dark:text-white text-3xl font-bold mb-4">
               About Us
             </h2>
@@ -25,25 +37,15 @@ export default function AboutUs() {
           </div>
 
           {/* Image / Placeholder */}
-          <div>
-            <p className="text-2xl font-bold py-4 text-pink-400">
-              Meet the newest member of our team!
-            </p>
-            <img
-              src="/IMG_8522.JPEG"
-              alt="JPM team"
-              className="w-full h-[400px] object-cover rounded-2xl shadow-lg "
-            />
-          </div>
         </div>
       </section>
 
-      <section className="p-0">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <section className="bg-red-300">
+        <div className="w-11/12 lg:w-3/4 bg-green-300 mx-auto flex flex-wrap lg:flex-row-reverse gap-5 lg:gap-0 items-center">
           {/* Text Content */}
 
           {/* Image / Placeholder */}
-          <div>
+          <div className="lg:w-1/2 lg:p-20">
             <img
               src="/nick-jim.webp"
               alt="JPM team"
@@ -54,7 +56,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div>
+          <div className="lg:w-1/2 lg:p-20">
             <h2 className="dark:text-white text-3xl font-bold mb-4">
               Our History
             </h2>
@@ -73,10 +75,10 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <section className="bg-red-300">
+        <div className="w-11/12 lg:w-3/4 bg-green-300 mx-auto flex flex-wrap lg:flex-row-reverse gap-5 lg:gap-0 items-center">
           {/* Text Content */}
-          <div>
+          <div className="lg:w-1/2 lg:p-20">
             <h2 className="dark:text-white text-3xl font-bold mb-4">
               Why Choose Us?
             </h2>
@@ -94,7 +96,7 @@ export default function AboutUs() {
           </div>
 
           {/* Image / Placeholder */}
-          <div>
+          <div className="lg:w-1/2 lg:p-20">
             <img
               src="/young_nick.webp"
               alt="JPM team"
