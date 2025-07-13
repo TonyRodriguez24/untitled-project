@@ -136,10 +136,10 @@ export default function ContactForm() {
                   value={formData.email}
                 />
               </div>
-              <div className="flex flex-col w-full lg:w-fit">
+              <div className="flex flex-col w-full lg:w-fit relative">
                 <label htmlFor="service">Service type</label>
                 <select
-                  className={`${styles} appearance-none`}
+                  className={`${styles} appearance-none pr-10`} // add pr-10 for arrow spacing
                   type="text"
                   name="service"
                   id="service"
@@ -154,6 +154,11 @@ export default function ContactForm() {
                   <option value="pressure_washing">Pressure Washing</option>
                   <option value="paver_sealing">Paver Sealing</option>
                 </select>
+
+                {/* Fake dropdown arrow */}
+                <div className="pointer-events-none absolute right-3 bottom-2 text-black">
+                  ▼
+                </div>
               </div>
             </div>
 
