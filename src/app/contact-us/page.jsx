@@ -42,7 +42,7 @@ export default function ContactForm() {
       <h1 className="px-6 text-3xl lg:text-3xl text-black dark:text-white font-bold text-gray-900">
         How Can We Help?
       </h1>
-      <p className="px-6 text-gray-500 text-sm mt-1 mb-8">
+      <p className="px-6 text-gray-500 text-sm mt-1 mb-2 lg:mb-8">
         Reach out to us with any questions or concerns—your satisfaction is our
         priority.
       </p>
