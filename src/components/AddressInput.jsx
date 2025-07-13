@@ -13,7 +13,7 @@ export default function AddressInput({ value, onChange }) {
                 "w-full border border-black p-2 rounded-sm bg-stone-200 md:bg-white dark:bg-zinc-700",
             })}
           />
-          <div className="absolute top-full left-0 w-full z-50 bg-white md:border border-gray-300 rounded mt-1">
+          <div className="absolute top-full left-0 w-full z-50 bg-white md:border border-gray-300 dark:bg-black dark:border-gray-900 dark:text-black rounded mt-1">
             {suggestions.map((suggestion) => {
               const { key, ...rest } = getSuggestionItemProps(suggestion, {
                 className: `px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${

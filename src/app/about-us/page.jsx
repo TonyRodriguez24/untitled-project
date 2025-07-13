@@ -40,7 +40,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <hr></hr>
+      <hr className="flex lg:hidden"></hr>
 
       <section>
         <div className="w-11/12 lg:w-3/4 mx-auto flex flex-wrap lg:flex-row-reverse gap-5 lg:gap-0 items-center">
@@ -77,8 +77,8 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <hr></hr>
-      
+      <hr className="flex lg:hidden"></hr>
+
       <section>
         <div className="w-11/12 lg:w-3/4 mx-auto flex flex-wrap lg:flex-row-reverse gap-5 lg:gap-0 items-center">
           {/* Text Content */}

@@ -73,10 +73,13 @@ export default function Navbar() {
                     key={slug}
                     href={`/services/${slug}`}
                     className="block px-4 py-2 text-white hover:text-amber-400">
+          
                     {slug
                       .replace("-", " ")
                       .replace(/\b\w/g, (c) => c.toUpperCase())}
+                    
                   </Link>
+                  
                 ))}
               </div>
             )}
