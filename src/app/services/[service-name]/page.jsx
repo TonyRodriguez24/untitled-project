@@ -15,7 +15,7 @@ export default async function ServicePage({ params }) {
   return (
     <main>
       {/* Hero Section */}
-      <section className="border-b-3 border-b-gray-400 p-3 lg:p-0 py-16 text-center">
+      <section className="border-b-3 border-b-gray-400 p-3  py-16 text-center">
         <div className="lg:max-w-2/3 mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {service.name}
@@ -90,7 +90,7 @@ export default async function ServicePage({ params }) {
             </div>
 
             {/* Right: Long Description + Benefits + CTAs */}
-            <div className="md:w-2/5 lg:p-4 flex flex-col">
+            <div className="md:w-2/5 lg:px-4 flex flex-col">
               <p className="text-lg mb-4 dark:text-white">{sub.description}</p>
               <hr className="my-4 dark:text-white" />
               <ul className="list-none p-0 space-y-3 dark:text-gray-400">
