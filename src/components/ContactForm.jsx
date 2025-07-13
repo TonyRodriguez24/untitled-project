@@ -61,7 +61,7 @@ export default function ContactForm() {
             autoComplete="on"
             className="flex w-11/12 flex-col lg:bg-zinc-300 dark:lg:bg-slate-900 gap-2 my-2 lg:mx-0 p-3 lg:p-8 rounded-2xl justify-center items-start">
             <div className="flex items-center justify-between w-full">
-              <header >
+              <header>
                 <h3 className="font-bold text-xl mb-1">
                   Ready when you are, let’s bring your ideas to life with ease.
                 </h3>
@@ -71,7 +71,8 @@ export default function ContactForm() {
                   contact form{" "}
                   <Link href={"/contact-us"} className="text-blue-500">
                     here
-                  </Link> .
+                  </Link>{" "}
+                  .
                 </small>
               </header>
 
@@ -138,7 +139,7 @@ export default function ContactForm() {
               <div className="flex flex-col w-full lg:w-fit">
                 <label htmlFor="service">Service type</label>
                 <select
-                  className={`${styles}`}
+                  className={`${styles} appearance-none`}
                   type="text"
                   name="service"
                   id="service"
