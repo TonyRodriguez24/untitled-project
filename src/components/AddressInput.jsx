@@ -10,7 +10,7 @@ export default function AddressInput({ value, onChange }) {
             {...getInputProps({
               placeholder: "Enter address",
               className:
-                "w-full border border-black p-2 rounded-sm bg-stone-200 md:bg-white",
+                "w-full border border-black p-2 rounded-sm bg-stone-200 md:bg-white dark:bg-zinc-700",
             })}
           />
           <div className="absolute top-full left-0 w-full z-50 bg-white md:border border-gray-300 rounded mt-1">

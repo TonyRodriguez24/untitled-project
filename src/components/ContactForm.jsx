@@ -59,7 +59,7 @@ export default function ContactForm() {
             method="POST"
             onSubmit={handleSubmit}
             autoComplete="on"
-            className="flex w-10/12 flex-col lg:bg-zinc-300 dark:lg:bg-slate-900 gap-2 my-2 lg:mx-0 p-8 rounded-2xl justify-center items-start">
+            className="flex w-11/12 flex-col lg:bg-zinc-300 dark:lg:bg-slate-900 gap-2 my-2 lg:mx-0 p-8 rounded-2xl justify-center items-start">
             <div className="flex items-center justify-between w-full">
               <header >
                 <h3 className="font-bold text-xl mb-1">
@@ -138,7 +138,7 @@ export default function ContactForm() {
               <div className="flex flex-col w-full lg:w-fit">
                 <label htmlFor="service">Service type</label>
                 <select
-                  className={styles}
+                  className={`${styles}`}
                   type="text"
                   name="service"
                   id="service"

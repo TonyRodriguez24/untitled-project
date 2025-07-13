@@ -59,7 +59,7 @@ export default function Navbar() {
               Services ▾
             </button>
             {isServicesOpen && (
-              <div className="absolute z-10 bg-gray-900 shadow-lg rounded mt-2 w-48">
+              <div className="absolute z-10 bg-zinc-800 shadow-lg rounded mt-2 w-48">
                 {[
                   "asphalt",
                   "concrete",
