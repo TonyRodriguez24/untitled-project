@@ -59,19 +59,19 @@ export default function ContactForm() {
             method="POST"
             onSubmit={handleSubmit}
             autoComplete="on"
-            className="flex w-11/12 flex-col lg:bg-zinc-300 dark:lg:bg-slate-900 gap-2 my-2 lg:mx-0 p-8 rounded-2xl justify-center items-start">
+            className="flex w-11/12 flex-col lg:bg-zinc-300 dark:lg:bg-slate-900 gap-2 my-2 lg:mx-0 p-3 lg:p-8 rounded-2xl justify-center items-start">
             <div className="flex items-center justify-between w-full">
               <header >
                 <h3 className="font-bold text-xl mb-1">
                   Ready when you are, let’s bring your ideas to life with ease.
                 </h3>
-                <small className="text-gray-800 dark:text-gray-500">
+                <small className="text-gray-800 dark:text-gray-300">
                   No spam or junk emails, just timely updates and professional
                   communication. If you want to leave a message, view our full
                   contact form{" "}
                   <Link href={"/contact-us"} className="text-blue-500">
                     here
-                  </Link>
+                  </Link> .
                 </small>
               </header>
 

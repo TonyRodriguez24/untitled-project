@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <section id="services" className="flex flex-col items-center p-0 lg:p-3 w-11/12 lg:w-full">
+    <section id="services" className="flex flex-col items-center  lg:p-3 lg:w-full">
       <h2 className="text-3xl font-bold text-center mb-3 lg:mb-0">Our Services</h2>
 
-      <div className="my-2 flex flex-wrap justify-center gap-10 xl:p-6 xl:w-10/12">
+      <div className="my-2 flex flex-wrap justify-center w-11/12 gap-10 xl:p-6 xl:w-10/12">
         {services.map((service) => (
           <div
             key={service.id}

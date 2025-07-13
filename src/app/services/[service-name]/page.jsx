@@ -15,8 +15,8 @@ export default async function ServicePage({ params }) {
   return (
     <main>
       {/* Hero Section */}
-      <section className="border-b-3 border-b-gray-400  py-16 text-center">
-        <div className="lg:max-w-2/3 mx-auto px-4">
+      <section className="border-b-3 border-b-gray-400 p-3 lg:p-0 py-16 text-center">
+        <div className="lg:max-w-2/3 mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {service.name}
           </h1>
@@ -27,34 +27,36 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Sub-Header */}
-      <section className="flex flex-wrap justify-center lg:px-7 lg:w-2/3 pt-5 items-start gap-5 w-full mx-auto">
-        <div className="w-4/5">
-          <h2 className="text-2xl font-semibold lg:mb-0">
-            Our {service.name} Services
-          </h2>
-          <p className="text-gray-600 lg:text-lg ">{service.caption}</p>
-        </div>
-        <div className="flex flex-wrap gap-2 lg:gap-3 w-4/5 lg:w-4/5">
-          {service.subServices.map((sub, i) => (
-            <a
-              key={i}
-              href={`#${sub.name.toLowerCase().replace(/\s+/g, "-")}`}
-              className="px-2 lg:px-4 py-2 lg:py-3 rounded-xl bg-blue-800 text-white text-sm lg:text-md hover:bg-indigo-700 transition">
-              {sub.name}
-            </a>
-          ))}
+      <section className="flex flex-wrap mb-20 justify-center lg:w-2/3 pt-5 items-start gap-5 w-11/12 mx-auto">
+        <div className="lg:w-4/5 flex flex-col gap-5 lg:gap-4 lg:px-12 lg:py-2">
+          <div className="lg:w-4/5">
+            <h2 className="text-2xl font-semibold lg:mb-0">
+              Our {service.name} Services
+            </h2>
+            <p className="text-gray-600 lg:text-lg ">{service.caption}</p>
+          </div>
+          <div className="flex flex-wrap gap-2 lg:gap-3">
+            {service.subServices.map((sub, i) => (
+              <a
+                key={i}
+                href={`#${sub.name.toLowerCase().replace(/\s+/g, "-")}`}
+                className="px-2 lg:px-4 py-2 lg:py-3 rounded-xl bg-blue-800 text-white text-sm lg:text-md hover:bg-indigo-700 transition">
+                {sub.name}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Sub Services */}
-      <section className="lg:w-2/3 my-3 mx-auto space-y-16 pb-20 ">
+      <section className="lg:w-2/3  my-3 mx-auto space-y-16 pb-20 ">
         {service.subServices.map((sub, i) => (
           <div
             key={i}
             id={sub.name.toLowerCase().replace(/\s+/g, "-")}
-            className="flex flex-col md:flex-row items-stretch justify-center rounded-xl p-0 lg:p-6 lg:gap-6 scroll-mt-10">
+            className="flex flex-col w-11/12 mx-auto md:flex-row items-stretch justify-center rounded-xl p-0 lg:p-6 lg:gap-6 scroll-mt-10">
             {/* Left: Card */}
-            <div className="md:w-2/5 flex flex-col p-4">
+            <div className="md:w-2/5 flex flex-col">
               <img
                 src={sub.imageUrl || "/placeholder.jpg"}
                 alt={sub.name}
@@ -88,7 +90,7 @@ export default async function ServicePage({ params }) {
             </div>
 
             {/* Right: Long Description + Benefits + CTAs */}
-            <div className="md:w-2/5 p-4 flex flex-col">
+            <div className="md:w-2/5 lg:p-4 flex flex-col">
               <p className="text-lg mb-4 dark:text-white">{sub.description}</p>
               <hr className="my-4 dark:text-white" />
               <ul className="list-none p-0 space-y-3 dark:text-gray-400">
