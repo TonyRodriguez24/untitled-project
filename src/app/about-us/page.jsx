@@ -17,6 +17,9 @@ export default function AboutUs() {
               alt="JPM team"
               className="w-full h-[400px] object-cover rounded-2xl shadow-lg "
             />
+            <p className="text-gray-500 dark:text-gray-600 py-3">
+              Gia, Isabella, and Nick.
+            </p>
           </div>
 
           <div className="lg:w-1/2 lg:p-20">
@@ -54,7 +57,7 @@ export default function AboutUs() {
               className="w-full h-[400px] object-cover rounded-2xl "
             />
             <p className="text-gray-500 dark:text-gray-600 py-3">
-              Founder: Jim Moore and his son Nick.
+              Founder Jim Moore and his son Nick.
             </p>
           </div>
 
