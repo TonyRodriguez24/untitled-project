@@ -17,6 +17,7 @@ export default function Financing() {
         imageWrapperClassName="bg-amber-400 rounded-2xl flex justify-center items-center mx-auto max-w-xl w-full aspect-[4/3] p-4 px-20"
         imageClassName="w-full h-auto object-cover"
         customBackground=""
+        customTextColor = "text-black"
       />
 
       {/* Why Choose Hearth Section */}

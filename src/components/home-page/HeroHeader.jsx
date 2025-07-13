@@ -11,7 +11,8 @@ export default function HeroHeader({
   imageWrapperClassName = "",
   imageClassName = "",
   customBackground = "",
-  customOverlay = ""
+  customOverlay = "",
+  customTextColor = ""
 }) {
   return (
     <div className="w-full flex justify-center sm:px-8 lg:px-10">
@@ -24,7 +25,7 @@ export default function HeroHeader({
           <div className= {`${customOverlay}`}/>
 
           {/* Content */}
-          <div className="flex flex-col p-5 lg:p-0 gap-3 lg:gap-5 relative z-10">
+          <div className={`flex flex-col p-5 ${customTextColor} lg:p-0 gap-3 lg:gap-5 relative z-10`}>
             <h1 className="text-3xl xl:text-5xl md:text-black dark:text-white font-extrabold select-none">
               {title}
             </h1>

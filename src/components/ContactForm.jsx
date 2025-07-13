@@ -49,7 +49,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center py-3 lg:py-0">
         {isSubmitted ? (
           <div className="bg-green-800 p-10 rounded-2xl">
             Thank you, your form has successfully been submitted
