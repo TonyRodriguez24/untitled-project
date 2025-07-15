@@ -1,9 +1,16 @@
-// components/AddressInput.jsx
 import PlacesAutocomplete from "react-places-autocomplete";
+import { useDebounce } from "../hooks/useDebounce";
 
 export default function AddressInput({ value, onChange }) {
+  const isValidInput = value.trim().length >= 5;
+  const debouncedValue = useDebounce(isValidInput ? value : "", 500);
+
+
   return (
-    <PlacesAutocomplete value={value} onChange={onChange} onSelect={onChange}>
+    <PlacesAutocomplete
+      value={debouncedValue}
+      onChange={onChange}
+      onSelect={onChange}>
       {({ getInputProps, suggestions, getSuggestionItemProps }) => (
         <div className="relative w-full">
           <input
