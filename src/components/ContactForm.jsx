@@ -6,6 +6,7 @@ import Button from "./layout/Button";
 import axios from 'axios'
 import AddressInput from "../components/AddressInput";
 import useLoadGoogleMaps from "../hooks/useLoadGoogleMaps"
+import { useRouter } from "next/navigation";
 
 export default function ContactForm() {
   const INITIAL_STATE = {
@@ -15,6 +16,8 @@ export default function ContactForm() {
     service: "",
     address: "",
   };
+
+  const router = useRouter();
 
   const mapsLoaded = useLoadGoogleMaps(
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
@@ -28,8 +31,8 @@ export default function ContactForm() {
     e.preventDefault()
     try {
       setIsSubmitted(true);
-      const response = await axios.post("/api/send-email", formData);
-      console.log(response);
+      await axios.post("/api/send-email", formData);
+      router.push("/thank-you");
     } catch (error) {
       console.log(error)
     }
@@ -49,12 +52,6 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="w-full flex justify-center py-3 lg:py-0">
-        {isSubmitted ? (
-          <div className="bg-green-800 p-10 rounded-2xl">
-            Thank you, your form has successfully been submitted
-          </div>
-        ) : (
           <form
             method="POST"
             onSubmit={handleSubmit}
@@ -166,8 +163,7 @@ export default function ContactForm() {
               Get started today
             </button>
           </form>
-        )}
-      </div>
+        
     </>
   );
 }
