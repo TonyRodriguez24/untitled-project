@@ -37,7 +37,7 @@ export async function POST(request) {
         const messageToCustomer = {
             to: data.email,
             from: 'JPM and Sons <contact@jpmandsons.com>',
-            subject: 'Thank you for contacting us!',
+            subject: 'Thank you for contacting us.',
             text: `Hi, ${data.name}! Your form has been received, expect a call or email back from us soon.`,
             html: generateEmailToCustomer(data),
         };
