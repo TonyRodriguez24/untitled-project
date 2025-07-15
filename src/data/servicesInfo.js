@@ -3,7 +3,7 @@ export const services = [
         id: 1,
         name: "Asphalt",
         link: "asphalt",
-        image: "/home_page/icon-group/asphalt.webp",
+        image: "/home_page/icon-group/asphalt_card.png",
         cardDescription: 'We provide professional asphalt paving services for driveways, walkways, and parking lots. We ensure a durable and long-lasting finish by using high-quality materials and proper installation techniques.',
         subServices: [
             {
@@ -80,7 +80,7 @@ export const services = [
         id: 2,
         name: "Concrete",
         link: "concrete",
-        image: "/home_page/icon-group/concrete.webp",
+        image: "/home_page/icon-group/concrete_pathway.png",
         cardDescription: "Our concrete services include driveways, patios, sidewalks, and steps. We focus on quality and precision, ensuring long-lasting results for all installations, whether it's a decorative patio or a functional driveway.",
         subServices: [
             {
@@ -156,8 +156,8 @@ export const services = [
         id: 3,
         name: "Home Improvement",
         link: "home-improvement",
-        image: "/home_page/icon-group/home_improvement.webp",
-        cardDescription: "From kitchen remodeling to bathroom renovations, our home improvement services enhance the beauty and functionality of your home. We specialize in siding, roofing, and flooring installations.",
+        image: "/gallery/home-improvement/marble-counters.webp",
+        cardDescription: "From kitchen remodeling to bathroom renovations, our home improvement services enhance the beauty and functionality of your home — including expert flooring installation for a polished finish.",
         subServices: [
             {
                 name: "Kitchen Remodeling",
@@ -218,7 +218,7 @@ export const services = [
         id: 4,
         name: "Masonry",
         link: "masonry",
-        image: "/home_page/icon-group/masonry.webp",
+        image: "/home_page/icon-group/masonry_work.png",
         cardDescription: "Our masonry services feature custom brickwork, retaining walls, and outdoor barbecues. We combine durability with aesthetic appeal to create functional and beautiful structures, tailored to your property's unique design.",
         subServices: [
             {
@@ -449,8 +449,8 @@ export const services = [
         id: 7,
         name: "Exterior Renovations ",
         link: "exterior-renovations",
-        image: "/home_page/icon-group/exterior-renovations.webp",
-        cardDescription: "From kitchen remodeling to bathroom renovations, our home improvement services enhance the beauty and functionality of your home. We specialize in siding, roofing, and flooring installations.",
+        image: "/home_page/icon-group/exterior_renovations.png",
+        cardDescription: "From roofing and siding to window replacement, we handle every part of your exterior renovation. Whether you're fixing damage or updating your home’s look, we deliver solid work that lasts.",
         subServices: [
             {
                 name: "Roofing Services",

@@ -22,7 +22,7 @@ export default function Services() {
                 alt={service.name}
                 width={300}
                 height={200}
-                className="w-full rounded-t-xl cursor-pointer hover:opacity-60 transition"
+                className="w-full h-[200px] object-cover rounded-t-xl cursor-pointer hover:opacity-60 transition"
               />
             </Link>
 
