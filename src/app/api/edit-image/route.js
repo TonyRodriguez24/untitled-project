@@ -1,51 +1,47 @@
-// // app/api/edit-image/route.js
+// import fs from "fs";
+// import OpenAI, { toFile } from "openai";
 
-// import { NextResponse } from "next/server";
-// import OpenAI from "openai";
-// import { toFile } from "openai";
-// import fs from "fs/promises";
-// import path from "path";
-// import os from "os";
+import { NextResponse } from "next/server";
+
+// const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+export function GET() {
+  return NextResponse.json({ message: "Nothing to see here" });
+}
+
+
+
 
 // export async function POST(req) {
-//   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 //   try {
 //     const formData = await req.formData();
 //     const file = formData.get("image");
 //     const prompt = formData.get("prompt");
 
+//     console.log("Received prompt:", prompt);
+//     console.log("Received file:", file);
+
 //     if (!file || !prompt) {
-//       return NextResponse.json({ error: "Missing image or prompt" }, { status: 400 });
+//       console.warn("Missing file or prompt");
+//       return new Response("Missing image or prompt", { status: 400 });
 //     }
 
-//     // Save uploaded file to temp folder
-//     const arrayBuffer = await file.arrayBuffer();
-//     const buffer = Buffer.from(arrayBuffer);
-//     const tempDir = os.tmpdir();
-//     const tempFilePath = path.join(tempDir, file.name);
-//     await fs.writeFile(tempFilePath, buffer);
-
-//     const imageFile = await toFile(tempFilePath);
+//     const image = await toFile(file, file.name, { type: file.type });
+//     console.log("Converted file:", image);
 
 //     const response = await openai.images.edit({
-//       image: imageFile,
-//       prompt: prompt,
-//       model: "dall-e-2"
+//       model: "gpt-image-1",
+//       image,
+//       prompt,
+//       n: 1,
+//       size: "1024x1024",
 //     });
 
-//     // Clean up temp file
-//     await fs.unlink(tempFilePath);
+//     console.log("OpenAI response:", response);
 
-//     const imageUrl = response.data[0].url;
-
-//     return NextResponse.json({ imageUrl });
+//     return Response.json(response);
 //   } catch (err) {
-//     console.error(err);
-//     return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
+//     console.error("Server error:", err);
+//     return new Response("Internal server error", { status: 500 });
 //   }
 // }
-
-export function GET() {
-  return new Response("This route is under construction.", { status: 200 });
-}

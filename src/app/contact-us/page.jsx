@@ -127,9 +127,15 @@ export default function ContactForm() {
                     <option value="" disabled hidden>
                       Select a service
                     </option>
-                    <option value="Concrete">Concrete</option>
-                    <option value="Asphalt">Asphalt</option>
-                    <option value="Masonry">Masonry</option>
+                    <option value="asphalt">Asphalt</option>
+                    <option value="concrete">Concrete</option>
+                    <option value="exterior_renovations">
+                      Exterior Renovations
+                    </option>
+                    <option value="home_improvement">Home Improvement</option>
+                    <option value="masonry">Masonry</option>
+                    <option value="paver_sealing">Paver Sealing</option>
+                    <option value="pressure_washing">Pressure Washing</option>
                   </select>
 
                   {errors.service && (
@@ -172,9 +178,13 @@ export default function ContactForm() {
                     <option value="" disabled hidden>
                       Select
                     </option>
-                    <option value="Google">Google</option>
-                    <option value="Friend">Friend</option>
-                    <option value="Social Media">Social Media</option>
+                    <option value="google">Google</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="friend_family">Friend or Family</option>
+                    <option value="returning_customer">
+                      Returning Customer
+                    </option>
                   </select>
 
                   {errors.referral && (

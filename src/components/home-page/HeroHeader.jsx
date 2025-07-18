@@ -29,7 +29,7 @@ export default function HeroHeader({
             <h1 className="text-3xl xl:text-5xl md:text-black dark:text-white font-extrabold select-none">
               {title}
             </h1>
-            <p className="text-md md:text-black dark:text-gray-400 lg:text-xl select-none">
+            <p className="text-md md:text-black dark:text-gray-100 lg:text-xl select-none">
               {subtitle}
             </p>
             <Button CTA={buttonText} href={buttonHref} />

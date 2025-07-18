@@ -28,7 +28,7 @@ export default function Services() {
 
             <div className="flex flex-col h-full justify-between">
               <Link href={`/services/${service.link}`}>
-                <h3 className="dark:text-blue-700 my-4 px-5 hover:!text-blue-400 transition cursor-pointer text-start text-2xl font-bold">
+                <h3 className="dark:text-indigo-50 my-4 px-5 hover:!text-blue-400 transition cursor-pointer text-start text-2xl font-bold">
                   {service.name}
                 </h3>
               </Link>

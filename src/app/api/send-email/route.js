@@ -4,8 +4,10 @@ import { generateEmailToSelf, generateEmailToCustomer } from '../../helpers/emai
 import Ajv from 'ajv';
 import { contactFormSchema } from '../../../schemas/ContactFormSchema';
 import addFormats from "ajv-formats";
+import { titleize } from '../../../data/helpers';
 
-const ajv = new Ajv();
+const ajv = new Ajv({ allErrors: true });
+
 addFormats(ajv);
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -13,6 +15,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export async function POST(request) {
     try {
         const data = await request.json();
+        console.log("Raw formData:", data); // <---- ADD THIS
 
         //validate data
         const validate = ajv.compile(contactFormSchema)
@@ -20,8 +23,23 @@ export async function POST(request) {
         console.log(validate.errors); // check what’s failing
 
         if (!valid) {
+            const parsedErrors = {};
+
+            for (const err of validate.errors) {
+                const field = err.instancePath.replace("/", "");
+
+                if (err.keyword === "minLength" && err.params.limit <= 1) {
+                    parsedErrors[field] = `${titleize(field)} is required`;
+                } else if (err.keyword === "format" && field === "email") {
+                    parsedErrors[field] = "Email must be a valid email address";
+                } else {
+                    parsedErrors[field] = `${titleize(field)} is required`;
+                }
+
+            }
+
             return NextResponse.json(
-                { error: 'Invalid input', details: validate.errors },
+                { error: 'Invalid input', details: parsedErrors },
                 { status: 400 }
             );
           }
