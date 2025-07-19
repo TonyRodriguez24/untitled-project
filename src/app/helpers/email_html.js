@@ -36,9 +36,11 @@ export default function buildConfirmationEmail({ data , readableService }) {
                   </ul>
 
                   <h3>What Happens Next?</h3>
-                  <p>A team member will review your request.</p>
-                  <p>Someone from our team will be in touch within a day to go over everything.</p>
-                  <p>We’ll work with you to find a time that fits your schedule.</p>
+                  <ul>
+                  <li>A team member will review your request.</li>
+                  <li>Someone from our team will be in touch within a day to go over everything.</li>
+                  <li>We’ll work with you to find a time that fits your schedule.</li>
+                  <ul>
 
                   <hr />
 

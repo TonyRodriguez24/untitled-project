@@ -13,29 +13,75 @@ export default function ContactForm() {
     email: "",
     service: "",
     address: "",
+    company: ""
   };
+
+  const [fieldStatus, setFieldStatus] = useState({
+    name: null, 
+    number: null,
+    email: null,
+    address: null,
+    service: null,
+  });
 
   const [formErrors, setFormErrors] = useState({});
   
 
   const router = useRouter();
 
-  const mapsLoaded = useLoadGoogleMaps(
-    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-  );
 
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const validateField = (name, value) => {
+    switch (name) {
+      case "name":
+        return /^[a-zA-Z\s'-]{2,}$/.test(value);
+      case "number":
+        return value.replace(/\D/g, "").length === 10;
+      case "email":
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      case "address":
+        return value.trim().length > 5;
+      case "service":
+        return value !== "";
+      default:
+        return true;
+    }
+  };
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.company.trim() !== "") {
+      console.warn("Spam detected via honeypot. Submission blocked.");
+      return;
+    }
+
+    const updatedStatus = {};
+    let allValid = true;
+
+    for (const key in formData) {
+      const isValid = validateField(key, formData[key]);
+      updatedStatus[key] = isValid;
+      if (!isValid) allValid = false;
+    }
+
+    setFieldStatus(updatedStatus);
+
+    if (!allValid) {
+      console.log("Validation failed. Form not submitted.");
+      return;
+    }
+
     try {
       setIsSubmitted(true);
       await axios.post("/api/send-email", formData);
       setFormErrors({});
       router.push("/thank-you");
     } catch (error) {
-      console.log("Form Errors:", error.response.data.details);
+      console.log("Form Errors:", error.response?.data?.details);
       if (error.response?.data?.details) {
         setFormErrors(error.response.data.details);
       }
@@ -43,13 +89,29 @@ export default function ContactForm() {
     }
   };
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+
+    let val = value;
+
+    if (name === "number") {
+      let raw = value.replace(/\D/g, "");
+      if (raw.length === 11 && raw.startsWith("1")) raw = raw.slice(1);
+      raw = raw.slice(0, 10);
+      val = raw
+        .replace(/^(\d{3})(\d)/, "$1-$2")
+        .replace(/^(\d{3})-(\d{3})(\d)/, "$1-$2-$3");
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: val }));
+
+    const isValid = validateField(name, val);
+    setFieldStatus((prev) => ({ ...prev, [name]: isValid }));
+
+    console.log("Field:", name, "| Value:", val, "| Valid:", isValid);
   };
+
 
   const styles =
     "p-2 border-1 border-black rounded-sm bg-stone-200 md:bg-white  dark:bg-zinc-700";
@@ -87,10 +149,17 @@ export default function ContactForm() {
         <hr className="my-2 border-black w-full border-1"></hr>
 
         <div className="flex flex-col lg:flex-row w-full h-fit gap-4 items-center lg:items-end">
-          <div className="flex flex-col min-h-[100px] w-full lg:w-1/6">
+          <div className="flex flex-col  lg:min-h-[100px] w-full lg:w-1/6">
             <label htmlFor="name">Name</label>
+
             <input
-              className={`${styles} ${formErrors.name ? "border-red-500" : ""}`}
+              className={`${styles} ${
+                fieldStatus.name === true
+                  ? "border-green-500"
+                  : fieldStatus.name === false
+                  ? "border-red-500"
+                  : ""
+              }`}
               type="text"
               name="name"
               id="name"
@@ -98,74 +167,107 @@ export default function ContactForm() {
               onChange={handleChange}
               value={formData.name}
             />
-            {formErrors.name && (
-              <p className="text-sm mt-1 h-5 text-red-600">
-                {formErrors.name || "\u00A0"}
-              </p>
-            )}
+
+            {/* validation message zone */}
+            <div className="lg:h-9 mt-1 text-sm">
+              {fieldStatus.name === true && (
+                <span className="text-green-600">✓ Looks good</span>
+              )}
+              {fieldStatus.name === false && (
+                <p className="text-red-600">Name must be at least 5 letters.</p>
+              )}
+              {formErrors.name && fieldStatus.name === null && (
+                <p className="text-red-600">{formErrors.name}</p>
+              )}
+            </div>
           </div>
-          <div className="flex flex-col w-full min-h-[100px] lg:w-1/7">
+
+          <div className="flex flex-col w-full lg:min-h-[100px] lg:w-1/7">
             <label htmlFor="number">Number</label>
             <input
               className={`${styles} ${
-                formErrors.number ? "border-red-500" : ""
+                fieldStatus.number === true
+                  ? "border-green-500"
+                  : fieldStatus.number === false
+                  ? "border-red-500"
+                  : ""
               }`}
               type="text"
               name="number"
               id="number"
               placeholder="Phone number"
-              onChange={(e) => {
-                let raw = e.target.value.replace(/\D/g, ""); // remove all non-digits
-
-                // If number starts with 1 and is 11 digits, strip the leading 1
-                if (raw.length === 11 && raw.startsWith("1")) {
-                  raw = raw.slice(1);
-                }
-
-                // Cap it at 10 digits
-                raw = raw.slice(0, 10);
-
-                // Format: 123-456-7890
-                let formatted = raw
-                  .replace(/^(\d{3})(\d)/, "$1-$2")
-                  .replace(/^(\d{3})-(\d{3})(\d)/, "$1-$2-$3");
-
-                setFormData({ ...formData, number: formatted });
-              }}
+              onChange={handleChange}
               value={formData.number}
               autoComplete="tel"
               inputMode="numeric"
             />
-            <p className="text-sm mt-1 h-5 text-red-600">
-              {formErrors.number || "\u00A0"}
-            </p>
+            <div className="lg:h-9 mt-1 text-sm">
+              {fieldStatus.number === true && (
+                <span className="text-green-600">✓ Looks good</span>
+              )}
+              {fieldStatus.number === false && (
+                <p className="text-red-600">Number must be 10 digits.</p>
+              )}
+              {formErrors.number && fieldStatus.number === null && (
+                <p className="text-red-600">{formErrors.number}</p>
+              )}
+            </div>
           </div>
 
-          <div className="flex flex-col w-full min-h-[100px] lg:w-1/4">
+          <input
+            type="text"
+            name="company"
+            autoComplete="off"
+            className="hidden"
+            tabIndex="-1"
+          />
+
+          <div className="flex flex-col w-full lg:min-h-[100px] lg:w-1/4">
             <label htmlFor="address">Address</label>
+
             <input
               className={`${styles} ${
-                formErrors.address ? "border-red-500" : ""
+                fieldStatus.address === true
+                  ? "border-green-500"
+                  : fieldStatus.address === false
+                  ? "border-red-500"
+                  : ""
               }`}
               type="text"
               name="address"
               id="address"
+              autoComplete="on"
               placeholder="Enter your address"
               onChange={handleChange}
               value={formData.address}
             />
-            {formErrors.address && (
-              <p className="text-sm mt-1 h-5 text-red-600">
-                {formErrors.address || "\u00A0"}
-              </p>
-            )}
+
+            {/* validation feedback */}
+            <div className="lg:h-9 mt-1 text-sm">
+              {fieldStatus.address === true && (
+                <span className="text-green-600">✓ Looks good</span>
+              )}
+              {fieldStatus.address === false && (
+                <p className="text-red-600">
+                  Address must be at least 6 characters.
+                </p>
+              )}
+              {formErrors.address && fieldStatus.address === null && (
+                <p className="text-red-600">{formErrors.address}</p>
+              )}
+            </div>
           </div>
 
-          <div className="flex flex-col min-h-[100px] w-full lg:w-1/4">
+          <div className="flex flex-col lg:min-h-[100px] w-full lg:w-1/4">
             <label htmlFor="email">Email</label>
+
             <input
               className={`${styles} ${
-                formErrors.service ? "border-red-500" : ""
+                fieldStatus.email === true
+                  ? "border-green-500"
+                  : fieldStatus.email === false
+                  ? "border-red-500"
+                  : ""
               }`}
               type="email"
               name="email"
@@ -174,21 +276,35 @@ export default function ContactForm() {
               onChange={handleChange}
               value={formData.email}
             />
-            {formErrors.email && (
-              <p className="text-sm mt-1 h-5 text-red-600">
-                {formErrors.email || "\u00A0"}
-              </p>
-            )}
+
+            {/* validation feedback */}
+            <div className="lg:h-9 mt-1 text-sm">
+              {fieldStatus.email === true && (
+                <span className="text-green-600">✓ Looks good</span>
+              )}
+              {fieldStatus.email === false && (
+                <p className="text-red-600">
+                  Please enter a valid email address.
+                </p>
+              )}
+              {formErrors.email && fieldStatus.email === null && (
+                <p className="text-red-600">{formErrors.email}</p>
+              )}
+            </div>
           </div>
 
-          <div className="flex flex-col min-h-[100px] w-full lg:w-fit">
+          <div className="flex flex-col lg:min-h-[100px] w-full lg:w-fit">
             <label htmlFor="service">Service type</label>
 
-            {/* relative wrapper just for select + arrow */}
+            {/* relative wrapper for select + dropdown arrow */}
             <div className="relative w-full">
               <select
                 className={`${styles} appearance-none pr-10 w-full ${
-                  formErrors.service ? "border-red-500" : ""
+                  fieldStatus.service === true
+                    ? "border-green-500"
+                    : fieldStatus.service === false
+                    ? "border-red-500"
+                    : ""
                 }`}
                 name="service"
                 id="service"
@@ -211,11 +327,18 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {formErrors.service && (
-              <p className="text-sm mt-1 h-5 text-red-600">
-                {formErrors.service || "\u00A0"}
-              </p>
-            )}
+            {/* validation message */}
+            <div className="lg:h-9 mt-1 text-sm">
+              {fieldStatus.service === true && (
+                <span className="text-green-600">✓ Looks good</span>
+              )}
+              {fieldStatus.service === false && (
+                <p className="text-red-600">Please select a service type.</p>
+              )}
+              {formErrors.service && fieldStatus.service === null && (
+                <p className="text-red-600">{formErrors.service}</p>
+              )}
+            </div>
           </div>
         </div>
 

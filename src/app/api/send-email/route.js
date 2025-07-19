@@ -15,12 +15,22 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export async function POST(request) {
     try {
         const data = await request.json();
+        if (
+            (data.company && data.company.trim() !== "") ||
+            (data.email && data.email.toLowerCase().includes("estimator"))
+        ) {
+            return NextResponse.json({ success: true });
+        }
+
+
+        
         console.log("Raw formData:", data); // <---- ADD THIS
 
         //validate data
         const validate = ajv.compile(contactFormSchema)
         const valid = validate(data)
         console.log(validate.errors); // check what’s failing
+        
 
         if (!valid) {
             const parsedErrors = {};

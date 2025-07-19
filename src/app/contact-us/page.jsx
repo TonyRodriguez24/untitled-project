@@ -3,6 +3,8 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 export default function ContactForm() {
   const INITIAL_STATE = {
@@ -13,27 +15,107 @@ export default function ContactForm() {
     address: "",
     referral: "",
     message: "",
+    company: "",
   };
+
+  const [fieldStatus, setFieldStatus] = useState({
+    name: null,
+    number: null,
+    email: null,
+    address: null,
+    service: null,
+    referral: null,
+    message: null,
+  });
 
   const [formData, setFormData] = useState(INITIAL_STATE);
-  const [errors, setErrors] = useState({});
+  const [formErrors, setFormErrors] = useState({});
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((f) => ({ ...f, [name]: value }));
-  };
+  const router = useRouter();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("/api/send-email", formData);
-      console.log(response);
-      console.log(formData);
-      setFormData(INITIAL_STATE);
-    } catch (error) {
-      console.log(error);
+  const validateField = (name, value) => {
+    switch (name) {
+      case "name":
+        return /^[a-zA-Z\s'-]{2,}$/.test(value);
+      case "number":
+        return value.replace(/\D/g, "").length === 10;
+      case "email":
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      case "address":
+        return value.trim().length > 5;
+      case "service":
+        return value !== "";
+      case "referral":
+        return value !== "";
+      case "message":
+        return value.trim().length >= 10;
+      default:
+        return true;
     }
   };
+
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     if (formData.company.trim() !== "") {
+       console.warn("Spam detected via honeypot. Submission blocked.");
+       return;
+     }
+
+     const updatedStatus = {};
+     let allValid = true;
+
+     for (const key in formData) {
+       const isValid = validateField(key, formData[key]);
+       updatedStatus[key] = isValid;
+       if (!isValid) allValid = false;
+     }
+
+     setFieldStatus(updatedStatus);
+
+     if (!allValid) {
+       console.log("Validation failed. Form not submitted.");
+       return;
+     }
+
+     try {
+       setIsSubmitted(true);
+       await axios.post("/api/send-email", formData);
+       setFormErrors({});
+       router.push("/thank-you");
+     } catch (error) {
+       console.log("Form Errors:", error.response?.data?.details);
+       if (error.response?.data?.details) {
+         setFormErrors(error.response.data.details);
+       }
+       console.error("Form submission error:", error);
+     }
+   };
+
+   const handleChange = (e) => {
+     const { name, value } = e.target;
+
+     let val = value;
+
+     if (name === "number") {
+       let raw = value.replace(/\D/g, "");
+       if (raw.length === 11 && raw.startsWith("1")) raw = raw.slice(1);
+       raw = raw.slice(0, 10);
+       val = raw
+         .replace(/^(\d{3})(\d)/, "$1-$2")
+         .replace(/^(\d{3})-(\d{3})(\d)/, "$1-$2-$3");
+     }
+
+     setFormData((prev) => ({ ...prev, [name]: val }));
+
+     const isValid = validateField(name, val);
+     setFieldStatus((prev) => ({ ...prev, [name]: isValid }));
+
+     console.log("Field:", name, "| Value:", val, "| Valid:", isValid);
+  };
+  
+  const styles =
+    "w-full bg-stone-200 rounded-sm border-1 text-black border-black placeholder-gray-600 dark:bg-zinc-700 p-2";
+  
 
   return (
     <div
@@ -51,7 +133,7 @@ export default function ContactForm() {
         {/* Form Section */}
         <div className="w-full lg:w-2/3 rounded-xl p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col md:flex-row gap-3 lg:gap-6">
               {/* Left Column */}
               <div className="flex-1 space-y-4">
                 <div>
@@ -65,11 +147,27 @@ export default function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className="w-full bg-stone-100 rounded-lg border-2 text-black border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                    className={`${styles} ${
+                      fieldStatus.name === true
+                        ? "border-green-500"
+                        : fieldStatus.name === false
+                        ? "border-red-500"
+                        : ""
+                    }`}
                   />
-                  {errors.name && (
-                    <small className="text-red-500">{errors.name}</small>
-                  )}
+                  <div className="lg:h-3 mt-1 text-sm">
+                    {fieldStatus.name === true && (
+                      <span className="text-green-600">✓ Looks good</span>
+                    )}
+                    {fieldStatus.name === false && (
+                      <p className="text-red-600">
+                        Name must be at least 5 letters.
+                      </p>
+                    )}
+                    {formErrors.name && fieldStatus.name === null && (
+                      <p className="text-red-600">{formErrors.name}</p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -81,15 +179,38 @@ export default function ContactForm() {
                   <input
                     type="tel"
                     name="number"
+                    id="number"
                     value={formData.number}
                     onChange={handleChange}
                     placeholder="516-123-4567"
-                    className="w-full bg-stone-100 text-black rounded-lg border-2 border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                    className={`${styles} ${
+                      fieldStatus.number === true
+                        ? "border-green-500"
+                        : fieldStatus.number === false
+                        ? "border-red-500"
+                        : ""
+                    }`}
                   />
-                  {errors.number && (
-                    <small className="text-red-500">{errors.number}</small>
-                  )}
+                  <div className="lg:h-3 mt-1 text-sm">
+                    {fieldStatus.number === true && (
+                      <span className="text-green-600">✓ Looks good</span>
+                    )}
+                    {fieldStatus.number === false && (
+                      <p className="text-red-600">Number must be 10 digits.</p>
+                    )}
+                    {formErrors.number && fieldStatus.number === null && (
+                      <p className="text-red-600">{formErrors.number}</p>
+                    )}
+                  </div>
                 </div>
+
+                <input
+                  type="text"
+                  name="company"
+                  autoComplete="off"
+                  className="hidden"
+                  tabIndex="-1"
+                />
 
                 <div>
                   <label htmlFor="email" className="text-black dark:text-white">
@@ -102,45 +223,80 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className="w-full text-black bg-stone-100 rounded-lg border-2 border-gray-600 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                    className={`${styles} ${
+                      fieldStatus.email === true
+                        ? "border-green-500"
+                        : fieldStatus.email === false
+                        ? "border-red-500"
+                        : ""
+                    }`}
                   />
-                  {errors.email && (
-                    <small className="text-red-500">{errors.email}</small>
-                  )}
+                  <div className="lg:h-3 mt-1 text-sm">
+                    {fieldStatus.email === true && (
+                      <span className="text-green-600">✓ Looks good</span>
+                    )}
+                    {fieldStatus.email === false && (
+                      <p className="text-red-600">
+                        Please enter a valid email address.
+                      </p>
+                    )}
+                    {formErrors.email && fieldStatus.email === null && (
+                      <p className="text-red-600">{formErrors.email}</p>
+                    )}
+                  </div>
                 </div>
               </div>
 
               {/* Right Column */}
               <div className="flex-1 space-y-4">
-                <div>
-                  <label
-                    htmlFor="service"
-                    className="text-black dark:text-white">
-                    Service Type
-                  </label>
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className={`w-full bg-stone-100 rounded-lg border-2 border-gray-600 px-3 py-2 placeholder-gray-500 focus:border-blue-500 focus:ring focus:ring-blue-200
-    ${formData.service ? "text-black" : "text-gray-500"}`}>
-                    <option value="" disabled hidden>
-                      Select a service
-                    </option>
-                    <option value="asphalt">Asphalt</option>
-                    <option value="concrete">Concrete</option>
-                    <option value="exterior_renovations">
-                      Exterior Renovations
-                    </option>
-                    <option value="home_improvement">Home Improvement</option>
-                    <option value="masonry">Masonry</option>
-                    <option value="paver_sealing">Paver Sealing</option>
-                    <option value="pressure_washing">Pressure Washing</option>
-                  </select>
+                <div className="flex flex-col w-full lg:w-full ">
+                  <label htmlFor="service">Service type</label>
 
-                  {errors.service && (
-                    <small className="text-red-500">{errors.service}</small>
-                  )}
+                  {/* relative wrapper for select + dropdown arrow */}
+                  <div className="relative w-full">
+                    <select
+                      className={`${styles} appearance-none pr-10 w-full ${
+                        fieldStatus.service === true
+                          ? "border-green-500"
+                          : fieldStatus.service === false
+                          ? "border-red-500"
+                          : ""
+                      }`}
+                      name="service"
+                      id="service"
+                      onChange={handleChange}
+                      value={formData.service}>
+                      <option value={""}>Select one</option>
+                      <option value="asphalt">Asphalt</option>
+                      <option value="concrete">Concrete</option>
+                      <option value="exterior_renovations">
+                        Exterior Renovations
+                      </option>
+                      <option value="home_improvement">Home Improvement</option>
+                      <option value="masonry">Masonry</option>
+                      <option value="pressure_washing">Pressure Washing</option>
+                      <option value="paver_sealing">Paver Sealing</option>
+                    </select>
+
+                    <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-black">
+                      ▼
+                    </div>
+                  </div>
+
+                  {/* validation message */}
+                  <div className="lg:h-3 mt-1 text-sm">
+                    {fieldStatus.service === true && (
+                      <span className="text-green-600">✓ Looks good</span>
+                    )}
+                    {fieldStatus.service === false && (
+                      <p className="text-red-600">
+                        Please select a service type.
+                      </p>
+                    )}
+                    {formErrors.service && fieldStatus.service === null && (
+                      <p className="text-red-600">{formErrors.service}</p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -155,11 +311,27 @@ export default function ContactForm() {
                     value={formData.address}
                     onChange={handleChange}
                     placeholder="239 Cherry Lane, Levittown"
-                    className="w-full bg-stone-100 rounded-lg border-2 border-gray-600 placeholder-gray-500 text-black focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                    className={`${styles} ${
+                      fieldStatus.address === true
+                        ? "border-green-500"
+                        : fieldStatus.address === false
+                        ? "border-red-500"
+                        : ""
+                    }`}
                   />
-                  {errors.address && (
-                    <small className="text-red-500">{errors.address}</small>
-                  )}
+                  <div className="lg:h-3 mt-1 text-sm">
+                    {fieldStatus.address === true && (
+                      <span className="text-green-600">✓ Looks good</span>
+                    )}
+                    {fieldStatus.address === false && (
+                      <p className="text-red-600">
+                        Address must be at least 6 characters.
+                      </p>
+                    )}
+                    {formErrors.address && fieldStatus.address === null && (
+                      <p className="text-red-600">{formErrors.address}</p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -168,13 +340,18 @@ export default function ContactForm() {
                     className="text-black dark:text-white">
                     How did you hear about us?
                   </label>
+
                   <select
                     name="referral"
                     value={formData.referral}
                     onChange={handleChange}
-                    className={`w-full bg-stone-100 rounded-lg border-2 border-gray-600 px-3 py-2
-    focus:border-blue-500 focus:ring focus:ring-blue-200
-    ${formData.referral ? "text-black" : "text-gray-500"}`}>
+                    className={`${styles} ${
+                      fieldStatus.referral === true
+                        ? "border-green-500"
+                        : fieldStatus.referral === false
+                        ? "border-red-500"
+                        : ""
+                    }`}>
                     <option value="" disabled hidden>
                       Select
                     </option>
@@ -187,9 +364,14 @@ export default function ContactForm() {
                     </option>
                   </select>
 
-                  {errors.referral && (
-                    <small className="text-red-500">{errors.referral}</small>
-                  )}
+                  <div className="lg:h-3 mt-1 text-sm">
+                    {fieldStatus.referral === true && (
+                      <span className="text-green-600">✓ Looks good</span>
+                    )}
+                    {fieldStatus.referral === false && (
+                      <p className="text-red-600">Please select an option.</p>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -198,17 +380,32 @@ export default function ContactForm() {
               <label htmlFor="message" className="text-black dark:text-white">
                 Message
               </label>
+
               <textarea
                 name="message"
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Tell us more about your project..."
-                className="w-full bg-stone-100 rounded border-2 border-gray-600 placeholder-gray-500 text-black focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2"
+                className={`w-full bg-stone-200 rounded-sm border-1 placeholder-gray-600 text-black px-3 py-2 ${
+                  fieldStatus.message === true
+                    ? "border-green-500"
+                    : fieldStatus.message === false
+                    ? "border-red-500"
+                    : "border-black"
+                }`}
               />
-              {errors.message && (
-                <small className="text-red-500">{errors.message}</small>
-              )}
+
+              <div className="lg:h-3 mt-1 text-sm">
+                {fieldStatus.message === true && (
+                  <span className="text-green-600">✓ Looks good</span>
+                )}
+                {fieldStatus.message === false && (
+                  <p className="text-red-600">
+                    Message must be at least 10 characters.
+                  </p>
+                )}
+              </div>
             </div>
 
             <div className="text-center">
