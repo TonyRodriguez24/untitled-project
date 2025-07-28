@@ -38,7 +38,7 @@ export default function ContactForm() {
   const validateField = (name, value) => {
     switch (name) {
       case "name":
-        return /^[a-zA-Z\s'-]{2,}$/.test(value);
+        return /^[a-zA-Z\s'-]{5,}$/.test(value);
       case "number":
         return value.replace(/\D/g, "").length === 10;
       case "email":
@@ -85,6 +85,7 @@ export default function ContactForm() {
        setFormErrors({});
        router.push("/thank-you");
      } catch (error) {
+       setIsSubmitted(false)
        console.log("Form Errors:", error.response?.data?.details);
        if (error.response?.data?.details) {
          setFormErrors(error.response.data.details);
@@ -186,7 +187,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     placeholder="516-123-4567"
                     autoComplete="tel"
-              inputMode="numeric"
+                    inputMode="numeric"
                     className={`${styles} ${
                       fieldStatus.number === true
                         ? "border-green-500"
@@ -422,8 +423,13 @@ export default function ContactForm() {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-blue-800 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition cursor-pointer">
-                Get started today
+                disabled={isSubmitted}
+                className={`px-6 py-2 rounded-full transition cursor-pointer ${
+                  isSubmitted
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-blue-800 text-white hover:bg-blue-700"
+                }`}>
+                {isSubmitted ? "Submitting..." : "Get started today"}
               </button>
             </div>
           </form>

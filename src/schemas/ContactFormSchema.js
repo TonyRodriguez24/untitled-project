@@ -1,13 +1,15 @@
 export const contactFormSchema = {
     type: "object",
     properties: {
-        name: { type: "string", minLength: 2 },
-        number: { type: "string", pattern: "^\\d{3}-\\d{3}-\\d{4}$" },
-        email: { type: "string", format: "email" },
-        service: { type: "string", minLength: 1 },
-        address: { type: "string", minLength: 6 },
-        company: { type: "string" }  // <-- add this line
+        name: { type: "string" },
+        number: { type: "string" },
+        email: { type: "string" },
+        address: { type: "string" },
+        service: { type: "string" },
+        referral: { type: "string" },
+        message: { type: "string" },
+        company: { type: "string" }
     },
-    required: ["name", "number", "email", "service", "address"],
+    required: ["name", "number", "email", "address", "service"],
     additionalProperties: false
 };
