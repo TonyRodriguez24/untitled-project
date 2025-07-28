@@ -82,7 +82,7 @@ export default function buildConfirmationEmail({ data, readableService }) {
 
                   <h3>Questions or Concerns?</h3>
                   <p>You can reach us anytime:</p>
-                  <p><strong>Phone:</strong> <a href="tel:+15164033030">+1-516-403-3030</a></p>
+                  <p><strong>Phone:</strong> <a href="tel:+15167350685">+1-516-735-0685</a></p>
                   <p><strong>Email:</strong> <a href="mailto:contact@jpmandsons.com">contact@jpmandsons.com</a></p>
 
                   <p style="font-size: 16px; margin: 30px 0 10px; padding: 0; text-align: left;">
