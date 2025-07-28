@@ -41,7 +41,7 @@ export default function Testimonials() {
           {testimonials.map((t, idx) => (
             <article
               key={idx}
-              className="bg-zinc-300 shadow-md rounded-lg p-6 text-center dark:bg-slate-900 flex flex-col justify-start h-full">
+              className="bg-zinc-200 shadow-md rounded-lg p-6 text-center dark:bg-slate-900 flex flex-col justify-start h-full">
               <div className="mb-5 p-3">
                 <Image
                   src={t.avatar}

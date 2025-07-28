@@ -29,8 +29,8 @@ export default function buildConfirmationEmail({ data, readableService }) {
             <table width="600" cellpadding="20" cellspacing="0" bgcolor="#ffffff" style="margin: 20px auto;">
               <tr>
                 <td align="center">
-                  <h1 style="margin: 0;">JPM and Sons</h1>
-                  <p style="margin: 0;">We look forward to working with you.</p>
+                  <h2 style="margin: 0; font-size: 22px; font-weight: 600; color: #111;">We look forward to working with you.</h2>
+
                 </td>
               </tr>
               <tr>

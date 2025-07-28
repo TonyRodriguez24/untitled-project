@@ -151,8 +151,8 @@ export default function ContactForm() {
                       fieldStatus.name === true
                         ? "border-green-500"
                         : fieldStatus.name === false
-                        ? "border-red-500"
-                        : ""
+                          ? "border-red-500"
+                          : ""
                     }`}
                   />
                   <div className="lg:h-3 mt-1 text-sm">
@@ -183,12 +183,14 @@ export default function ContactForm() {
                     value={formData.number}
                     onChange={handleChange}
                     placeholder="516-123-4567"
+                    autoComplete="tel"
+              inputMode="numeric"
                     className={`${styles} ${
                       fieldStatus.number === true
                         ? "border-green-500"
                         : fieldStatus.number === false
-                        ? "border-red-500"
-                        : ""
+                          ? "border-red-500"
+                          : ""
                     }`}
                   />
                   <div className="lg:h-3 mt-1 text-sm">
@@ -227,8 +229,8 @@ export default function ContactForm() {
                       fieldStatus.email === true
                         ? "border-green-500"
                         : fieldStatus.email === false
-                        ? "border-red-500"
-                        : ""
+                          ? "border-red-500"
+                          : ""
                     }`}
                   />
                   <div className="lg:h-3 mt-1 text-sm">
@@ -259,8 +261,8 @@ export default function ContactForm() {
                         fieldStatus.service === true
                           ? "border-green-500"
                           : fieldStatus.service === false
-                          ? "border-red-500"
-                          : ""
+                            ? "border-red-500"
+                            : ""
                       }`}
                       name="service"
                       id="service"
@@ -315,8 +317,8 @@ export default function ContactForm() {
                       fieldStatus.address === true
                         ? "border-green-500"
                         : fieldStatus.address === false
-                        ? "border-red-500"
-                        : ""
+                          ? "border-red-500"
+                          : ""
                     }`}
                   />
                   <div className="lg:h-3 mt-1 text-sm">
@@ -341,28 +343,35 @@ export default function ContactForm() {
                     How did you hear about us?
                   </label>
 
-                  <select
-                    name="referral"
-                    value={formData.referral}
-                    onChange={handleChange}
-                    className={`${styles} ${
-                      fieldStatus.referral === true
-                        ? "border-green-500"
-                        : fieldStatus.referral === false
-                        ? "border-red-500"
-                        : ""
-                    }`}>
-                    <option value="" disabled hidden>
-                      Select
-                    </option>
-                    <option value="google">Google</option>
-                    <option value="instagram">Instagram</option>
-                    <option value="facebook">Facebook</option>
-                    <option value="friend_family">Friend or Family</option>
-                    <option value="returning_customer">
-                      Returning Customer
-                    </option>
-                  </select>
+                  <div className="relative w-full">
+                    <select
+                      className={`${styles} appearance-none pr-10 w-full ${
+                        fieldStatus.referral === true
+                          ? "border-green-500"
+                          : fieldStatus.referral === false
+                            ? "border-red-500"
+                            : ""
+                      }`}
+                      name="referral"
+                      id="referral"
+                      onChange={handleChange}
+                      value={formData.referral}>
+                      <option value="" disabled hidden>
+                        Select
+                      </option>
+                      <option value="google">Google</option>
+                      <option value="instagram">Instagram</option>
+                      <option value="facebook">Facebook</option>
+                      <option value="friend_family">Friend or Family</option>
+                      <option value="returning_customer">
+                        Returning Customer
+                      </option>
+                    </select>
+
+                    <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-black">
+                      ▼
+                    </div>
+                  </div>
 
                   <div className="lg:h-3 mt-1 text-sm">
                     {fieldStatus.referral === true && (
@@ -391,8 +400,8 @@ export default function ContactForm() {
                   fieldStatus.message === true
                     ? "border-green-500"
                     : fieldStatus.message === false
-                    ? "border-red-500"
-                    : "border-black"
+                      ? "border-red-500"
+                      : "border-black"
                 }`}
               />
 
