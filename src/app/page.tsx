@@ -23,7 +23,7 @@ export default function Home() {
         <Gallery />
         <PageDivider
           href="/contact-us"
-          imageUrl="/materials.png"
+          imageUrl="/materials.webp"
           title="See Materials Before You Buy"
           description={
             <>

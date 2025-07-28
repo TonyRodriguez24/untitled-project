@@ -13,7 +13,7 @@ export default function AboutUs() {
               Meet the newest member of our team!
             </p>
             <img
-              src="/IMG_8522.JPEG"
+              src="/nick_gia.webp"
               alt="JPM team"
               className="w-full h-[400px] object-cover rounded-2xl shadow-lg "
             />

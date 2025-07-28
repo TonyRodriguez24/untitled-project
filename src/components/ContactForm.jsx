@@ -107,7 +107,7 @@ export default function ContactForm() {
   };
 
   const styles =
-    "p-2 border-1 border-black rounded-sm bg-stone-200 md:bg-white  dark:bg-zinc-700";
+    "p-2 border-1 border-black rounded-sm bg-stone-200 md:bg-white text-black dark:bg-zinc-200 lg:dark:bg-zinc-200";
 
   return (
     <>
@@ -115,7 +115,7 @@ export default function ContactForm() {
         method="POST"
         onSubmit={handleSubmit}
         autoComplete="on"
-        className="flex w-11/12 flex-col lg:bg-zinc-300 dark:lg:bg-slate-900 gap-2 my-2 lg:mx-0 p-3 lg:p-8 lg:pb-0 rounded-2xl justify-center items-start">
+        className="flex w-11/12 flex-col lg:bg-zinc-300 dark:lg:bg-zinc-900 gap-2 my-2 lg:mx-0 p-3 lg:p-8 lg:pb-0 rounded-2xl justify-center items-start">
         <div className="flex items-center justify-between w-full">
           <header>
             <h3 className="font-bold text-xl mb-1">
@@ -315,7 +315,7 @@ export default function ContactForm() {
                 <option value="paver_sealing">Paver Sealing</option>
               </select>
 
-              <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-black">
+              <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-black lg:dark:text-zinc-500">
                 ▼
               </div>
             </div>

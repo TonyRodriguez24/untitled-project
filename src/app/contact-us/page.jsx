@@ -114,7 +114,7 @@ export default function ContactForm() {
   };
   
   const styles =
-    "w-full bg-stone-200 rounded-sm border-1 text-black border-black placeholder-gray-600 dark:bg-zinc-700 p-2";
+    "w-full bg-stone-200 rounded-sm border-1 text-black border-black dark:bg-zinc-100 p-2";
   
 
   return (
