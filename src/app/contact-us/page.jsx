@@ -30,6 +30,8 @@ export default function ContactForm() {
 
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
 
   const router = useRouter();
 
