@@ -100,15 +100,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-300 dark:border-zinc-800 py-4 text-center text-sm text-gray-600 dark:text-gray-400">
-        <p>
-          &copy; 2025 JPM and Sons. All rights reserved.{" "}
-          <Link
-            href="/privacy-policy"
-            className="ml-1 underline text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-300">
-            Privacy Policy
-          </Link>
-        </p>
+      <div className="border-t border-gray-300 dark:border-zinc-800 py-4 text-center text-sm text-gray-600 dark:text-gray-400 flex flex-col gap-1">
+        <p>&copy; 2025 JPM and Sons. All rights reserved. </p>
+        <Link
+          href="/privacy-policy"
+          className="ml-1 underline text-blue-300 dark:text-gray-400 hover:text-blue-400 dark:hover:text-blue-300">
+          Privacy Policy
+        </Link>
       </div>
     </footer>
   );
