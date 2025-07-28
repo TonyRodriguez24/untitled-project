@@ -4,7 +4,6 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import useLoadGoogleMaps from "../hooks/useLoadGoogleMaps";
 
 export default function ContactForm() {
   const INITIAL_STATE = {
@@ -13,11 +12,11 @@ export default function ContactForm() {
     email: "",
     service: "",
     address: "",
-    company: ""
+    company: "",
   };
 
   const [fieldStatus, setFieldStatus] = useState({
-    name: null, 
+    name: null,
     number: null,
     email: null,
     address: null,
@@ -25,10 +24,8 @@ export default function ContactForm() {
   });
 
   const [formErrors, setFormErrors] = useState({});
-  
 
   const router = useRouter();
-
 
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -49,8 +46,6 @@ export default function ContactForm() {
         return true;
     }
   };
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -89,7 +84,6 @@ export default function ContactForm() {
     }
   };
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -111,7 +105,6 @@ export default function ContactForm() {
 
     console.log("Field:", name, "| Value:", val, "| Valid:", isValid);
   };
-
 
   const styles =
     "p-2 border-1 border-black rounded-sm bg-stone-200 md:bg-white  dark:bg-zinc-700";
