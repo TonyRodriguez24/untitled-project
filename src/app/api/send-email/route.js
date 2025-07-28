@@ -46,7 +46,7 @@ export async function POST(request) {
 
     // Send to self
     const selfEmail = await resend.emails.send({
-      from: 'JPM and Sons <contact@jpmandsons.com>',
+      from: 'JPM and Sons <no-reply@jpmandsons.com>',
       to: 'contact@jpmandsons.com',
       subject: 'New Form Submission on jpmandsons.com',
       html: generateEmailToSelf(data),
