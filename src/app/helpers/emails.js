@@ -1,4 +1,5 @@
 import buildConfirmationEmail from "./email_html";
+import { titleize } from "../../data/helpers";
 
 function formatServiceName(serviceKey) {
   const map = {
@@ -13,17 +14,26 @@ function formatServiceName(serviceKey) {
 
 
 export function generateEmailToSelf(data) {
+  const formatService = (service) => {
+    if (!service) return "";
+    return service
+      .split("_")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   return `
     <h2>New Form Submission</h2>
     <p>Name: ${data.name}</p>
-    <p>Email: ${data.email}</p>
-    <p>Phone: ${data.number}</p>
+    <p>Email: <a href="mailto:${data.email}">${data.email}</a></p>
+    <p>Phone: <a href="tel:${data.number}">${data.number}</a></p>
     <p>Address: ${data.address}</p>
-    <p>Service: ${data.service}</p>
+    <p>Service: ${formatServiceName(data.service)}</p>
     ${data.message ? `<p>Message: ${data.message}</p>` : ""}
-    ${data.referral ? `<p>Referral: ${data.referral}</p>` : ""}
+    ${data.referral ? `<p>Referral: ${titleize(data.referral)}</p>` : ""}
   `;
 }
+
 
 
 export function generateEmailToCustomer(data) {
