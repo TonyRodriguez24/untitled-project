@@ -4,6 +4,16 @@ import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { IoIosBusiness } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+
+
+
+
 
 
 
@@ -443,7 +453,8 @@ export default function ContactForm() {
           <Link
             href="/"
             className="text-gray-900 hover:text-blue-500 transition">
-            <i className="bi bi-building dark:text-gray-400 text-3xl lg:text-2xl"></i>
+            <IoIosBusiness className="mx-auto dark:text-gray-400 w-7 h-7" />
+
             <h4 className="font-bold text-lg dark:text-white text-black">
               JPM and Sons
             </h4>
@@ -455,6 +466,8 @@ export default function ContactForm() {
           <a
             href="mailto:contact@jpmandsons.com"
             className="text-gray-900 hover:text-blue-500 transition">
+            <MdEmail className="mx-auto w-6 h-6 dark:text-gray-400" />
+
             <i className="bi bi-envelope dark:text-gray-400 text-3xl lg:text-2xl"></i>
             <h4 className="font-bold text-lg dark:text-white text-black">
               Email
@@ -467,7 +480,8 @@ export default function ContactForm() {
           <a
             href="tel:516-735-0685"
             className="text-gray-900 hover:text-blue-500 transition">
-            <i className="bi bi-telephone dark:text-gray-400 text-3xl lg:text-2xl"></i>
+            <FaPhoneAlt className="mx-auto w-6 h-5 dark:text-gray-400" />
+
             <h4 className="font-bold text-lg dark:text-white text-black">
               Phone
             </h4>
@@ -476,24 +490,24 @@ export default function ContactForm() {
             </p>
           </a>
 
-          <div className="flex gap-2 lg:gap-3 justify-center">
+          <div className="flex gap-2 lg:gap-2 justify-center">
             <a
               href="https://www.facebook.com/JPMSonsCorp/"
               target="_blank"
               className="text-black dark:text-white hover:text-blue-500 transition">
-              <i className="bi bi-facebook text-4xl"></i>
+              <FaFacebook className="w-6 h-auto" />
             </a>
             <a
               href="https://www.tiktok.com/@jpmandsons"
               target="_blank"
               className="text-black dark:text-white hover:text-blue-500 transition">
-              <i className="bi bi-tiktok text-4xl"></i>
+              <FaTiktok className="w-6 h-auto"/>
             </a>
             <a
               href="https://www.instagram.com/jpmandsonscorp/"
               target="_blank"
               className="text-black dark:text-white hover:text-blue-500 transition">
-              <i className="bi bi-instagram text-4xl"></i>
+              <FaInstagram className="w-6 h-auto"/>
             </a>
           </div>
 
