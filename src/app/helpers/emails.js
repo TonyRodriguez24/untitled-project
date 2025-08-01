@@ -25,3 +25,9 @@ export function generateEmailToSelf(data) {
     ${data.referral ? `<p>Referral: ${titleize(data.referral)}</p>` : ""}
   `;
 }
+
+export function generateEmailToCustomer(data) {
+  const readableService = formatServiceName(data.service);
+  return buildConfirmationEmail({data, readableService})
+}
+  
