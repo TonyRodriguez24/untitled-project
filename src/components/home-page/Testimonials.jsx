@@ -41,7 +41,7 @@ export default function Testimonials() {
           {testimonials.map((t, idx) => (
             <article
               key={idx}
-              className="bg-zinc-200 shadow-md rounded-lg p-6 text-center dark:bg-slate-900 flex flex-col justify-start h-full">
+              className="bg-zinc-200 shadow-md rounded-lg p-6 text-center dark:bg-zinc-900 flex flex-col justify-start h-full">
               <div className="mb-5 p-3">
                 <Image
                   src={t.avatar}
@@ -50,7 +50,7 @@ export default function Testimonials() {
                   height={60}
                   className="rounded-full mx-auto object-cover"
                 />
-                <h3 className="dark:text-white text-lg font-semibold mb-1">{t.name}</h3>
+                <h3 className="dark:text-white text-lg font-semibold my-1">{t.name}</h3>
                 <p className="text-sm text-gray-800 dark:text-gray-500 ">{t.details}</p>
               </div>
               <blockquote className="text-sm text-left dark:text-gray-300 mb-4">
