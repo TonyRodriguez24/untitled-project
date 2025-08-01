@@ -11,7 +11,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "JPM and Sons - General Contracting",
+  title:
+    "Long Island’s Best General Contractor for Masonry, Concrete, Pavers, and Asphalt | JPM and Sons",
   description:
     "Your trusted source for masonry, concrete, asphalt, and home renovation services throughout Long Island.",
 };
