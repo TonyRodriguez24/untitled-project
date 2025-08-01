@@ -13,15 +13,18 @@ function formatServiceName(serviceKey) {
 
 
 export function generateEmailToSelf(data) {
-    return `
-      <h2>New Form Submission</h2>
-      <p>Name: ${data.name}</p>
-      <p>Email: ${data.email}</p>
-      <p>Phone: ${data.number}</p>
-      <p>Address: ${data.address}</p>
-      <p>Service: ${data.service}</p>
-    `;
+  return `
+    <h2>New Form Submission</h2>
+    <p>Name: ${data.name}</p>
+    <p>Email: ${data.email}</p>
+    <p>Phone: ${data.number}</p>
+    <p>Address: ${data.address}</p>
+    <p>Service: ${data.service}</p>
+    ${data.message ? `<p>Message: ${data.message}</p>` : ""}
+    ${data.referral ? `<p>Referral: ${data.referral}</p>` : ""}
+  `;
 }
+
 
 export function generateEmailToCustomer(data) {
   const readableService = formatServiceName(data.service);

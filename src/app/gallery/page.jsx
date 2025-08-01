@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import { RiMessage2Fill } from "react-icons/ri";
 
+import metaData from "../../data/metaData";
+
 export default function Gallery() {
 
   const [isLoaded, setIsLoaded] = useState(false);

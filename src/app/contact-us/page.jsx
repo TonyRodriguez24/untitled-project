@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 
+
 export default function ContactForm() {
   const INITIAL_STATE = {
     name: "",
@@ -312,6 +313,7 @@ export default function ContactForm() {
                   </label>
                   <input
                     type="text"
+                    id="address"
                     name="address"
                     value={formData.address}
                     onChange={handleChange}
@@ -396,6 +398,7 @@ export default function ContactForm() {
               <textarea
                 name="message"
                 rows={5}
+                id="message"
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Tell us more about your project..."

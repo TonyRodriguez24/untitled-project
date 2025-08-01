@@ -2,6 +2,12 @@ import Button from "../../components/layout/Button";
 import PageDivider from "../../components/layout/PageDivider";
 import HeroHeader from "@/components/home-page/HeroHeader";
 
+import metaData from "../../data/metaData";
+
+export function generateMetadata() {
+  return metaData["/financing"];
+}
+
 
 export default function Financing() {
   return (

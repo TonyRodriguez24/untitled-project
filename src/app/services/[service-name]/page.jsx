@@ -1,5 +1,22 @@
 import { services } from "@/data/servicesInfo";
 
+import metaData from "../../../data/metaData";
+
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params; // ✅ await the params object
+  const path = `/services/${resolvedParams["service-name"]}`;
+
+  return (
+    metaData[path] || {
+      title: "JPM and Sons - Services",
+      description:
+        "Explore our general contracting services across Long Island.",
+    }
+  );
+}
+
+
+
 export default async function ServicePage({ params }) {
   const { ["service-name"]: serviceName } = await params;
   const service = services.find((s) => s.link === serviceName);

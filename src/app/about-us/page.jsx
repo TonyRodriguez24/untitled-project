@@ -1,3 +1,9 @@
+import metaData from "../../data/metaData";
+
+export function generateMetadata() {
+  return metaData["/about-us"];
+}
+
 export default function AboutUs() {
   return (
     <main className="text-gray-800 flex flex-col gap-20">
