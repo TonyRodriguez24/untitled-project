@@ -10,6 +10,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+
 
 
 
@@ -18,6 +20,7 @@ import { FaInstagram } from "react-icons/fa";
 
 
 export default function ContactForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const INITIAL_STATE = {
     name: "",
     number: "",
@@ -67,7 +70,8 @@ export default function ContactForm() {
     }
   };
 
-   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
+     if (!executeRecaptcha) return;
      e.preventDefault();
      if (formData.company.trim() !== "") {
        console.warn("Spam detected via honeypot. Submission blocked.");
@@ -90,7 +94,17 @@ export default function ContactForm() {
        return;
      }
 
-     try {
+    try {
+      const token = await executeRecaptcha("contact_form");
+      const verifyResponse = await axios.post("/api/verify-recaptcha", {
+        token,
+      });
+      if (!verifyResponse.data.success) {
+        console.warn("reCAPTCHA verification failed:", verifyResponse.data);
+        alert("Please try again — reCAPTCHA failed.");
+        return;
+      } 
+
        setIsSubmitted(true);
        await axios.post("/api/send-email", formData);
        setFormErrors({});

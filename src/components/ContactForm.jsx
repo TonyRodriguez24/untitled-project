@@ -4,8 +4,11 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function ContactForm() {
+const { executeRecaptcha } = useGoogleReCaptcha();
+
   const INITIAL_STATE = {
     name: "",
     number: "",
@@ -49,6 +52,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!executeRecaptcha) return;
     if (formData.company.trim() !== "") {
       console.warn("Spam detected via honeypot. Submission blocked.");
       return;
@@ -71,6 +75,16 @@ export default function ContactForm() {
     }
 
     try {
+      const token = await executeRecaptcha("contact_form");
+      const verifyResponse = await axios.post("/api/verify-recaptcha", {
+        token,
+      });
+      if (!verifyResponse.data.success) {
+        console.warn("reCAPTCHA verification failed:", verifyResponse.data);
+        alert("Please try again — reCAPTCHA failed.");
+        return;
+      }
+
       setIsSubmitted(true);
       await axios.post("/api/send-email", formData);
       setFormErrors({});

@@ -1,7 +1,8 @@
 import Footer from "@/components/layout/Footer";
-import MyNavbar from '@/components/layout/MyNavbar';
+import MyNavbar from "@/components/layout/MyNavbar";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import ReCaptchaProviderWrapper from "@/components/ReCaptchaProviderWrapper";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -25,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <MyNavbar />
-        {children}
-        <Footer />
+        <ReCaptchaProviderWrapper>
+          <MyNavbar />
+          {children}
+          <Footer />
+        </ReCaptchaProviderWrapper>
       </body>
     </html>
   );
