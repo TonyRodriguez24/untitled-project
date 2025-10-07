@@ -18,7 +18,7 @@ export async function POST(req) {
 
         const data = await response.json();
 
-        if (data.success && data.score > 0.5) {
+        if (data.success && data.score > 0.7) {
             return NextResponse.json({ success: true, score: data.score });
         } else {
             return NextResponse.json(
