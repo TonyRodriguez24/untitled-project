@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { FaLongArrowAltRight } from "react-icons/fa";
+
 
 export default function ContactForm() {
 const { executeRecaptcha } = useGoogleReCaptcha();
@@ -120,8 +122,7 @@ const { executeRecaptcha } = useGoogleReCaptcha();
     console.log("Field:", name, "| Value:", val, "| Valid:", isValid);
   };
 
-  const styles =
-    "p-2 border-1 border-black rounded-sm bg-stone-200 md:bg-white text-black dark:bg-zinc-200 lg:dark:bg-zinc-200";
+  const styles = "p-2 border-1 border-black rounded-sm bg-stone-200 text-black dark:bg-zinc-200 lg:dark:bg-zinc-200";
 
   return (
     <>
@@ -129,34 +130,34 @@ const { executeRecaptcha } = useGoogleReCaptcha();
         method="POST"
         onSubmit={handleSubmit}
         autoComplete="on"
-        className="flex w-11/12 flex-col lg:bg-zinc-300 dark:lg:bg-zinc-900 gap-2 my-2 lg:mx-0 p-3 lg:p-8 lg:pb-0 rounded-2xl justify-center items-start">
+        className="flex w-11/12 flex-col  gap-2 my-2 lg:mx-0 p-3 lg:p-8 lg:pb-0 rounded-2xl justify-center items-start">
         <div className="flex items-center justify-between w-full">
           <header>
             <h3 className="font-bold text-xl mb-1">
               Ready when you are, let’s bring your ideas to life with ease.
             </h3>
-            <small className="text-gray-800 dark:text-gray-300">
+            <small className="text-gray-800 dark:text-gray-300 flex flex-wrap items-center gap-1">
               No spam or junk emails, just timely updates and professional
-              communication. If you want to leave a message, view our full
-              contact form{" "}
-              <Link href={"/contact-us"} className="text-blue-500">
-                here
-              </Link>{" "}
-              .
+              communication. If you want to leave a message you can
+              <Link
+                href={"/contact-us"}
+                className="text-blue-500 flex items-center gap-1">
+                view our full contact form here &#8594; {/* Unicode right arrow */}
+              </Link>
             </small>
           </header>
 
           <div className="hidden lg:flex">
-            <button className="bg-blue-800 w-fit p-4 px-4 rounded-full text-sm text-white hover:bg-blue-700 transition cursor-pointer">
+            <button className="bg-blue-800 w-full p-3 px-4 rounded-full text-sm text-white hover:bg-blue-700 transition cursor-pointer">
               Get started today
             </button>
           </div>
         </div>
 
-        <hr className="my-2 border-black w-full border-1"></hr>
+        <hr className="my-1 border-black w-full border-1"></hr>
 
         <div className="flex flex-col lg:flex-row w-full h-fit gap-4 items-center lg:items-end">
-          <div className="flex flex-col  lg:min-h-[100px] w-full lg:w-1/6">
+          <div className="flex flex-col lg:min-h-[100px] w-full lg:w-1/6">
             <label htmlFor="name">Name</label>
 
             <input
@@ -164,8 +165,8 @@ const { executeRecaptcha } = useGoogleReCaptcha();
                 fieldStatus.name === true
                   ? "border-green-500"
                   : fieldStatus.name === false
-                  ? "border-red-500"
-                  : ""
+                    ? "border-red-500"
+                    : ""
               }`}
               type="text"
               name="name"
@@ -196,8 +197,8 @@ const { executeRecaptcha } = useGoogleReCaptcha();
                 fieldStatus.number === true
                   ? "border-green-500"
                   : fieldStatus.number === false
-                  ? "border-red-500"
-                  : ""
+                    ? "border-red-500"
+                    : ""
               }`}
               type="text"
               name="number"
@@ -237,8 +238,8 @@ const { executeRecaptcha } = useGoogleReCaptcha();
                 fieldStatus.address === true
                   ? "border-green-500"
                   : fieldStatus.address === false
-                  ? "border-red-500"
-                  : ""
+                    ? "border-red-500"
+                    : ""
               }`}
               type="text"
               name="address"
@@ -273,8 +274,8 @@ const { executeRecaptcha } = useGoogleReCaptcha();
                 fieldStatus.email === true
                   ? "border-green-500"
                   : fieldStatus.email === false
-                  ? "border-red-500"
-                  : ""
+                    ? "border-red-500"
+                    : ""
               }`}
               type="email"
               name="email"
@@ -310,8 +311,8 @@ const { executeRecaptcha } = useGoogleReCaptcha();
                   fieldStatus.service === true
                     ? "border-green-500"
                     : fieldStatus.service === false
-                    ? "border-red-500"
-                    : ""
+                      ? "border-red-500"
+                      : ""
                 }`}
                 name="service"
                 id="service"
