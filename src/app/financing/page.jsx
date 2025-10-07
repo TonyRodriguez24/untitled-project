@@ -1,6 +1,11 @@
 import Button from "../../components/layout/Button";
 import PageDivider from "../../components/layout/PageDivider";
 import HeroHeader from "@/components/home-page/HeroHeader";
+import { MdOutlineCreditCardOff } from "react-icons/md";
+import { MdMoneyOff } from "react-icons/md";
+import { FaRunning } from "react-icons/fa";
+
+
 
 import metaData from "../../data/metaData";
 
@@ -23,7 +28,7 @@ export default function Financing() {
         imageWrapperClassName="bg-amber-400 rounded-2xl flex justify-center items-center mx-auto max-w-xl w-full aspect-[4/3] p-4 px-20"
         imageClassName="w-full h-auto object-cover"
         customBackground=""
-        customTextColor = "text-black"
+        customTextColor="text-black"
       />
 
       {/* Why Choose Hearth Section */}
@@ -34,7 +39,8 @@ export default function Financing() {
           </h2>
           <div className="flex flex-col md:flex-row justify-center gap-8">
             <div className="md:w-1/3 p-4">
-              <i className="bi bi-credit-card text-blue-600 text-5xl mb-4"></i>
+              <MdOutlineCreditCardOff className="mx-auto h-auto w-11 text-yellow-500" />
+
               <h3 className="font-bold my-2">No Credit Impact</h3>
               <p className="text-gray-700 dark:text-gray-400">
                 Prequalify with a "soft" credit check—compare offers without
@@ -42,14 +48,16 @@ export default function Financing() {
               </p>
             </div>
             <div className="md:w-1/3 p-4">
-              <i className="bi bi-cash text-green-600 text-5xl"></i>
+              <MdMoneyOff className="mx-auto h-auto w-11 text-green-500" />
+
               <h3 className="font-bold my-2">No Pre-Payment Fees</h3>
               <p className="text-gray-700 dark:text-gray-400">
                 Pay off your loan early without any additional charges.
               </p>
             </div>
             <div className="md:w-1/3 p-4">
-              <i className="bi bi-clock text-yellow-500 text-5xl mb-4"></i>
+              <FaRunning className="mx-auto h-auto w-11 text-orange-500" />
+
               <h3 className="font-bold my-2">Fast Funding</h3>
               <p className="text-gray-700 dark:text-gray-400">
                 Receive your funds in as little as 1–5 business days.
