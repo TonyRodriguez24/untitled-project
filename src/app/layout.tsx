@@ -1,13 +1,13 @@
 import Footer from "@/components/layout/Footer";
 import MyNavbar from "@/components/layout/MyNavbar";
+import ReCaptchaProviderWrapper from "@/components/ReCaptchaProviderWrapper";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import ReCaptchaProviderWrapper from "@/components/ReCaptchaProviderWrapper";
 import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600", "700"], // pick the weights you need
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
@@ -25,6 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/title_icon.png" type="image/png" />
+      </head>
       <body className={`${poppins.className} antialiased`}>
         <ReCaptchaProviderWrapper>
           <MyNavbar />
