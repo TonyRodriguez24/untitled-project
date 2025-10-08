@@ -154,7 +154,7 @@ const { executeRecaptcha } = useGoogleReCaptcha();
           </div>
         </div>
 
-        <hr className="my-1 border-black w-full border-1"></hr>
+        <hr className="mb-3 border-zinc-400 w-full"></hr>
 
         <div className="flex flex-col lg:flex-row w-full h-fit gap-4 items-center lg:items-end">
           <div className="flex flex-col lg:min-h-[100px] w-full lg:w-1/6">
