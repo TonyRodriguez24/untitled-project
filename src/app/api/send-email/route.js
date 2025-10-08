@@ -1,10 +1,10 @@
-import { Resend } from 'resend';
-import { NextResponse } from 'next/server';
-import { generateEmailToSelf, generateEmailToCustomer } from '../../helpers/emails';
 import Ajv from 'ajv';
-import { contactFormSchema } from '../../../schemas/ContactFormSchema';
 import addFormats from 'ajv-formats';
+import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
 import { titleize } from '../../../data/helpers';
+import { contactFormSchema } from '../../../schemas/ContactFormSchema';
+import { generateEmailToCustomer, generateEmailToSelf } from '../../helpers/emails';
 
 const ajv = new Ajv({ allErrors: true });
 addFormats(ajv);
@@ -19,7 +19,9 @@ export async function POST(request) {
     // Honeypot bot check
     if (
       (data.company && data.company.trim() !== '') ||
-      (data.email && data.email.toLowerCase().includes('estimator'))
+      (data.email && data.email.toLowerCase().includes('estimator')) ||
+      !(/\d/.test(data.address)) // address missing number
+
     ) {
       return NextResponse.json({ success: true });
     }
