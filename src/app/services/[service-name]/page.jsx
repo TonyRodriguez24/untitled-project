@@ -32,7 +32,7 @@ export default async function ServicePage({ params }) {
   return (
     <main>
       {/* Hero Section */}
-      <section className="border-b-3 border-b-gray-400 p-3  py-16 text-center">
+      <section className="border-b-2 border-b-gray-400 p-3  py-16 text-center">
         <div className="lg:max-w-2/3 mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {service.name}
@@ -52,7 +52,7 @@ export default async function ServicePage({ params }) {
             </h2>
             <p className="text-gray-600 lg:text-lg ">{service.caption}</p>
           </div>
-          <div className="flex flex-wrap gap-2 lg:gap-3">
+          <div className="flex flex-wrap gap-2 lg:gap-3 ">
             {service.subServices.map((sub, i) => (
               <a
                 key={i}
@@ -71,7 +71,7 @@ export default async function ServicePage({ params }) {
           <div
             key={i}
             id={sub.name.toLowerCase().replace(/\s+/g, "-")}
-            className="flex flex-col w-11/12 mx-auto md:flex-row items-stretch justify-center rounded-xl p-0 lg:p-6 lg:gap-6 scroll-mt-10">
+            className="flex flex-col  w-11/12 mx-auto md:flex-row items-stretch justify-center rounded-xl p-0 lg:p-6 lg:gap-6 scroll-mt-10">
             {/* Left: Card */}
             <div className="md:w-2/5 flex flex-col">
               <img
