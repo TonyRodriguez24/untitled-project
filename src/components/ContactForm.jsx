@@ -136,13 +136,13 @@ const { executeRecaptcha } = useGoogleReCaptcha();
             <h3 className="font-bold text-xl mb-1">
               Ready when you are, let’s bring your ideas to life with ease.
             </h3>
-            <small className="text-gray-800 dark:text-gray-300 flex flex-wrap items-center gap-1">
+            <small className="text-gray-800 dark:text-gray-300  flex-wrap items-center gap-1">
               No spam or junk emails, just timely updates and professional
-              communication. If you want to leave a message you can
+              communication. If you want to leave a message you can{" "}
               <Link
-                href={"/contact-us"}
-                className="text-blue-500 flex items-center gap-1">
-                view our full contact form here &#8594; {/* Unicode right arrow */}
+                href="/contact-us"
+                className="text-blue-500 inline-flex items-center gap-1">
+                view our full contact form here →
               </Link>
             </small>
           </header>
