@@ -90,7 +90,6 @@ export default function ContactForm() {
      setFieldStatus(updatedStatus);
 
      if (!allValid) {
-       console.log("Validation failed. Form not submitted.");
        return;
      }
 
@@ -111,7 +110,6 @@ export default function ContactForm() {
        router.push("/thank-you");
      } catch (error) {
        setIsSubmitted(false)
-       console.log("Form Errors:", error.response?.data?.details);
        if (error.response?.data?.details) {
          setFormErrors(error.response.data.details);
        }
@@ -138,7 +136,6 @@ export default function ContactForm() {
      const isValid = validateField(name, val);
      setFieldStatus((prev) => ({ ...prev, [name]: isValid }));
 
-     console.log("Field:", name, "| Value:", val, "| Valid:", isValid);
   };
   
   const styles =

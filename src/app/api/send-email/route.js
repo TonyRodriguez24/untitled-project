@@ -14,7 +14,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request) {
   try {
     const data = await request.json();
-    console.log('Incoming form data:', data);
 
     // Honeypot bot check
     if (
@@ -32,7 +31,6 @@ export async function POST(request) {
     // Validation
     const validate = ajv.compile(contactFormSchema);
     const valid = validate(data);
-    console.log(validate.errors);
 
     if (!valid) {
       const parsedErrors = {};
@@ -56,7 +54,6 @@ export async function POST(request) {
       subject: 'New Form Submission on jpmandsons.com',
       html: generateEmailToSelf(data),
     });
-    console.log('Self email result:', selfEmail);
 
     const customerEmail = await resend.emails.send({
       from: 'JPM and Sons <contact@jpmandsons.com>',
@@ -64,7 +61,6 @@ export async function POST(request) {
       subject: 'Thank you for contacting us.',
       html: generateEmailToCustomer(data),
     });
-    console.log('Customer email result:', customerEmail);
 
 
     return NextResponse.json({ success: true });

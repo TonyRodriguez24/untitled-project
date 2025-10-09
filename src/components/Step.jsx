@@ -11,7 +11,6 @@ function Step({ stepNumber, description, values = [], fields = [] }) {
       <ul className="flex gap-10">
         {values.map((item) => (
           <li key={item.id} className="list-none">
-            {console.log('logging item id ' + item.id)}
             {/* Image */}
             {item.img ? (
               <img src={item.img} className="w-100 h-60" />

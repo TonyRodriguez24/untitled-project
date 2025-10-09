@@ -72,7 +72,6 @@ const { executeRecaptcha } = useGoogleReCaptcha();
     setFieldStatus(updatedStatus);
 
     if (!allValid) {
-      console.log("Validation failed. Form not submitted.");
       return;
     }
 
@@ -92,7 +91,6 @@ const { executeRecaptcha } = useGoogleReCaptcha();
       setFormErrors({});
       router.push("/thank-you");
     } catch (error) {
-      console.log("Form Errors:", error.response?.data?.details);
       if (error.response?.data?.details) {
         setFormErrors(error.response.data.details);
       }
@@ -119,7 +117,6 @@ const { executeRecaptcha } = useGoogleReCaptcha();
     const isValid = validateField(name, val);
     setFieldStatus((prev) => ({ ...prev, [name]: isValid }));
 
-    console.log("Field:", name, "| Value:", val, "| Valid:", isValid);
   };
 
   const styles = "p-2 border-1 border-black rounded-sm bg-stone-200 text-black dark:bg-zinc-200 lg:dark:bg-zinc-200";
