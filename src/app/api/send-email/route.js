@@ -19,12 +19,15 @@ export async function POST(request) {
     // Honeypot bot check
     if (
       (data.company && data.company.trim() !== '') ||
-      (data.email && data.email.toLowerCase().includes('estimator')) ||
+      (data.email && (
+        data.email.toLowerCase().includes('estimator') ||
+        data.email.toLowerCase().includes('estimation')
+      )) ||
       !(/\d/.test(data.address)) // address missing number
-
     ) {
-      return NextResponse.json({ success: true });
+      return NextResponse.json({ success: true }, { status: 200 });
     }
+
 
     // Validation
     const validate = ajv.compile(contactFormSchema);
